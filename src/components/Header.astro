@@ -1,0 +1,155 @@
+---
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { MobileMenu } from "@/components/MobileMenu";
+import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
+import { SITE } from "@/config";
+import { translateFor, getRelativeLocalePath } from "@/i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const { pathname } = Astro.url;
+const currentLocale = Astro.currentLocale;
+const t = translateFor(currentLocale);
+
+const currentPath =
+  pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+
+const isActive = (path: string) => {
+  const currentPathArray = currentPath.split("/").filter(p => p.trim());
+  const pathArray = path.split("/").filter(p => p.trim());
+  return currentPath === path || currentPathArray[0] === pathArray[0];
+};
+
+const navLinks = [
+  { href: "/", label: t("home") },
+  { href: "/features", label: t("features") },
+  { href: "/pricing", label: t("pricing") },
+  { href: "/blog", label: t("blog") },
+  { href: "/about", label: t("about") },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container flex h-16 items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-6">
+      <a
+        href={getRelativeLocalePath(currentLocale, "/")}
+        class="flex items-center space-x-2 font-bold text-xl"
+      >
+        <span class="text-primary">⚡</span>
+        <span>{t("site.title")}</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a
+            href={getRelativeLocalePath(currentLocale, link.href)}
+            class:list={[
+              "text-sm font-medium transition-colors hover:text-primary",
+              isActive(link.href) ? "text-foreground" : "text-muted-foreground"
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Right side actions -->
+    <div class="flex items-center gap-4">
+      <!-- Language Picker -->
+      <div class="hidden sm:block">
+        <LanguagePicker />
+      </div>
+      
+      <!-- Theme Toggle -->
+      <button
+        id="theme-btn"
+        class="focus-outline p-2 hover:text-accent transition-colors"
+        title={t("toggleLightAndDark")}
+        aria-label={t("toggleLightAndDark")}
+        aria-live="polite"
+      >
+        <IconSunHigh id="sun-svg" class="scale-125 hover:rotate-12 transition-transform" />
+        <IconMoon id="moon-svg" class="hidden scale-125 hover:-rotate-12 transition-transform" />
+      </button>
+
+      <!-- CTA Buttons (Desktop) -->
+      <div class="hidden lg:flex items-center gap-2">
+        <Button variant="ghost" size="sm" client:load>
+          <a href="/login" class="no-underline">{t("signIn")}</a>
+        </Button>
+        <Button size="sm" className="rounded-xl" client:load>
+          <a href="/signup" class="no-underline">{t("startFree")}</a>
+        </Button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <MobileMenu navLinks={navLinks} client:load />
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupTheme() {
+    const theme = (() => {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+
+    window.localStorage.setItem("theme", theme || "light");
+  }
+
+  setupTheme();
+  document.addEventListener("astro:after-swap", setupTheme);
+
+  function attachThemeToggle() {
+    const themeBtn = document.querySelector("#theme-btn");
+    const sunSvg = document.querySelector("#sun-svg");
+    const moonSvg = document.querySelector("#moon-svg");
+
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      sunSvg?.classList.add("hidden");
+      moonSvg?.classList.remove("hidden");
+    }
+
+    themeBtn?.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      
+      if (newTheme === "dark") {
+        sunSvg?.classList.add("hidden");
+        moonSvg?.classList.remove("hidden");
+      } else {
+        sunSvg?.classList.remove("hidden");
+        moonSvg?.classList.add("hidden");
+      }
+    });
+  }
+
+  attachThemeToggle();
+  document.addEventListener("astro:after-swap", attachThemeToggle);
+</script>

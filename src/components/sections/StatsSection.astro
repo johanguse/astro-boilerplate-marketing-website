@@ -1,0 +1,65 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+  suffix?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  stats: Stat[];
+}
+
+const { title, subtitle, stats } = Astro.props;
+---
+
+<section class="py-20 md:py-32 bg-muted/30">
+  <div class="container max-w-7xl">
+    {(title || subtitle) && (
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+          {title}
+        </h2>
+        {subtitle && (
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      {stats.map((stat, index) => (
+        <div 
+          class="text-center animate-scale-in"
+          style={`animation-delay: ${index * 150}ms`}
+        >
+          <div class="flex items-baseline justify-center gap-2 mb-2">
+            <span class="text-5xl md:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
+              {stat.value}
+            </span>
+            {stat.suffix && (
+              <span class="text-3xl font-bold text-primary/70">
+                {stat.suffix}
+              </span>
+            )}
+          </div>
+          <p class="text-lg text-muted-foreground font-medium">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @supports (-webkit-background-clip: text) {
+    .bg-clip-text {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+</style>

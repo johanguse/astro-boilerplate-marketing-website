@@ -1,0 +1,70 @@
+---
+import { Button } from "@/components/ui/button";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  primaryCta?: string;
+  primaryCtaHref?: string;
+  secondaryCta?: string;
+  secondaryCtaHref?: string;
+  variant?: "default" | "gradient";
+}
+
+const {
+  title,
+  subtitle,
+  primaryCta = "Get Started",
+  primaryCtaHref = "#",
+  secondaryCta,
+  secondaryCtaHref = "#",
+  variant = "default",
+} = Astro.props;
+
+const bgClass = variant === "gradient" 
+  ? "bg-gradient-to-br from-primary via-primary to-accent" 
+  : "bg-muted/50";
+const textClass = variant === "gradient" ? "text-white" : "text-foreground";
+---
+
+<section class={`py-20 md:py-32 ${bgClass}`}>
+  <div class="container max-w-5xl">
+    <div class="text-center animate-slide-up">
+      <h2 class={`text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 ${textClass}`}>
+        {title}
+      </h2>
+      
+      {subtitle && (
+        <p class={`text-xl mb-10 max-w-3xl mx-auto leading-relaxed ${variant === "gradient" ? "text-white/90" : "text-muted-foreground"}`}>
+          {subtitle}
+        </p>
+      )}
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button 
+          size="lg" 
+          variant={variant === "gradient" ? "secondary" : "default"}
+          className="px-8 py-6 text-lg rounded-2xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300" 
+          client:load
+        >
+          <a href={primaryCtaHref} class="no-underline">
+            {primaryCta}
+          </a>
+        </Button>
+        
+        {secondaryCta && (
+          <Button 
+            variant={variant === "gradient" ? "outline" : "outline"}
+            size="lg" 
+            className={`px-8 py-6 text-lg rounded-2xl shadow-soft hover:shadow-soft-lg transition-all duration-300 ${variant === "gradient" ? "text-white border-white/30 hover:bg-white/10" : ""}`}
+            client:load
+          >
+            <a href={secondaryCtaHref} class="no-underline">
+              {secondaryCta}
+            </a>
+          </Button>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

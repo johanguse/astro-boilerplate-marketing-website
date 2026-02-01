@@ -1,0 +1,205 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+import PricingSection from "@/components/sections/PricingSection.astro";
+import CTASection from "@/components/sections/CTASection.astro";
+import StatsSection from "@/components/sections/StatsSection.astro";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+import { translateFor } from "@/i18n/utils";
+import type { GetStaticPaths } from "astro";
+
+export const prerender = true;
+
+export const getStaticPaths = (async () =>
+  SUPPORTED_LOCALES.map(locale => ({
+    params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
+  }))) satisfies GetStaticPaths;
+
+const { locale = DEFAULT_LOCALE } = Astro.params;
+const t = translateFor(Astro.currentLocale);
+
+const plans = [
+  {
+    name: "Free",
+    price: "$0",
+    period: "month",
+    description: "Perfect for trying out our AI features",
+    badge: undefined,
+    popular: false,
+    cta: "Start Free",
+    ctaHref: "/signup",
+    features: [
+      { text: "10 AI Credits/month", included: true },
+      { text: "AI Document Intelligence", included: true },
+      { text: "1 Project", included: true },
+      { text: "1 User", included: true },
+      { text: "1GB Storage", included: true },
+      { text: "AI Content Generation", included: false },
+      { text: "AI Analytics", included: false },
+      { text: "API Access", included: false },
+    ],
+  },
+  {
+    name: "Starter",
+    price: "$9.90",
+    period: "month",
+    description: "Great for individuals and small teams",
+    badge: undefined,
+    popular: false,
+    cta: "Get Started",
+    ctaHref: "/signup?plan=starter",
+    features: [
+      { text: "1,000 AI Credits/month", included: true },
+      { text: "AI Document Intelligence", included: true },
+      { text: "AI Content Generation", included: true },
+      { text: "1 Project", included: true },
+      { text: "3 Users", included: true },
+      { text: "5GB Storage", included: true },
+      { text: "AI Analytics", included: false },
+      { text: "API Access", included: false },
+    ],
+  },
+  {
+    name: "Professional",
+    price: "$29.90",
+    period: "month",
+    description: "For growing businesses and teams",
+    badge: "Most Popular",
+    popular: true,
+    cta: "Start Pro",
+    ctaHref: "/signup?plan=professional",
+    features: [
+      { text: "5,000 AI Credits/month", included: true },
+      { text: "AI Document Intelligence", included: true },
+      { text: "AI Content Generation", included: true },
+      { text: "AI Analytics", included: true },
+      { text: "5 Projects", included: true },
+      { text: "10 Users", included: true },
+      { text: "20GB Storage", included: true },
+      { text: "API Access", included: false },
+    ],
+  },
+  {
+    name: "Business",
+    price: "$99.90",
+    period: "month",
+    description: "Enterprise-grade AI capabilities",
+    badge: undefined,
+    popular: false,
+    cta: "Contact Sales",
+    ctaHref: "/contact",
+    features: [
+      { text: "25,000 AI Credits/month", included: true },
+      { text: "AI Document Intelligence", included: true },
+      { text: "AI Content Generation", included: true },
+      { text: "AI Analytics", included: true },
+      { text: "20 Projects", included: true },
+      { text: "50 Users", included: true },
+      { text: "100GB Storage", included: true },
+      { text: "Full API Access", included: true },
+    ],
+  },
+];
+
+const stats = [
+  { value: "99.9", suffix: "%", label: "Uptime SLA" },
+  { value: "10M+", suffix: "", label: "AI Operations" },
+  { value: "5K+", suffix: "", label: "Happy Customers" },
+  { value: "24/7", suffix: "", label: "Support" },
+];
+---
+
+<Layout title="Pricing - AI-Powered SaaS Platform" description="Simple, transparent pricing for our AI-powered platform. Choose the plan that fits your needs.">
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 md:py-32 bg-gradient-mesh">
+      <div class="container max-w-4xl text-center">
+        <h1 class="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6 animate-slide-up">
+          Pricing that scales with you
+        </h1>
+        <p class="text-xl text-muted-foreground mb-8 animate-fade-in">
+          Start free, upgrade when you need more power. All plans include access to our AI features.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <PricingSection
+      title="Choose your plan"
+      subtitle="All plans include a 14-day money-back guarantee"
+      plans={plans}
+    />
+
+    <!-- Stats -->
+    <StatsSection
+      title="Trusted by teams worldwide"
+      subtitle="Join thousands of companies using our AI platform"
+      stats={stats}
+    />
+
+    <!-- FAQ Section -->
+    <section class="py-20 md:py-32 bg-muted/30">
+      <div class="container max-w-4xl">
+        <h2 class="text-4xl font-bold tracking-tight text-center mb-16">
+          Frequently asked questions
+        </h2>
+        
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-3">What are AI Credits?</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              AI Credits are used to power all AI operations on our platform. 1 credit ≈ 1,000 tokens. 
+              Document processing uses 10-50 credits, content generation uses 5-20 credits, and analytics queries use 3-10 credits per operation.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-3">Can I change plans anytime?</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, 
+              and we'll prorate any charges or credits.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-3">What happens if I exceed my credits?</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              You can purchase additional credit packs or upgrade to a higher plan. We'll notify you 
+              when you reach 80% of your monthly limit.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-3">Do you offer refunds?</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Yes! We offer a 14-day money-back guarantee on all paid plans. If you're not satisfied, 
+              we'll refund your payment in full.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-3">Can I use my own OpenAI API key?</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Business plan users can connect their own API keys for OpenAI, Anthropic, or OpenRouter 
+              to reduce costs and have full control over their AI usage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTASection
+      title="Ready to get started?"
+      subtitle="Join thousands of teams already using our AI platform"
+      primaryCta="Start Free Trial"
+      primaryCtaHref="/signup"
+      secondaryCta="Contact Sales"
+      secondaryCtaHref="/contact"
+      variant="gradient"
+    />
+  </main>
+  <Footer />
+</Layout>

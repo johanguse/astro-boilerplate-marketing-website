@@ -1,0 +1,393 @@
+{
+  "pt/como-adicionar-equacoes-latex-blog": [
+    {
+      "id": "pt/guia-inteligencia-documental-ia",
+      "similarity": 0.2726
+    },
+    {
+      "id": "pt/revolucao-criacao-conteudo-ia",
+      "similarity": 0.2563
+    },
+    {
+      "id": "pt/analise-potenciada-ia-negocios",
+      "similarity": 0.1987
+    }
+  ],
+  "pt/revolucao-criacao-conteudo-ia": [
+    {
+      "id": "pt/analise-potenciada-ia-negocios",
+      "similarity": 0.6185
+    },
+    {
+      "id": "pt/guia-inteligencia-documental-ia",
+      "similarity": 0.5965
+    },
+    {
+      "id": "pt/como-adicionar-equacoes-latex-blog",
+      "similarity": 0.2563
+    }
+  ],
+  "pt/guia-inteligencia-documental-ia": [
+    {
+      "id": "pt/analise-potenciada-ia-negocios",
+      "similarity": 0.7525
+    },
+    {
+      "id": "pt/revolucao-criacao-conteudo-ia",
+      "similarity": 0.5965
+    },
+    {
+      "id": "pt/como-adicionar-equacoes-latex-blog",
+      "similarity": 0.2726
+    }
+  ],
+  "pt/analise-potenciada-ia-negocios": [
+    {
+      "id": "pt/guia-inteligencia-documental-ia",
+      "similarity": 0.7525
+    },
+    {
+      "id": "pt/revolucao-criacao-conteudo-ia",
+      "similarity": 0.6185
+    },
+    {
+      "id": "pt/como-adicionar-equacoes-latex-blog",
+      "similarity": 0.1987
+    }
+  ],
+  "fr/analytique-ia-entreprises": [
+    {
+      "id": "fr/guide-intelligence-documentaire-ia",
+      "similarity": 0.5703
+    },
+    {
+      "id": "fr/revolution-creation-contenu-ia",
+      "similarity": 0.4858
+    },
+    {
+      "id": "fr/comment-ajouter-equations-latex-blog",
+      "similarity": 0.206
+    }
+  ],
+  "fr/comment-ajouter-equations-latex-blog": [
+    {
+      "id": "fr/guide-intelligence-documentaire-ia",
+      "similarity": 0.3018
+    },
+    {
+      "id": "fr/revolution-creation-contenu-ia",
+      "similarity": 0.274
+    },
+    {
+      "id": "fr/analytique-ia-entreprises",
+      "similarity": 0.206
+    }
+  ],
+  "fr/guide-intelligence-documentaire-ia": [
+    {
+      "id": "fr/analytique-ia-entreprises",
+      "similarity": 0.5703
+    },
+    {
+      "id": "fr/revolution-creation-contenu-ia",
+      "similarity": 0.5302
+    },
+    {
+      "id": "fr/comment-ajouter-equations-latex-blog",
+      "similarity": 0.3018
+    }
+  ],
+  "fr/revolution-creation-contenu-ia": [
+    {
+      "id": "fr/guide-intelligence-documentaire-ia",
+      "similarity": 0.5302
+    },
+    {
+      "id": "fr/analytique-ia-entreprises",
+      "similarity": 0.4858
+    },
+    {
+      "id": "fr/comment-ajouter-equations-latex-blog",
+      "similarity": 0.274
+    }
+  ],
+  "ar/how-to-add-latex-equations-in-blog-posts": [
+    {
+      "id": "ar/tailwind-typography",
+      "similarity": 0.2666
+    }
+  ],
+  "ar/tailwind-typography": [
+    {
+      "id": "ar/how-to-add-latex-equations-in-blog-posts",
+      "similarity": 0.2666
+    }
+  ],
+  "de/ki-dokument-intelligenz-leitfaden": [
+    {
+      "id": "de/ki-gestutzte-analytik-unternehmen",
+      "similarity": 0.6853
+    },
+    {
+      "id": "de/ki-content-erstellung-revolution",
+      "similarity": 0.5216
+    },
+    {
+      "id": "de/latex-gleichungen-blog-hinzufuegen",
+      "similarity": 0.0929
+    }
+  ],
+  "de/latex-gleichungen-blog-hinzufuegen": [
+    {
+      "id": "de/ki-content-erstellung-revolution",
+      "similarity": 0.1565
+    },
+    {
+      "id": "de/ki-gestutzte-analytik-unternehmen",
+      "similarity": 0.1158
+    },
+    {
+      "id": "de/ki-dokument-intelligenz-leitfaden",
+      "similarity": 0.0929
+    }
+  ],
+  "de/ki-gestutzte-analytik-unternehmen": [
+    {
+      "id": "de/ki-dokument-intelligenz-leitfaden",
+      "similarity": 0.6853
+    },
+    {
+      "id": "de/ki-content-erstellung-revolution",
+      "similarity": 0.5547
+    },
+    {
+      "id": "de/latex-gleichungen-blog-hinzufuegen",
+      "similarity": 0.1158
+    }
+  ],
+  "de/ki-content-erstellung-revolution": [
+    {
+      "id": "de/ki-gestutzte-analytik-unternehmen",
+      "similarity": 0.5547
+    },
+    {
+      "id": "de/ki-dokument-intelligenz-leitfaden",
+      "similarity": 0.5216
+    },
+    {
+      "id": "de/latex-gleichungen-blog-hinzufuegen",
+      "similarity": 0.1565
+    }
+  ],
+  "zh/preview": [],
+  "es/analitica-potenciada-ia-negocios": [
+    {
+      "id": "es/revolucion-creacion-contenido-ia",
+      "similarity": 0.6494
+    },
+    {
+      "id": "es/guia-inteligencia-documental-ia",
+      "similarity": 0.6281
+    },
+    {
+      "id": "es/como-agregar-ecuaciones-latex-blog",
+      "similarity": 0.2148
+    }
+  ],
+  "es/como-agregar-ecuaciones-latex-blog": [
+    {
+      "id": "es/guia-inteligencia-documental-ia",
+      "similarity": 0.2825
+    },
+    {
+      "id": "es/revolucion-creacion-contenido-ia",
+      "similarity": 0.2314
+    },
+    {
+      "id": "es/analitica-potenciada-ia-negocios",
+      "similarity": 0.2148
+    }
+  ],
+  "es/guia-inteligencia-documental-ia": [
+    {
+      "id": "es/analitica-potenciada-ia-negocios",
+      "similarity": 0.6281
+    },
+    {
+      "id": "es/revolucion-creacion-contenido-ia",
+      "similarity": 0.4654
+    },
+    {
+      "id": "es/como-agregar-ecuaciones-latex-blog",
+      "similarity": 0.2825
+    }
+  ],
+  "es/revolucion-creacion-contenido-ia": [
+    {
+      "id": "es/analitica-potenciada-ia-negocios",
+      "similarity": 0.6494
+    },
+    {
+      "id": "es/guia-inteligencia-documental-ia",
+      "similarity": 0.4654
+    },
+    {
+      "id": "es/como-agregar-ecuaciones-latex-blog",
+      "similarity": 0.2314
+    }
+  ],
+  "en/ai-powered-analytics-business": [
+    {
+      "id": "en/ai-document-intelligence-guide",
+      "similarity": 0.6382
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.4787
+    },
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.1005
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.0862
+    },
+    {
+      "id": "en/terminal-development",
+      "similarity": 0.0674
+    }
+  ],
+  "en/ai-document-intelligence-guide": [
+    {
+      "id": "en/ai-powered-analytics-business",
+      "similarity": 0.6382
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.5311
+    },
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.1075
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.1006
+    },
+    {
+      "id": "en/how-to-add-latex-equations-in-blog-posts",
+      "similarity": 0.0576
+    }
+  ],
+  "en/ai-content-creation-revolution": [
+    {
+      "id": "en/ai-document-intelligence-guide",
+      "similarity": 0.5311
+    },
+    {
+      "id": "en/ai-powered-analytics-business",
+      "similarity": 0.4787
+    },
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.2787
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.2465
+    },
+    {
+      "id": "en/terminal-development",
+      "similarity": 0.2107
+    }
+  ],
+  "en/how-to-add-latex-equations-in-blog-posts": [
+    {
+      "id": "en/terminal-development",
+      "similarity": 0.3012
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.2666
+    },
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.1465
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.1088
+    },
+    {
+      "id": "en/ai-document-intelligence-guide",
+      "similarity": 0.0576
+    }
+  ],
+  "en/portfolio-website-development": [
+    {
+      "id": "en/terminal-development",
+      "similarity": 0.5482
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.2787
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.244
+    },
+    {
+      "id": "en/how-to-add-latex-equations-in-blog-posts",
+      "similarity": 0.1465
+    },
+    {
+      "id": "en/ai-document-intelligence-guide",
+      "similarity": 0.1075
+    }
+  ],
+  "en/terminal-development": [
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.5482
+    },
+    {
+      "id": "en/tailwind-typography",
+      "similarity": 0.3058
+    },
+    {
+      "id": "en/how-to-add-latex-equations-in-blog-posts",
+      "similarity": 0.3012
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.2107
+    },
+    {
+      "id": "en/ai-powered-analytics-business",
+      "similarity": 0.0674
+    }
+  ],
+  "en/tailwind-typography": [
+    {
+      "id": "en/terminal-development",
+      "similarity": 0.3058
+    },
+    {
+      "id": "en/how-to-add-latex-equations-in-blog-posts",
+      "similarity": 0.2666
+    },
+    {
+      "id": "en/ai-content-creation-revolution",
+      "similarity": 0.2465
+    },
+    {
+      "id": "en/portfolio-website-development",
+      "similarity": 0.244
+    },
+    {
+      "id": "en/ai-document-intelligence-guide",
+      "similarity": 0.1006
+    }
+  ]
+}

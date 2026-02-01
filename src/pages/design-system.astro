@@ -1,0 +1,346 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
+import { AvatarDemo } from "@/components/AvatarDemo";
+import { AccordionDemo } from "@/components/AccordionDemo";
+---
+
+<Layout title="Design System">
+  <main class="container py-16 space-y-20">
+    <!-- Header -->
+    <section class="text-center max-w-3xl mx-auto">
+      <Badge variant="secondary" className="mb-6 px-4 py-2" client:load>
+        Design System v1.0
+      </Badge>
+      <h1 class="text-5xl font-bold mb-6">
+        Design System
+      </h1>
+      <p class="text-xl text-muted-foreground">
+        A comprehensive design system built with shadcn/ui, Tailwind CSS v4, and Stripe-inspired aesthetics.
+      </p>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Color Palette -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Color Palette</h2>
+        <p class="text-muted-foreground text-lg">Vibrant, accessible colors inspired by Stripe</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="space-y-3">
+          <div class="h-32 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground font-semibold">
+            Primary
+          </div>
+          <p class="text-sm font-mono text-muted-foreground">hsl(257 73% 55%)</p>
+          <p class="text-sm">Rich purple for primary actions</p>
+        </div>
+        
+        <div class="space-y-3">
+          <div class="h-32 rounded-2xl bg-accent flex items-center justify-center text-accent-foreground font-semibold">
+            Accent
+          </div>
+          <p class="text-sm font-mono text-muted-foreground">hsl(174 78% 45%)</p>
+          <p class="text-sm">Vibrant teal for highlights</p>
+        </div>
+        
+        <div class="space-y-3">
+          <div class="h-32 rounded-2xl bg-success flex items-center justify-center text-success-foreground font-semibold">
+            Success
+          </div>
+          <p class="text-sm font-mono text-muted-foreground">hsl(142 71% 45%)</p>
+          <p class="text-sm">Green for success states</p>
+        </div>
+        
+        <div class="space-y-3">
+          <div class="h-32 rounded-2xl bg-destructive flex items-center justify-center text-destructive-foreground font-semibold">
+            Destructive
+          </div>
+          <p class="text-sm font-mono text-muted-foreground">hsl(0 72% 51%)</p>
+          <p class="text-sm">Red for errors and warnings</p>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Typography -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Typography</h2>
+        <p class="text-muted-foreground text-lg">Clear hierarchy with Inter font family</p>
+      </div>
+      
+      <div class="space-y-6">
+        <div>
+          <h1 class="text-6xl font-bold mb-2">Heading 1</h1>
+          <p class="text-sm font-mono text-muted-foreground">text-6xl font-bold</p>
+        </div>
+        
+        <div>
+          <h2 class="text-5xl font-bold mb-2">Heading 2</h2>
+          <p class="text-sm font-mono text-muted-foreground">text-5xl font-bold</p>
+        </div>
+        
+        <div>
+          <h3 class="text-4xl font-semibold mb-2">Heading 3</h3>
+          <p class="text-sm font-mono text-muted-foreground">text-4xl font-semibold</p>
+        </div>
+        
+        <div>
+          <h4 class="text-2xl font-semibold mb-2">Heading 4</h4>
+          <p class="text-sm font-mono text-muted-foreground">text-2xl font-semibold</p>
+        </div>
+        
+        <div>
+          <p class="text-lg leading-relaxed mb-2">
+            Body text with comfortable reading experience. The quick brown fox jumps over the lazy dog.
+          </p>
+          <p class="text-sm font-mono text-muted-foreground">text-lg leading-relaxed</p>
+        </div>
+        
+        <div>
+          <p class="text-sm text-muted-foreground mb-2">
+            Small text for captions and metadata. Perfect for secondary information.
+          </p>
+          <p class="text-sm font-mono text-muted-foreground">text-sm text-muted-foreground</p>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Buttons -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Buttons</h2>
+        <p class="text-muted-foreground text-lg">Variants and sizes for every use case</p>
+      </div>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Variants</h3>
+          <div class="flex flex-wrap gap-4">
+            <Button client:load>Default</Button>
+            <Button variant="secondary" client:load>Secondary</Button>
+            <Button variant="destructive" client:load>Destructive</Button>
+            <Button variant="outline" client:load>Outline</Button>
+            <Button variant="ghost" client:load>Ghost</Button>
+            <Button variant="link" client:load>Link</Button>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Sizes</h3>
+          <div class="flex flex-wrap items-center gap-4">
+            <Button size="sm" client:load>Small</Button>
+            <Button client:load>Default</Button>
+            <Button size="lg" client:load>Large</Button>
+            <Button size="icon" client:load>⚡</Button>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-4">With Rounded Corners</h3>
+          <div class="flex flex-wrap gap-4">
+            <Button className="rounded-xl" client:load>Rounded Medium</Button>
+            <Button className="rounded-2xl" client:load>Rounded Large</Button>
+            <Button className="rounded-full px-8" client:load>Pill</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Cards -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Cards</h2>
+        <p class="text-muted-foreground text-lg">Flexible container component</p>
+      </div>
+      
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Card className="rounded-2xl border-2" client:load>
+          <CardHeader>
+            <CardTitle>Basic Card</CardTitle>
+            <CardDescription>
+              Simple card with title and description
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">Content goes here with comfortable padding and spacing.</p>
+          </CardContent>
+        </Card>
+        
+        <Card className="rounded-2xl border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-soft-lg" client:load>
+          <CardHeader>
+            <CardTitle>Interactive Card</CardTitle>
+            <CardDescription>
+              Hover to see effects
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">This card has hover states with smooth transitions.</p>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full" client:load>Action</Button>
+          </CardFooter>
+        </Card>
+        
+        <Card className="rounded-2xl border-2 border-primary" client:load>
+          <CardHeader>
+            <Badge className="w-fit mb-2" client:load>Featured</Badge>
+            <CardTitle>Highlighted Card</CardTitle>
+            <CardDescription>
+              Primary border emphasis
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">Use for important or featured content.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Badges -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Badges</h2>
+        <p class="text-muted-foreground text-lg">Small labels and tags</p>
+      </div>
+      
+      <div class="flex flex-wrap gap-4 items-center">
+        <Badge client:load>Default</Badge>
+        <Badge variant="secondary" client:load>Secondary</Badge>
+        <Badge variant="destructive" client:load>Destructive</Badge>
+        <Badge variant="outline" client:load>Outline</Badge>
+        <Badge className="bg-success text-success-foreground" client:load>Success</Badge>
+        <Badge className="bg-warning text-warning-foreground" client:load>Warning</Badge>
+        <Badge className="px-4 py-2 text-base" client:load>Large Badge</Badge>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Form Inputs -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Form Inputs</h2>
+        <p class="text-muted-foreground text-lg">Interactive form elements</p>
+      </div>
+      
+      <div class="max-w-2xl space-y-6">
+        <div class="space-y-2">
+          <Label htmlFor="email" client:load>Email</Label>
+          <Input type="email" id="email" placeholder="Enter your email" className="rounded-xl" client:load />
+          <p class="text-sm text-muted-foreground">We'll never share your email.</p>
+        </div>
+        
+        <div class="space-y-2">
+          <Label htmlFor="message" client:load>Message</Label>
+          <Textarea id="message" placeholder="Type your message here" className="rounded-xl min-h-32" client:load />
+        </div>
+        
+        <Button className="rounded-xl" client:load>Submit</Button>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Avatar -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Avatars</h2>
+        <p class="text-muted-foreground text-lg">User profile images with fallbacks</p>
+      </div>
+      
+      <AvatarDemo client:load />
+    </section>
+
+    <Separator client:load />
+
+    <!-- Accordion -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Accordion</h2>
+        <p class="text-muted-foreground text-lg">Collapsible content sections</p>
+      </div>
+      
+      <AccordionDemo client:load />
+    </section>
+
+    <Separator client:load />
+
+    <!-- Shadows -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Shadows</h2>
+        <p class="text-muted-foreground text-lg">Soft, Stripe-inspired shadows</p>
+      </div>
+      
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-8 bg-card rounded-2xl shadow-soft">
+          <p class="font-semibold mb-2">shadow-soft</p>
+          <p class="text-sm text-muted-foreground">Subtle elevation for cards</p>
+        </div>
+        
+        <div class="p-8 bg-card rounded-2xl shadow-soft-lg">
+          <p class="font-semibold mb-2">shadow-soft-lg</p>
+          <p class="text-sm text-muted-foreground">Medium elevation for modals</p>
+        </div>
+        
+        <div class="p-8 bg-card rounded-2xl shadow-soft-xl">
+          <p class="font-semibold mb-2">shadow-soft-xl</p>
+          <p class="text-sm text-muted-foreground">High elevation for popovers</p>
+        </div>
+      </div>
+    </section>
+
+    <Separator client:load />
+
+    <!-- Animations -->
+    <section class="space-y-8">
+      <div>
+        <h2 class="text-4xl font-semibold mb-3">Animations</h2>
+        <p class="text-muted-foreground text-lg">Smooth CSS animations using View Transitions API</p>
+      </div>
+      
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-8 bg-muted rounded-2xl animate-fade-in">
+          <p class="font-semibold mb-2">animate-fade-in</p>
+          <p class="text-sm text-muted-foreground">0.5s ease-out</p>
+        </div>
+        
+        <div class="p-8 bg-muted rounded-2xl animate-slide-up">
+          <p class="font-semibold mb-2">animate-slide-up</p>
+          <p class="text-sm text-muted-foreground">0.6s ease-out</p>
+        </div>
+        
+        <div class="p-8 bg-muted rounded-2xl animate-scale-in">
+          <p class="font-semibold mb-2">animate-scale-in</p>
+          <p class="text-sm text-muted-foreground">0.4s ease-out</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

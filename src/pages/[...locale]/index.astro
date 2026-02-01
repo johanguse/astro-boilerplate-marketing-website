@@ -1,0 +1,240 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+import HeroSection from "@/components/sections/HeroSection.astro";
+import FeatureGrid from "@/components/sections/FeatureGrid.astro";
+import StatsSection from "@/components/sections/StatsSection.astro";
+import CTASection from "@/components/sections/CTASection.astro";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+import { translateFor } from "@/i18n/utils";
+import type { GetStaticPaths } from "astro";
+
+export const prerender = true;
+
+export const getStaticPaths = (async () =>
+  SUPPORTED_LOCALES.map(locale => ({
+    params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
+  }))) satisfies GetStaticPaths;
+
+const { locale = DEFAULT_LOCALE } = Astro.params;
+const t = translateFor(Astro.currentLocale);
+
+const features = [
+  {
+    icon: "📄",
+    title: t("home.feature.docIntel.title"),
+    description: t("home.feature.docIntel.desc"),
+  },
+  {
+    icon: "✍️",
+    title: t("home.feature.contentGen.title"),
+    description: t("home.feature.contentGen.desc"),
+  },
+  {
+    icon: "📊",
+    title: t("home.feature.analytics.title"),
+    description: t("home.feature.analytics.desc"),
+  },
+  {
+    icon: "🔐",
+    title: t("home.feature.security.title"),
+    description: t("home.feature.security.desc"),
+  },
+  {
+    icon: "🌐",
+    title: t("home.feature.multiLang.title"),
+    description: t("home.feature.multiLang.desc"),
+  },
+  {
+    icon: "🔌",
+    title: t("home.feature.flexible.title"),
+    description: t("home.feature.flexible.desc"),
+  },
+];
+
+const stats = [
+  { value: "99.9", suffix: "%", label: t("home.stats.uptime") },
+  { value: "10M+", suffix: "", label: t("home.stats.operations") },
+  { value: "5K+", suffix: "", label: t("home.stats.customers") },
+  { value: "24/7", suffix: "", label: t("home.stats.support") },
+];
+---
+
+<Layout>
+  <Header />
+  <main id="main-content">
+    <!-- Hero -->
+    <HeroSection
+      badge={t("home.hero.badge")}
+      title={t("home.hero.title")}
+      subtitle={t("home.hero.subtitle")}
+      primaryCta={t("cta.startFreeTrial")}
+      primaryCtaHref="/signup"
+      secondaryCta={t("cta.viewDemo")}
+      secondaryCtaHref="/demo"
+    >
+      <div slot="logos" class="flex items-center gap-8 text-2xl">
+        <span>OpenAI</span>
+        <span>Anthropic</span>
+        <span>Google</span>
+      </div>
+    </HeroSection>
+
+    <!-- Features -->
+    <FeatureGrid
+      title={t("home.features.title")}
+      subtitle={t("home.features.subtitle")}
+      features={features}
+    />
+
+    <!-- How It Works -->
+    <section class="py-20 md:py-32 bg-muted/30">
+      <div class="container max-w-7xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4">
+            {t("home.howItWorks.title")}
+          </h2>
+          <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t("home.howItWorks.subtitle")}
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="text-center border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-3xl font-bold">
+                1
+              </div>
+              <CardTitle className="text-2xl">{t("home.howItWorks.step1.title")}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base">
+                {t("home.howItWorks.step1.desc")}
+              </CardDescription>
+            </CardContent>
+          </Card>
+          
+          <Card className="text-center border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent text-accent-foreground text-3xl font-bold">
+                2
+              </div>
+              <CardTitle className="text-2xl">{t("home.howItWorks.step2.title")}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base">
+                {t("home.howItWorks.step2.desc")}
+              </CardDescription>
+            </CardContent>
+          </Card>
+          
+          <Card className="text-center border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-success text-success-foreground text-3xl font-bold">
+                3
+              </div>
+              <CardTitle className="text-2xl">{t("home.howItWorks.step3.title")}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base">
+                {t("home.howItWorks.step3.desc")}
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <StatsSection
+      title={t("home.stats.title")}
+      subtitle={t("home.stats.subtitle")}
+      stats={stats}
+    />
+
+    <!-- Testimonials -->
+    <section class="py-20 md:py-32 bg-muted/30">
+      <div class="container max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+            {t("home.testimonials.title")}
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
+                  JD
+                </div>
+                <div>
+                  <CardTitle className="text-lg">{t("home.testimonial1.name")}</CardTitle>
+                  <CardDescription>{t("home.testimonial1.role")}</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("home.testimonial1.text")}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">
+                  SM
+                </div>
+                <div>
+                  <CardTitle className="text-lg">{t("home.testimonial2.name")}</CardTitle>
+                  <CardDescription>{t("home.testimonial2.role")}</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("home.testimonial2.text")}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-2 rounded-2xl" client:load>
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-12 w-12 rounded-full bg-success/10 flex items-center justify-center text-success text-xl font-bold">
+                  MJ
+                </div>
+                <div>
+                  <CardTitle className="text-lg">{t("home.testimonial3.name")}</CardTitle>
+                  <CardDescription>{t("home.testimonial3.role")}</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("home.testimonial3.text")}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTASection
+      title={t("home.finalCta.title")}
+      subtitle={t("home.finalCta.subtitle")}
+      primaryCta={t("cta.startFreeTrial")}
+      primaryCtaHref="/signup"
+      secondaryCta={t("cta.viewPricing")}
+      secondaryCtaHref="/pricing"
+      variant="gradient"
+    />
+  </main>
+  <Footer />
+</Layout>

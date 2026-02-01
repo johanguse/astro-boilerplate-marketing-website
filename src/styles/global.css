@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./typography.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root,
+html[data-theme="light"] {
+  /* Stripe-inspired Vibrant Palette */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 10%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 10%);
+  
+  /* Rich Purple Primary (Stripe-inspired) */
+  --primary: hsl(257 73% 55%);
+  --primary-foreground: hsl(0 0% 100%);
+  
+  /* Warm Secondary Accent */
+  --secondary: hsl(31 100% 96%);
+  --secondary-foreground: hsl(31 90% 40%);
+  
+  /* Subtle Gray Tones */
+  --muted: hsl(240 5% 96%);
+  --muted-foreground: hsl(240 4% 46%);
+  
+  /* Vibrant Teal Accent */
+  --accent: hsl(174 78% 45%);
+  --accent-foreground: hsl(0 0% 100%);
+  
+  /* Destructive with warmth */
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  
+  /* Success Green */
+  --success: hsl(142 71% 45%);
+  --success-foreground: hsl(0 0% 100%);
+  
+  /* Warning Orange */
+  --warning: hsl(38 92% 50%);
+  --warning-foreground: hsl(0 0% 100%);
+  
+  /* Soft borders and inputs */
+  --border: hsl(240 6% 90%);
+  --input: hsl(240 6% 90%);
+  --ring: hsl(257 73% 55%);
+  
+  /* Increased border radius for Stripe softness */
+  --radius: 0.75rem;
+  
+  /* Vibrant chart colors */
+  --chart-1: hsl(257 73% 55%);
+  --chart-2: hsl(174 78% 45%);
+  --chart-3: hsl(31 90% 55%);
+  --chart-4: hsl(142 71% 45%);
+  --chart-5: hsl(0 72% 51%);
+}
+
+html[data-theme="dark"] {
+  /* Dark mode with rich contrast */
+  --background: hsl(240 10% 6%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(240 8% 10%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(240 8% 10%);
+  --popover-foreground: hsl(0 0% 98%);
+  
+  /* Brighter purple for dark mode */
+  --primary: hsl(257 73% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  
+  /* Warm dark secondary */
+  --secondary: hsl(31 40% 15%);
+  --secondary-foreground: hsl(31 100% 70%);
+  
+  /* Dark muted tones */
+  --muted: hsl(240 5% 16%);
+  --muted-foreground: hsl(240 5% 64%);
+  
+  /* Vibrant teal accent adjusted */
+  --accent: hsl(174 78% 50%);
+  --accent-foreground: hsl(240 10% 6%);
+  
+  /* Destructive adjusted for dark */
+  --destructive: hsl(0 62% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  
+  /* Success adjusted for dark */
+  --success: hsl(142 71% 50%);
+  --success-foreground: hsl(240 10% 6%);
+  
+  /* Warning adjusted for dark */
+  --warning: hsl(38 92% 55%);
+  --warning-foreground: hsl(240 10% 6%);
+  
+  /* Subtle dark borders */
+  --border: hsl(240 5% 20%);
+  --input: hsl(240 5% 20%);
+  --ring: hsl(257 73% 60%);
+  
+  /* Vibrant chart colors for dark mode */
+  --chart-1: hsl(257 73% 60%);
+  --chart-2: hsl(174 78% 50%);
+  --chart-3: hsl(31 95% 60%);
+  --chart-4: hsl(142 71% 50%);
+  --chart-5: hsl(0 72% 55%);
+}
+
+@theme inline {
+  --font-sans: "Inter", "sans-serif";
+  --font-mono: "IBM Plex Mono", "monospace";
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    scrollbar-width: auto;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-sans text-foreground selection:bg-accent/75 selection:text-background antialiased;
+  }
+}
+
+/* Stripe-inspired soft shadows */
+@utility shadow-soft {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@utility shadow-soft-lg {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+@utility shadow-soft-xl {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth animations */
+@utility animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@utility animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+@utility animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gradient utilities for Stripe-style backgrounds */
+@utility bg-gradient-radial {
+  background: radial-gradient(circle at top left, var(--primary) 0%, transparent 50%),
+              radial-gradient(circle at bottom right, var(--accent) 0%, transparent 50%);
+  opacity: 0.03;
+}
+
+@utility bg-gradient-mesh {
+  background: 
+    radial-gradient(at 0% 0%, hsla(257, 73%, 55%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(174, 78%, 45%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(31, 90%, 55%, 0.05) 0px, transparent 50%);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-4;
+}
+
+/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 1rem;
+}

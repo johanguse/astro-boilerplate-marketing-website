@@ -1,0 +1,62 @@
+---
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface Feature {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+}
+
+const { title = "Features", subtitle, features } = Astro.props;
+---
+
+<section class="py-20 md:py-32">
+  <div class="container max-w-7xl">
+    {(title || subtitle) && (
+      <div class="text-center mb-16 animate-fade-in">
+        <h2 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4">
+          {title}
+        </h2>
+        {subtitle && (
+          <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div 
+          class="animate-slide-up"
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <Card 
+            className="h-full border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-soft-lg rounded-2xl group cursor-pointer"
+            client:load
+          >
+            <CardHeader>
+              {feature.icon && (
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <span className="text-3xl">{feature.icon}</span>
+                </div>
+              )}
+              <CardTitle className="text-2xl">{feature.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base leading-relaxed">
+                {feature.description}
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
