@@ -8,6 +8,7 @@ import {
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
+import CookieConsent from "@/components/CookieConsent.astro";
 import "@/styles/global.css";
 
 const t = translateFor(Astro.currentLocale);
@@ -176,9 +177,12 @@ const structuredData = {
     <ClientRouter />
 
     <script is:inline src="/toggle-theme.js"></script>
+    <!-- Google Tag Manager ID (replace with your GTM ID) -->
+    <meta name="gtm-id" content="GTM-XXXXXXX" />
   </head>
   <body>
     <slot />
+    <CookieConsent />
   </body>
 </html>
 
