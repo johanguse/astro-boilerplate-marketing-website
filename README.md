@@ -24,7 +24,7 @@ A modern, multilingual marketing website built with Astro, featuring a professio
 
 ### 🌍 Internationalization (i18n)
 
-- **5 Languages Supported**: English (default), Spanish, French, German, Portuguese
+- **7 Languages Supported**: English (default), Spanish, French, German, Portuguese, Arabic, Chinese
 - **Astro i18n Routing**: Built-in routing with locale prefixes (`/es/`, `/fr/`, etc.)
 - **Type-Safe Translations**: Full TypeScript support for all translations
 - **RTL Support**: Ready for right-to-left languages (Arabic, Hebrew, etc.)
@@ -78,8 +78,9 @@ A modern, multilingual marketing website built with Astro, featuring a professio
 
 ### Prerequisites
 
-- [Bun](https://bun.sh) v1.3.8 or higher
-- Node.js v18+ (for compatibility)
+- [Bun](https://bun.sh) v1.3.8 or higher (recommended)
+- OR [Node.js](https://nodejs.org) v20.19.0 with [pnpm](https://pnpm.io) v10.6.5 (via Volta)
+- [Wrangler](https://developers.cloudflare.com/workers/wrangler/) for Cloudflare deployment
 
 ### Installation
 
@@ -111,7 +112,7 @@ bun run dev
 │   ├── components/     # Astro & React components
 │   │   ├── sections/  # Reusable section components
 │   │   └── ui/        # shadcn/ui components
-│   ├── content/        # Content collections
+│   ├── data/           # Content collections
 │   │   ├── about/     # Localized about pages
 │   │   └── blog/      # Blog posts by locale
 │   │       ├── en/    # English posts
@@ -128,10 +129,11 @@ bun run dev
 │   │   │   ├── blog/            # Blog pages
 │   │   │   ├── about.astro      # About page
 │   │   │   ├── search.astro     # Search page
+│   │   │   ├── features.astro   # Features page
+│   │   │   ├── pricing.astro    # Pricing page
 │   │   │   └── tags/            # Tag pages
-│   │   ├── features.astro       # Features page (non-localized)
-│   │   ├── pricing.astro        # Pricing page (non-localized)
-│   │   └── design-system.astro  # Component showcase
+│   │   ├── design-system.astro  # Component showcase
+│   │   └── robots.txt.ts        # Robots.txt generation
 │   ├── styles/         # Global styles
 │   └── utils/          # Utility functions
 ├── astro.config.ts     # Astro configuration
@@ -184,7 +186,7 @@ export const localeToProfile = {
 
 ### Theme Colors
 
-Customize your color palette in `src/styles/globals.css`:
+Customize your color palette in `src/styles/global.css`:
 
 ```css
 :root {
@@ -200,7 +202,7 @@ Customize your color palette in `src/styles/globals.css`:
 
 ### Adding Blog Posts
 
-1. Create a markdown file in `src/content/blog/<locale>/your-post.md`:
+1. Create a markdown file in `src/data/blog/<locale>/your-post.md`:
 
 ```markdown
 ---
@@ -251,7 +253,7 @@ export default locale;
 
 ### Adding About Page
 
-Create `src/content/about/about.<locale>.md`:
+Create `src/data/about/about.<locale>.md`:
 
 ```markdown
 ---
@@ -268,9 +270,13 @@ Your about content here...
 |:--------|:-------|
 | `bun install` | Install dependencies |
 | `bun run dev` | Start dev server at `localhost:4321` |
-| `bun run build` | Build production site to `./dist/` |
+| `bun run build` | Build production site to `./dist/` (includes Pagefind search index) |
+| `bun run build:full` | Generate similarities + build (for related posts feature) |
 | `bun run preview` | Preview build locally before deployment |
 | `bun run astro ...` | Run Astro CLI commands |
+| `bun run format` | Format code with Biome |
+| `bun run lint` | Lint code with Biome |
+| `bun run test` | Run tests with Vitest |
 
 ## 🚢 Deployment
 
@@ -281,16 +287,19 @@ This site is configured for **Cloudflare Pages** deployment with the `@astrojs/c
 Deploy automatically via GitHub Actions (see `.github/workflows/deploy.yml`):
 
 1. Create a Cloudflare Pages project
-2. Add the following secrets to your GitHub repository:
-   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Pages edit permissions
-   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+2. Add the following secrets and variables to your GitHub repository:
+   - **Secrets:**
+     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Pages edit permissions
+     - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+   - **Variables:**
+     - `CLOUDFLARE_PROJECT_NAME`: Your Cloudflare Pages project name (optional, defaults to 'astro-marketing-website')
 3. Push to `main` branch to trigger deployment
 
 Or deploy manually:
 
 ```bash
 bun run build
-npx wrangler pages deploy dist --project-name=your-project-name
+wrangler pages deploy dist --project-name=your-project-name
 ```
 
 ### Netlify
