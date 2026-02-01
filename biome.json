@@ -9,10 +9,10 @@
     "ignoreUnknown": false,
     "includes": [
       "**",
-      "!**/dist/**",
-      "!**/node_modules/**",
-      "!**/.astro/**",
-      "!**/scripts/**"
+      "!!dist",
+      "!!node_modules",
+      "!!.astro",
+      "!scripts"
     ]
   },
   "formatter": {

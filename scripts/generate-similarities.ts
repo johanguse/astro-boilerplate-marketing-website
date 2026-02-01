@@ -165,7 +165,6 @@ async function processFile(filePath: string): Promise<Document | null> {
       tags,
     };
   } catch (error) {
-    // biome-ignore lint/suspicious/noConsole: CLI script
     console.error(`Error processing ${filePath}:`, error);
     return null;
   }
@@ -195,7 +194,6 @@ async function generateEmbeddings(
 ): Promise<Float32Array[]> {
   const embeddings: Float32Array[] = [];
 
-  // biome-ignore lint/suspicious/noConsole: CLI script
   console.log(`Generating embeddings for ${docs.length} documents...`);
 
   for (let i = 0; i < docs.length; i++) {
@@ -210,7 +208,6 @@ async function generateEmbeddings(
     embeddings.push(normalize(output.data));
   }
 
-  // biome-ignore lint/suspicious/noConsole: CLI script
   console.log("\n  ✓ Embeddings generated");
   return embeddings;
 }
@@ -257,7 +254,6 @@ function computeAllSimilarities(
 }
 
 // --------- Main ---------
-// biome-ignore lint/suspicious/noConsole: CLI script with progress output
 async function main() {
   console.log("🔍 Generating post similarities...\n");
 

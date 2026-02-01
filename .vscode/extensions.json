@@ -1,4 +1,4 @@
 {
   "recommendations": ["astro-build.astro-vscode", "biomejs.biome"],
-  "unwantedRecommendations": ["eslint.vscode-eslint"]
+  "unwantedRecommendations": ["eslint.vscode-eslint", "dbaeumer.vscode-eslint"]
 }
