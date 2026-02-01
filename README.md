@@ -353,6 +353,19 @@ All components are fully responsive with breakpoints:
 
 Dark mode is implemented using CSS variables and Tailwind's `dark:` variant. The theme preference is stored in localStorage and respects system preferences.
 
+## 🍪 Cookie Consent & Analytics
+
+GDPR-compliant cookie consent is implemented using [vanilla-cookieconsent](https://github.com/orestbida/cookieconsent) with Google Tag Manager integration:
+
+- **Granular Consent**: Users can accept/reject analytics and marketing cookies separately
+- **GTM Integration**: Google Tag Manager loads only after analytics consent
+- **Consent Persistence**: User preferences stored and respected across sessions
+- **Customizable**: Full control over cookie categories and styling
+- **Legal Pages**: Privacy Policy, Terms of Service, Security Policy, and GDPR pages included
+
+For detailed setup instructions, see [docs/GTM_COOKIE_CONSENT.md](docs/GTM_COOKIE_CONSENT.md).
+
+
 ## 🔍 SEO Features
 
 - Semantic HTML structure

@@ -74,10 +74,7 @@ export default defineConfig({
   },
   image: {
     service: {
-      entrypoint: "astro/assets/services/sharp",
-      config: {
-        limitInputPixels: false,
-      },
+      entrypoint: "astro/assets/services/compile",
     },
     responsiveStyles: true,
     layout: "constrained",
