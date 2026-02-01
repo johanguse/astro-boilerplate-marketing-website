@@ -41,6 +41,7 @@ A modern, multilingual marketing website built with Astro, featuring a professio
 - **Archives**: Time-based post organization
 - **OG Images**: Auto-generated Open Graph images for social sharing
 - **Featured Posts**: Highlight important posts on the homepage
+- **Related Posts**: AI-powered semantic similarity using pre-computed embeddings (transformers.js)
 
 ### 🚀 SaaS-Ready Pages
 
@@ -273,7 +274,24 @@ Your about content here...
 
 ## 🚢 Deployment
 
-This site can be deployed to any static hosting platform:
+This site is configured for **Cloudflare Pages** deployment with the `@astrojs/cloudflare` adapter.
+
+### Cloudflare Pages (Recommended)
+
+Deploy automatically via GitHub Actions (see `.github/workflows/deploy.yml`):
+
+1. Create a Cloudflare Pages project
+2. Add the following secrets to your GitHub repository:
+   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Pages edit permissions
+   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+3. Push to `main` branch to trigger deployment
+
+Or deploy manually:
+
+```bash
+bun run build
+npx wrangler pages deploy dist --project-name=your-project-name
+```
 
 ### Netlify
 
@@ -359,9 +377,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📧 Support
-
-For support, email your-email@example.com or open an issue on GitHub.
 
 ---
 
