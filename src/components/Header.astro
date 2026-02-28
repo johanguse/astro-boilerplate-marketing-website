@@ -1,4 +1,7 @@
 ---
+import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
+import { MobileMenu } from "@/components/MobileMenu";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -6,11 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { MobileMenu } from "@/components/MobileMenu";
-import IconMoon from "@/assets/icons/IconMoon.svg";
-import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import { SITE } from "@/config";
-import { translateFor, getRelativeLocalePath } from "@/i18n/utils";
+import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
 import LanguagePicker from "./LanguagePicker.astro";
 
 const { pathname } = Astro.url;
@@ -21,8 +21,8 @@ const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
 const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter(p => p.trim());
-  const pathArray = path.split("/").filter(p => p.trim());
+  const currentPathArray = currentPath.split("/").filter((p) => p.trim());
+  const pathArray = path.split("/").filter((p) => p.trim());
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
 

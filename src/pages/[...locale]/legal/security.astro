@@ -1,9 +1,9 @@
 ---
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Layout from "@/layouts/Layout.astro";
-import { translateFor } from "@/i18n/utils";
+import { Card, CardContent } from "@/components/ui/card";
 import { SITE } from "@/config";
+import { translateFor } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
 
 const currentLocale = Astro.currentLocale;
 const t = translateFor(currentLocale);

@@ -1,11 +1,11 @@
+import { describe, expect, it } from "vitest";
 import {
-  localeToProfile,
-  SUPPORTED_LOCALES,
   DEFAULT_LOCALE,
   LOCALES_TO_LANG,
   type LocaleProfile,
+  localeToProfile,
+  SUPPORTED_LOCALES,
 } from "@/i18n/config";
-import { describe, it, expect } from "vitest";
 
 describe("SUPPORTED_LOCALES", () => {
   it("should have at least one supported locale", () => {
@@ -17,20 +17,20 @@ describe("SUPPORTED_LOCALES", () => {
   });
 
   it("should contain valid locale profiles for all supported locales", () => {
-    SUPPORTED_LOCALES.forEach(locale => {
+    SUPPORTED_LOCALES.forEach((locale) => {
       const profile = localeToProfile[locale];
       expect(profile).toBeDefined();
     });
   });
 
   it("should contain all locale keys as lowercase", () => {
-    SUPPORTED_LOCALES.forEach(localeKey =>
+    SUPPORTED_LOCALES.forEach((localeKey) =>
       expect(localeKey).toBe(localeKey.toLowerCase())
     );
   });
 
   it("should have all locale keys complaint with BCP-47", () => {
-    SUPPORTED_LOCALES.forEach(localKey => {
+    SUPPORTED_LOCALES.forEach((localKey) => {
       expect(() => new Intl.Locale(localKey)).not.toThrow();
     });
   });
@@ -51,24 +51,21 @@ describe("DEFAULT_LOCALE", () => {
     // mostly will require us to create a function that gets the default locale
   });
 
-  it.todo(
-    "should fallback to the first supported locale if no default is set",
-    () => {
-      // mostly will require us to create a function that gets the default locale
-    }
-  );
+  it.todo("should fallback to the first supported locale if no default is set", () => {
+    // mostly will require us to create a function that gets the default locale
+  });
 });
 
 describe("LOCALES_TO_LANG", () => {
   it("should map each locale to its langTag", () => {
-    SUPPORTED_LOCALES.forEach(locale => {
+    SUPPORTED_LOCALES.forEach((locale) => {
       expect(LOCALES_TO_LANG[locale]).toBe(localeToProfile[locale].langTag);
     });
   });
 
   it("should have all langTags complaint with BCP-47", () => {
     const langTags = Object.values(LOCALES_TO_LANG);
-    langTags.forEach(langTag => {
+    langTags.forEach((langTag) => {
       expect(() => new Intl.Locale(langTag)).not.toThrow();
     });
   });

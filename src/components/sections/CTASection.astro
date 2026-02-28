@@ -21,9 +21,10 @@ const {
   variant = "default",
 } = Astro.props;
 
-const bgClass = variant === "gradient" 
-  ? "bg-gradient-to-br from-primary via-primary to-accent" 
-  : "bg-muted/50";
+const bgClass =
+  variant === "gradient"
+    ? "bg-gradient-to-br from-primary via-primary to-accent"
+    : "bg-muted/50";
 const textClass = variant === "gradient" ? "text-white" : "text-foreground";
 ---
 

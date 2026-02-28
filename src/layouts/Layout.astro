@@ -1,14 +1,14 @@
 ---
+import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import { ClientRouter } from "astro:transitions";
+import CookieConsent from "@/components/CookieConsent.astro";
+import { SITE } from "@/config";
 import { DEFAULT_LOCALE } from "@/i18n/config";
 import {
-  translateFor,
   getLocaleInfo,
   getRelativeLocalePath,
+  translateFor,
 } from "@/i18n/utils";
-import { ClientRouter } from "astro:transitions";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
-import { SITE } from "@/config";
-import CookieConsent from "@/components/CookieConsent.astro";
 import "@/styles/global.css";
 
 const t = translateFor(Astro.currentLocale);

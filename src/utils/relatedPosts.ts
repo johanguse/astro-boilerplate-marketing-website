@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
-import { getPath } from "./getPath";
 // Import pre-computed similarities directly (no dynamic import)
 import similaritiesData from "@/assets/similarities.json";
+import { getPath } from "./getPath";
 
 // Type for the similarities structure
 type SimilarityMap = Record<string, Array<{ id: string; similarity: number }>>;
@@ -34,7 +34,7 @@ export async function getRelatedPosts(
 
   for (const key of possibleKeys) {
     if (similarities[key]) {
-      similarIds = similarities[key].slice(0, limit).map(s => s.id);
+      similarIds = similarities[key].slice(0, limit).map((s) => s.id);
       break;
     }
   }
@@ -52,7 +52,7 @@ export async function getRelatedPosts(
     const [simLocale, ...slugParts] = simId.split("/");
     const simSlug = slugParts.join("/");
 
-    const matchingPost = allPosts.find(post => {
+    const matchingPost = allPosts.find((post) => {
       const postLocale = post.id.split("/")[0];
       const postSlug = getPath(post.id, post.filePath, false);
 

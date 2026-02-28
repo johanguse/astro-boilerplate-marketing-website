@@ -1,27 +1,17 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "astro-boilerplate-i18n",
-  "compatibility_date": "2026-01-28",
+  "name": "astro-boilerplate-marketing-website",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2026-02-28",
   "placement": {
-    "mode": "smart",
+    "mode": "smart"
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
   },
   "observability": {
     "enabled": true
   },
-  "main": "dist/_worker.js/index.js",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "dist"
-  },
-  "kv_namespaces": [
-    {
-      "binding": "SESSION",
-      "id": "placeholder",
-      "preview_id": "placeholder"
-    }
-  ]
+  "compatibility_flags": ["nodejs_compat"]
 }

@@ -1,16 +1,16 @@
 import rss from "@astrojs/rss";
-import getSortedPosts from "@/utils/getSortedPosts";
-import { SITE } from "@/config";
-import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
 import type { APIContext, InferGetStaticParamsType } from "astro";
-import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from "@/i18n/config";
-import { getPostsGroupedByLocale } from "@/utils/posts";
+import { SITE } from "@/config";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
 import { getPath } from "@/utils/getPath";
+import getSortedPosts from "@/utils/getSortedPosts";
+import { getPostsGroupedByLocale } from "@/utils/posts";
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return SUPPORTED_LOCALES.map(locale => ({
+  return SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }));
 }

@@ -1,8 +1,8 @@
-import { Resvg } from "@resvg/resvg-js";
 import { type CollectionEntry } from "astro:content";
+import { Resvg } from "@resvg/resvg-js";
+import type { LocaleKey, LocaleProfile } from "@/i18n/config";
 import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
-import type { LocaleProfile, LocaleKey } from "@/i18n/config";
 
 function svgBufferToPngBuffer(svg: string): Uint8Array<ArrayBuffer> {
   const resvg = new Resvg(svg);

@@ -13,43 +13,43 @@ html[data-theme="light"] {
   --card-foreground: hsl(240 10% 10%);
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(240 10% 10%);
-  
+
   /* Rich Purple Primary (Stripe-inspired) */
   --primary: hsl(257 73% 55%);
   --primary-foreground: hsl(0 0% 100%);
-  
+
   /* Warm Secondary Accent */
   --secondary: hsl(31 100% 96%);
   --secondary-foreground: hsl(31 90% 40%);
-  
+
   /* Subtle Gray Tones */
   --muted: hsl(240 5% 96%);
   --muted-foreground: hsl(240 4% 46%);
-  
+
   /* Vibrant Teal Accent */
   --accent: hsl(174 78% 45%);
   --accent-foreground: hsl(0 0% 100%);
-  
+
   /* Destructive with warmth */
   --destructive: hsl(0 72% 51%);
   --destructive-foreground: hsl(0 0% 100%);
-  
+
   /* Success Green */
   --success: hsl(142 71% 45%);
   --success-foreground: hsl(0 0% 100%);
-  
+
   /* Warning Orange */
   --warning: hsl(38 92% 50%);
   --warning-foreground: hsl(0 0% 100%);
-  
+
   /* Soft borders and inputs */
   --border: hsl(240 6% 90%);
   --input: hsl(240 6% 90%);
   --ring: hsl(257 73% 55%);
-  
+
   /* Increased border radius for Stripe softness */
   --radius: 0.75rem;
-  
+
   /* Vibrant chart colors */
   --chart-1: hsl(257 73% 55%);
   --chart-2: hsl(174 78% 45%);
@@ -66,40 +66,40 @@ html[data-theme="dark"] {
   --card-foreground: hsl(0 0% 98%);
   --popover: hsl(240 8% 10%);
   --popover-foreground: hsl(0 0% 98%);
-  
+
   /* Brighter purple for dark mode */
   --primary: hsl(257 73% 60%);
   --primary-foreground: hsl(0 0% 100%);
-  
+
   /* Warm dark secondary */
   --secondary: hsl(31 40% 15%);
   --secondary-foreground: hsl(31 100% 70%);
-  
+
   /* Dark muted tones */
   --muted: hsl(240 5% 16%);
   --muted-foreground: hsl(240 5% 64%);
-  
+
   /* Vibrant teal accent adjusted */
   --accent: hsl(174 78% 50%);
   --accent-foreground: hsl(240 10% 6%);
-  
+
   /* Destructive adjusted for dark */
   --destructive: hsl(0 62% 50%);
   --destructive-foreground: hsl(0 0% 100%);
-  
+
   /* Success adjusted for dark */
   --success: hsl(142 71% 50%);
   --success-foreground: hsl(240 10% 6%);
-  
+
   /* Warning adjusted for dark */
   --warning: hsl(38 92% 55%);
   --warning-foreground: hsl(240 10% 6%);
-  
+
   /* Subtle dark borders */
   --border: hsl(240 5% 20%);
   --input: hsl(240 5% 20%);
   --ring: hsl(257 73% 60%);
-  
+
   /* Vibrant chart colors for dark mode */
   --chart-1: hsl(257 73% 60%);
   --chart-2: hsl(174 78% 50%);

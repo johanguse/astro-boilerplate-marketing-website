@@ -2,9 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { translateFor, getRelativeLocalePath } from "@/i18n/utils";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
+import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
 
 const currentLocale = Astro.currentLocale;
 const t = translateFor(currentLocale);

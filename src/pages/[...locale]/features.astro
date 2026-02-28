@@ -1,19 +1,19 @@
 ---
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import Layout from "@/layouts/Layout.astro";
-import FeatureGrid from "@/components/sections/FeatureGrid.astro";
-import CTASection from "@/components/sections/CTASection.astro";
-import { Badge } from "@/components/ui/badge";
+import type { GetStaticPaths } from "astro";
 import { FeatureTabs } from "@/components/FeatureTabs";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import CTASection from "@/components/sections/CTASection.astro";
+import FeatureGrid from "@/components/sections/FeatureGrid.astro";
+import { Badge } from "@/components/ui/badge";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { translateFor } from "@/i18n/utils";
-import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
 
 export const prerender = true;
 
 export const getStaticPaths = (async () =>
-  SUPPORTED_LOCALES.map(locale => ({
+  SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }))) satisfies GetStaticPaths;
 
@@ -24,32 +24,38 @@ const aiFeatures = [
   {
     icon: "📄",
     title: "AI Document Intelligence",
-    description: "Upload documents and let AI extract insights, summarize content, and enable intelligent search. Chat with your documents using RAG technology.",
+    description:
+      "Upload documents and let AI extract insights, summarize content, and enable intelligent search. Chat with your documents using RAG technology.",
   },
   {
     icon: "✍️",
     title: "AI Content Generation",
-    description: "Generate blog posts, marketing copy, social media content, and emails with AI. Choose tone, style, and length for perfect results.",
+    description:
+      "Generate blog posts, marketing copy, social media content, and emails with AI. Choose tone, style, and length for perfect results.",
   },
   {
     icon: "📊",
     title: "AI Analytics",
-    description: "Ask questions in natural language and get instant insights, charts, and reports from your data. No SQL knowledge required.",
+    description:
+      "Ask questions in natural language and get instant insights, charts, and reports from your data. No SQL knowledge required.",
   },
   {
     icon: "🔍",
     title: "Semantic Search",
-    description: "Find exactly what you need with AI-powered search that understands context and meaning, not just keywords.",
+    description:
+      "Find exactly what you need with AI-powered search that understands context and meaning, not just keywords.",
   },
   {
     icon: "🌐",
     title: "Multi-language Support",
-    description: "Generate content and analyze data in multiple languages. Full i18n support for global teams.",
+    description:
+      "Generate content and analyze data in multiple languages. Full i18n support for global teams.",
   },
   {
     icon: "🔌",
     title: "Flexible AI Providers",
-    description: "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
+    description:
+      "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
   },
 ];
 
@@ -57,32 +63,38 @@ const technicalFeatures = [
   {
     icon: "🔐",
     title: "Enterprise Security",
-    description: "RBAC, audit logging, rate limiting, and GDPR-compliant data handling built-in.",
+    description:
+      "RBAC, audit logging, rate limiting, and GDPR-compliant data handling built-in.",
   },
   {
     icon: "⚡",
     title: "Real-time Updates",
-    description: "WebSocket support for live collaboration and instant notifications across your team.",
+    description:
+      "WebSocket support for live collaboration and instant notifications across your team.",
   },
   {
     icon: "📱",
     title: "RESTful API",
-    description: "Comprehensive API with OpenAPI documentation. Integrate with your existing tools and workflows.",
+    description:
+      "Comprehensive API with OpenAPI documentation. Integrate with your existing tools and workflows.",
   },
   {
     icon: "🎨",
     title: "Modern UI/UX",
-    description: "Beautiful, responsive interfaces built with React, shadcn/ui, and Tailwind CSS v4.",
+    description:
+      "Beautiful, responsive interfaces built with React, shadcn/ui, and Tailwind CSS v4.",
   },
   {
     icon: "📈",
     title: "Usage Analytics",
-    description: "Real-time dashboards showing AI usage, costs, and performance metrics.",
+    description:
+      "Real-time dashboards showing AI usage, costs, and performance metrics.",
   },
   {
     icon: "🔄",
     title: "Async Processing",
-    description: "Background job processing with Celery for heavy AI operations that don't block your app.",
+    description:
+      "Background job processing with Celery for heavy AI operations that don't block your app.",
   },
 ];
 ---

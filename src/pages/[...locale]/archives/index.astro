@@ -22,7 +22,7 @@ if (!SITE.showArchives) {
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const paths = SUPPORTED_LOCALES.flatMap(locale => {
+  const paths = SUPPORTED_LOCALES.flatMap((locale) => {
     return {
       params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
     };

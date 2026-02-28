@@ -2,7 +2,8 @@ import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
   "site.title": "Plataforma SaaS com IA",
-  "site.desc": "Transforme o seu negócio com inteligência de documentos, geração de conteúdo e análise alimentadas por IA",
+  "site.desc":
+    "Transforme o seu negócio com inteligência de documentos, geração de conteúdo e análise alimentadas por IA",
 };
 
 const PTLocale: I18nStrings = {
@@ -102,7 +103,8 @@ const PTLocale: I18nStrings = {
   "a11y.themeButtonDefaultLabel": "auto",
   "a11y.pagination": "Paginação",
   "a11y.breadcrumb": "trilha de navegação",
-  "a11y.languagePicker": "Seletor de Idioma",  features: "Recursos",
+  "a11y.languagePicker": "Seletor de Idioma",
+  features: "Recursos",
   pricing: "Preços",
   signIn: "Entrar",
   startFree: "Começar Grátis",
@@ -110,32 +112,44 @@ const PTLocale: I18nStrings = {
   "cta.viewDemo": "Ver Demo",
   "cta.viewPricing": "Ver Preços",
   "home.hero.title": "Superpoderes de IA para o seu negócio",
-  "home.hero.subtitle": "Transforme seu fluxo de trabalho com inteligência documental alimentada por IA, geração de conteúdo e análise. Comece grátis, escale conforme você cresce.",
+  "home.hero.subtitle":
+    "Transforme seu fluxo de trabalho com inteligência documental alimentada por IA, geração de conteúdo e análise. Comece grátis, escale conforme você cresce.",
   "home.hero.badge": "🚀 Alimentado por GPT-4 e Claude",
   "home.features.title": "Tudo o que você precisa para ter sucesso",
-  "home.features.subtitle": "Recursos de IA prontos para produção que geram valor empresarial real",
+  "home.features.subtitle":
+    "Recursos de IA prontos para produção que geram valor empresarial real",
   "home.feature.docIntel.title": "Inteligência Documental",
-  "home.feature.docIntel.desc": "Faça upload e processe documentos com IA. Extraia insights, resumos e converse com seus arquivos usando tecnologia RAG avançada.",
+  "home.feature.docIntel.desc":
+    "Faça upload e processe documentos com IA. Extraia insights, resumos e converse com seus arquivos usando tecnologia RAG avançada.",
   "home.feature.contentGen.title": "Geração de Conteúdo",
-  "home.feature.contentGen.desc": "Crie posts de blog, textos de marketing e conteúdo para redes sociais em segundos. Personalize tom, estilo e tamanho para resultados perfeitos.",
+  "home.feature.contentGen.desc":
+    "Crie posts de blog, textos de marketing e conteúdo para redes sociais em segundos. Personalize tom, estilo e tamanho para resultados perfeitos.",
   "home.feature.analytics.title": "Análise com IA",
-  "home.feature.analytics.desc": "Faça perguntas em linguagem natural e obtenha insights instantâneos com gráficos e relatórios gerados automaticamente a partir de seus dados.",
+  "home.feature.analytics.desc":
+    "Faça perguntas em linguagem natural e obtenha insights instantâneos com gráficos e relatórios gerados automaticamente a partir de seus dados.",
   "home.feature.security.title": "Segurança Empresarial",
-  "home.feature.security.desc": "RBAC integrado, registro de auditoria e tratamento de dados em conformidade com GDPR. Seus dados estão sempre seguros e privados.",
+  "home.feature.security.desc":
+    "RBAC integrado, registro de auditoria e tratamento de dados em conformidade com GDPR. Seus dados estão sempre seguros e privados.",
   "home.feature.multiLang.title": "Multilíngue",
-  "home.feature.multiLang.desc": "Gere conteúdo e trabalhe em vários idiomas. Suporte completo de internacionalização para equipes globais.",
+  "home.feature.multiLang.desc":
+    "Gere conteúdo e trabalhe em vários idiomas. Suporte completo de internacionalização para equipes globais.",
   "home.feature.flexible.title": "Provedores de IA Flexíveis",
-  "home.feature.flexible.desc": "Escolha entre OpenAI, Anthropic ou OpenRouter. Troque de provedor com base em suas necessidades e orçamento.",
+  "home.feature.flexible.desc":
+    "Escolha entre OpenAI, Anthropic ou OpenRouter. Troque de provedor com base em suas necessidades e orçamento.",
   "home.howItWorks.title": "Comece em minutos",
   "home.howItWorks.subtitle": "Integração simples, resultados poderosos",
   "home.howItWorks.step1.title": "Cadastre-se",
-  "home.howItWorks.step1.desc": "Crie sua conta em segundos. Não é necessário cartão de crédito para começar.",
+  "home.howItWorks.step1.desc":
+    "Crie sua conta em segundos. Não é necessário cartão de crédito para começar.",
   "home.howItWorks.step2.title": "Faça Upload e Processe",
-  "home.howItWorks.step2.desc": "Faça upload de seus documentos ou comece a gerar conteúdo com nossas ferramentas de IA.",
+  "home.howItWorks.step2.desc":
+    "Faça upload de seus documentos ou comece a gerar conteúdo com nossas ferramentas de IA.",
   "home.howItWorks.step3.title": "Obtenha Insights",
-  "home.howItWorks.step3.desc": "Deixe a IA analisar, resumir e gerar insights de seus dados instantaneamente.",
+  "home.howItWorks.step3.desc":
+    "Deixe a IA analisar, resumir e gerar insights de seus dados instantaneamente.",
   "home.stats.title": "Confiado por equipes em todo o mundo",
-  "home.stats.subtitle": "Junte-se a milhares de empresas usando nossa plataforma de IA",
+  "home.stats.subtitle":
+    "Junte-se a milhares de empresas usando nossa plataforma de IA",
   "home.stats.uptime": "SLA de Disponibilidade",
   "home.stats.operations": "Operações de IA",
   "home.stats.customers": "Clientes Satisfeitos",
@@ -143,15 +157,19 @@ const PTLocale: I18nStrings = {
   "home.testimonials.title": "O que nossos clientes dizem",
   "home.testimonial1.name": "João Silva",
   "home.testimonial1.role": "CEO, TechCorp",
-  "home.testimonial1.text": "Esta plataforma transformou como lidamos com documentos. O recurso de chat com IA é incrível!",
+  "home.testimonial1.text":
+    "Esta plataforma transformou como lidamos com documentos. O recurso de chat com IA é incrível!",
   "home.testimonial2.name": "Maria Santos",
   "home.testimonial2.role": "Diretora de Marketing",
-  "home.testimonial2.text": "A geração de conteúdo nos economiza horas toda semana. A qualidade é consistentemente excelente.",
+  "home.testimonial2.text":
+    "A geração de conteúdo nos economiza horas toda semana. A qualidade é consistentemente excelente.",
   "home.testimonial3.name": "Carlos Oliveira",
   "home.testimonial3.role": "Analista de Dados",
-  "home.testimonial3.text": "A Análise com IA me permite consultar dados sem escrever SQL. É uma mudança de jogo para nossa equipe.",
+  "home.testimonial3.text":
+    "A Análise com IA me permite consultar dados sem escrever SQL. É uma mudança de jogo para nossa equipe.",
   "home.finalCta.title": "Pronto para turbinar seu fluxo de trabalho?",
-  "home.finalCta.subtitle": "Junte-se a milhares de equipes já usando nossa plataforma de IA. Comece grátis, sem necessidade de cartão de crédito.",
+  "home.finalCta.subtitle":
+    "Junte-se a milhares de equipes já usando nossa plataforma de IA. Comece grátis, sem necessidade de cartão de crédito.",
 };
 
 export default PTLocale;

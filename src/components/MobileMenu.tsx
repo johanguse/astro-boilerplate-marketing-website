@@ -1,8 +1,12 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export function MobileMenu({ navLinks }: { navLinks: Array<{ href: string; label: string }> }) {
+export function MobileMenu({
+  navLinks,
+}: {
+  navLinks: Array<{ href: string; label: string }>;
+}) {
   return (
     <Sheet>
       <SheetTrigger asChild>

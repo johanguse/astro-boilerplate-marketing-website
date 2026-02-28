@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from "vitest";
 import {
   DEFAULT_LOCALE,
+  type LocaleKey,
   localeToProfile,
   SUPPORTED_LOCALES,
-  type LocaleKey,
 } from "@/i18n/config";
 import { UnsupportedLocale } from "@/i18n/errors";
 import {
@@ -15,9 +16,8 @@ import {
   stripBaseAndLocale,
   translateFor,
 } from "@/i18n/utils";
-import { describe, expect, it, vi } from "vitest";
 
-vi.mock("@/i18n/config", async importOriginal => {
+vi.mock("@/i18n/config", async (importOriginal) => {
   const original = await importOriginal<typeof import("@/i18n/config")>();
   return {
     ...original,
@@ -82,7 +82,7 @@ describe("getLocaleMsgs", () => {
 
 describe("isLocaleKey", () => {
   it("should return true for supported locales", () => {
-    SUPPORTED_LOCALES.forEach(locale => {
+    SUPPORTED_LOCALES.forEach((locale) => {
       expect(isLocaleKey(locale)).toBe(true);
     });
   });
@@ -312,20 +312,12 @@ describe("buildPrefix", () => {
 
   describe('for "/my-site" as Base Url', () => {
     it('should return "/my-site" for default locale "es"', () => {
-      const prefix = buildPrefix(
-        DEFAULT_LOCALE,
-        DEFAULT_LOCALE,
-        "/my-site"
-      );
+      const prefix = buildPrefix(DEFAULT_LOCALE, DEFAULT_LOCALE, "/my-site");
       expect(prefix).toBe("/my-site");
     });
 
     it('should return "/my-site/ja" for non-default locale "ja"', () => {
-      const prefix = buildPrefix(
-        "ja" as LocaleKey,
-        DEFAULT_LOCALE,
-        "/my-site"
-      );
+      const prefix = buildPrefix("ja" as LocaleKey, DEFAULT_LOCALE, "/my-site");
       expect(prefix).toBe("/my-site/ja");
     });
   });

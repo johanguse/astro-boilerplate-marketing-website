@@ -7,13 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": [
-      "**",
-      "!!dist",
-      "!!node_modules",
-      "!!.astro",
-      "!scripts"
-    ]
+    "includes": ["**", "!!dist", "!!node_modules", "!!.astro", "!scripts"]
   },
   "formatter": {
     "enabled": true,
@@ -36,12 +30,7 @@
         "noConsole": {
           "level": "warn",
           "options": {
-            "allow": [
-              "assert",
-              "error",
-              "info",
-              "warn"
-            ]
+            "allow": ["assert", "error", "info", "warn"]
           }
         }
       }

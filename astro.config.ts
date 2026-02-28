@@ -1,10 +1,10 @@
-import { defineConfig, envField } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
-import remarkToc from "remark-toc";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, envField } from "astro/config";
 import remarkCollapse from "remark-collapse";
+import remarkToc from "remark-toc";
 import { SITE } from "./src/config";
 import {
   DEFAULT_LOCALE,
@@ -26,7 +26,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: (page) => SITE.showArchives || !page.endsWith("/archives"),
       i18n: {
         defaultLocale: DEFAULT_LOCALE,
         locales: LOCALES_TO_LANG,

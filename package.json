@@ -1,5 +1,5 @@
 {
-  "name": "astro-boilerplate-i18n",
+  "name": "astro-boilerplate-marketing-website",
   "version": "2.0.0",
   "type": "module",
   "private": false,
@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
+    "@biomejs/biome": "^2.4.4",
     "@pagefind/default-ui": "^1.4.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/lodash.kebabcase": "^4.1.9",

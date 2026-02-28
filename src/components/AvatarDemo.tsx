@@ -6,13 +6,15 @@ export function AvatarDemo() {
       <Avatar>
         <AvatarFallback>JD</AvatarFallback>
       </Avatar>
-      
+
       <Avatar className="h-16 w-16">
         <AvatarFallback className="text-xl">SM</AvatarFallback>
       </Avatar>
-      
+
       <Avatar className="h-20 w-20">
-        <AvatarFallback className="text-2xl bg-primary text-primary-foreground">MJ</AvatarFallback>
+        <AvatarFallback className="text-2xl bg-primary text-primary-foreground">
+          MJ
+        </AvatarFallback>
       </Avatar>
     </div>
   );

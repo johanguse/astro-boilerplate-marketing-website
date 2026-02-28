@@ -2,7 +2,8 @@ import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
   "site.title": "Plateforme SaaS alimentée par l'IA",
-  "site.desc": "Transformez votre entreprise avec l'intelligence documentaire, la génération de contenu et l'analytique alimentées par l'IA",
+  "site.desc":
+    "Transformez votre entreprise avec l'intelligence documentaire, la génération de contenu et l'analytique alimentées par l'IA",
 };
 
 const FRLocale: I18nStrings = {
@@ -102,7 +103,8 @@ const FRLocale: I18nStrings = {
   "a11y.themeButtonDefaultLabel": "auto",
   "a11y.pagination": "Pagination",
   "a11y.breadcrumb": "fil d'ariane",
-  "a11y.languagePicker": "Sélecteur de Langue",  features: "Fonctionnalités",
+  "a11y.languagePicker": "Sélecteur de Langue",
+  features: "Fonctionnalités",
   pricing: "Tarifs",
   signIn: "Se Connecter",
   startFree: "Commencer Gratuitement",
@@ -110,31 +112,44 @@ const FRLocale: I18nStrings = {
   "cta.viewDemo": "Voir la Démo",
   "cta.viewPricing": "Voir les Tarifs",
   "home.hero.title": "Des superpouvoirs IA pour votre entreprise",
-  "home.hero.subtitle": "Transformez votre flux de travail avec l'intelligence documentaire, la génération de contenu et l'analyse alimentées par l'IA. Commencez gratuitement, évoluez au fur et à mesure.",
-  "home.hero.badge": "🚀 Alimenté par GPT-4 et Claude",  "home.features.title": "Tout ce dont vous avez besoin pour réussir",
-  "home.features.subtitle": "Fonctionnalités IA prêtes pour la production qui génèrent une réelle valeur commerciale",
+  "home.hero.subtitle":
+    "Transformez votre flux de travail avec l'intelligence documentaire, la génération de contenu et l'analyse alimentées par l'IA. Commencez gratuitement, évoluez au fur et à mesure.",
+  "home.hero.badge": "🚀 Alimenté par GPT-4 et Claude",
+  "home.features.title": "Tout ce dont vous avez besoin pour réussir",
+  "home.features.subtitle":
+    "Fonctionnalités IA prêtes pour la production qui génèrent une réelle valeur commerciale",
   "home.feature.docIntel.title": "Intelligence Documentaire",
-  "home.feature.docIntel.desc": "Téléchargez et traitez des documents avec l'IA. Extrayez des informations, des résumés et discutez avec vos fichiers en utilisant une technologie RAG avancée.",
+  "home.feature.docIntel.desc":
+    "Téléchargez et traitez des documents avec l'IA. Extrayez des informations, des résumés et discutez avec vos fichiers en utilisant une technologie RAG avancée.",
   "home.feature.contentGen.title": "Génération de Contenu",
-  "home.feature.contentGen.desc": "Créez des articles de blog, du contenu marketing et des publications sur les réseaux sociaux en quelques secondes. Personnalisez le ton, le style et la longueur pour des résultats parfaits.",
+  "home.feature.contentGen.desc":
+    "Créez des articles de blog, du contenu marketing et des publications sur les réseaux sociaux en quelques secondes. Personnalisez le ton, le style et la longueur pour des résultats parfaits.",
   "home.feature.analytics.title": "Analytique IA",
-  "home.feature.analytics.desc": "Posez des questions en langage naturel et obtenez des informations instantanées avec des graphiques et des rapports générés automatiquement à partir de vos données.",
+  "home.feature.analytics.desc":
+    "Posez des questions en langage naturel et obtenez des informations instantanées avec des graphiques et des rapports générés automatiquement à partir de vos données.",
   "home.feature.security.title": "Sécurité Entreprise",
-  "home.feature.security.desc": "RBAC intégré, journalisation d'audit et gestion des données conforme au RGPD. Vos données sont toujours sécurisées et privées.",
+  "home.feature.security.desc":
+    "RBAC intégré, journalisation d'audit et gestion des données conforme au RGPD. Vos données sont toujours sécurisées et privées.",
   "home.feature.multiLang.title": "Multilingue",
-  "home.feature.multiLang.desc": "Générez du contenu et travaillez dans plusieurs langues. Support complet d'internationalisation pour les équipes mondiales.",
+  "home.feature.multiLang.desc":
+    "Générez du contenu et travaillez dans plusieurs langues. Support complet d'internationalisation pour les équipes mondiales.",
   "home.feature.flexible.title": "Fournisseurs IA Flexibles",
-  "home.feature.flexible.desc": "Choisissez parmi OpenAI, Anthropic ou OpenRouter. Changez de fournisseur selon vos besoins et votre budget.",
+  "home.feature.flexible.desc":
+    "Choisissez parmi OpenAI, Anthropic ou OpenRouter. Changez de fournisseur selon vos besoins et votre budget.",
   "home.howItWorks.title": "Commencez en quelques minutes",
   "home.howItWorks.subtitle": "Intégration simple, résultats puissants",
   "home.howItWorks.step1.title": "Inscrivez-vous",
-  "home.howItWorks.step1.desc": "Créez votre compte en quelques secondes. Aucune carte de crédit requise pour commencer.",
+  "home.howItWorks.step1.desc":
+    "Créez votre compte en quelques secondes. Aucune carte de crédit requise pour commencer.",
   "home.howItWorks.step2.title": "Téléchargez et Traitez",
-  "home.howItWorks.step2.desc": "Téléchargez vos documents ou commencez à générer du contenu avec nos outils IA.",
+  "home.howItWorks.step2.desc":
+    "Téléchargez vos documents ou commencez à générer du contenu avec nos outils IA.",
   "home.howItWorks.step3.title": "Obtenez des Informations",
-  "home.howItWorks.step3.desc": "Laissez l'IA analyser, résumer et générer des informations à partir de vos données instantanément.",
+  "home.howItWorks.step3.desc":
+    "Laissez l'IA analyser, résumer et générer des informations à partir de vos données instantanément.",
   "home.stats.title": "Approuvé par des équipes du monde entier",
-  "home.stats.subtitle": "Rejoignez des milliers d'entreprises utilisant notre plateforme IA",
+  "home.stats.subtitle":
+    "Rejoignez des milliers d'entreprises utilisant notre plateforme IA",
   "home.stats.uptime": "SLA de Disponibilité",
   "home.stats.operations": "Opérations IA",
   "home.stats.customers": "Clients Satisfaits",
@@ -142,14 +157,19 @@ const FRLocale: I18nStrings = {
   "home.testimonials.title": "Ce que disent nos clients",
   "home.testimonial1.name": "Jean Dupont",
   "home.testimonial1.role": "PDG, TechCorp",
-  "home.testimonial1.text": "Cette plateforme a transformé notre façon de gérer les documents. La fonction de chat IA est incroyable !",
+  "home.testimonial1.text":
+    "Cette plateforme a transformé notre façon de gérer les documents. La fonction de chat IA est incroyable !",
   "home.testimonial2.name": "Sophie Martin",
   "home.testimonial2.role": "Directrice Marketing",
-  "home.testimonial2.text": "La génération de contenu nous fait gagner des heures chaque semaine. La qualité est constamment excellente.",
+  "home.testimonial2.text":
+    "La génération de contenu nous fait gagner des heures chaque semaine. La qualité est constamment excellente.",
   "home.testimonial3.name": "Pierre Dubois",
   "home.testimonial3.role": "Analyste de Données",
-  "home.testimonial3.text": "L'Analytique IA me permet d'interroger les données sans écrire de SQL. C'est révolutionnaire pour notre équipe.",
+  "home.testimonial3.text":
+    "L'Analytique IA me permet d'interroger les données sans écrire de SQL. C'est révolutionnaire pour notre équipe.",
   "home.finalCta.title": "Prêt à booster votre flux de travail ?",
-  "home.finalCta.subtitle": "Rejoignez des milliers d'équipes utilisant déjà notre plateforme IA. Commencez gratuitement, aucune carte de crédit requise.",};
+  "home.finalCta.subtitle":
+    "Rejoignez des milliers d'équipes utilisant déjà notre plateforme IA. Commencez gratuitement, aucune carte de crédit requise.",
+};
 
 export default FRLocale;

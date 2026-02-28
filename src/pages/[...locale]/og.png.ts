@@ -1,12 +1,12 @@
 import type { APIRoute, InferGetStaticParamsType } from "astro";
-import { generateOgImageForSite } from "@/utils/generateOgImages";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { getLocaleInfo } from "@/i18n/utils";
-import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from "@/i18n/config";
+import { generateOgImageForSite } from "@/utils/generateOgImages";
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return SUPPORTED_LOCALES.map(locale => ({
+  return SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }));
 }

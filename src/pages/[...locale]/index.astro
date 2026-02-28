@@ -1,21 +1,27 @@
 ---
-import Header from "@/components/Header.astro";
+import type { GetStaticPaths } from "astro";
 import Footer from "@/components/Footer.astro";
-import Layout from "@/layouts/Layout.astro";
-import HeroSection from "@/components/sections/HeroSection.astro";
-import FeatureGrid from "@/components/sections/FeatureGrid.astro";
-import StatsSection from "@/components/sections/StatsSection.astro";
+import Header from "@/components/Header.astro";
 import CTASection from "@/components/sections/CTASection.astro";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import FeatureGrid from "@/components/sections/FeatureGrid.astro";
+import HeroSection from "@/components/sections/HeroSection.astro";
+import StatsSection from "@/components/sections/StatsSection.astro";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { translateFor } from "@/i18n/utils";
-import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
 
 export const prerender = true;
 
 export const getStaticPaths = (async () =>
-  SUPPORTED_LOCALES.map(locale => ({
+  SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }))) satisfies GetStaticPaths;
 

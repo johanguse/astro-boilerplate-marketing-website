@@ -1,11 +1,11 @@
-import type { APIRoute, InferGetStaticParamsType } from "astro";
 import { type CollectionEntry } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import { generateOgImageForPost } from "@/utils/generateOgImages";
-import { getLocaleInfo } from "@/i18n/utils";
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
-import { getPostsGroupedByLocale } from "@/utils/posts";
+import type { APIRoute, InferGetStaticParamsType } from "astro";
 import { SITE } from "@/config";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+import { getLocaleInfo } from "@/i18n/utils";
+import { generateOgImageForPost } from "@/utils/generateOgImages";
+import { getPath } from "@/utils/getPath";
+import { getPostsGroupedByLocale } from "@/utils/posts";
 
 export const prerender = true;
 
@@ -18,12 +18,12 @@ export async function getStaticPaths() {
     allowedLocales: SUPPORTED_LOCALES,
   });
 
-  const paths = SUPPORTED_LOCALES.flatMap(locale => {
+  const paths = SUPPORTED_LOCALES.flatMap((locale) => {
     const posts = postsByLocale[locale] || [];
 
     const postsWithoutOgImage = posts.filter(({ data }) => !data.ogImage);
 
-    return postsWithoutOgImage.map(post => ({
+    return postsWithoutOgImage.map((post) => ({
       params: {
         locale: locale === DEFAULT_LOCALE ? undefined : locale,
         slug: getPath(post.id, post.filePath, false),

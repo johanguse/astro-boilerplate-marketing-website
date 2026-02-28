@@ -1,7 +1,7 @@
-import { useRef, useEffect, useActionState } from "react";
-import type { FormState } from "@/types/contact";
-import { submitAction } from "@/actions/contact";
 import { TURNSTILE_SITE_KEY } from "astro:env/client";
+import { useActionState, useEffect, useRef } from "react";
+import { submitAction } from "@/actions/contact";
+import type { FormState } from "@/types/contact";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,13 +33,12 @@ export default function ContactForm() {
   }, [formState?.success]);
 
   return (
-    <form
-      ref={formRef}
-      action={formAction}
-      className="flex flex-col gap-4"
-    >
+    <form ref={formRef} action={formAction} className="flex flex-col gap-4">
       <div>
-        <label htmlFor="name" className="block mb-2 font-medium text-muted-foreground">
+        <label
+          htmlFor="name"
+          className="block mb-2 font-medium text-muted-foreground"
+        >
           Name
         </label>
         <input
@@ -52,7 +51,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block mb-2 font-medium text-muted-foreground">
+        <label
+          htmlFor="email"
+          className="block mb-2 font-medium text-muted-foreground"
+        >
           Email
         </label>
         <input
