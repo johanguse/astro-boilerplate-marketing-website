@@ -86,6 +86,16 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      TURNSTILE_SITE_KEY: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+      TURNSTILE_SECRET_KEY: envField.string({
+        access: "secret",
+        context: "server",
+        optional: true,
+      }),
     },
   },
   experimental: {
