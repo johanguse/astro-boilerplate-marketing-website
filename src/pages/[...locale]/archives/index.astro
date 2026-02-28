@@ -1,13 +1,7 @@
 ---
-import Card from "@/components/Card.astro";
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
 import { SITE } from "@/config";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { getLocaleInfo, translateFor } from "@/i18n/utils";
-import Layout from "@/layouts/Layout.astro";
-import Main from "@/layouts/Main.astro";
-import getPostsByGroupCondition from "@/utils/getPostsByGroupCondition";
 import { getPostsGroupedByLocale } from "@/utils/posts";
 
 const redirectTo404 = () => {
@@ -22,7 +16,7 @@ if (!SITE.showArchives) {
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const paths = SUPPORTED_LOCALES.flatMap(locale => {
+  const paths = SUPPORTED_LOCALES.flatMap((locale) => {
     return {
       params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
     };
@@ -38,11 +32,11 @@ const postsByLocale = await getPostsGroupedByLocale({
   allowedLocales: SUPPORTED_LOCALES,
 });
 
-const posts = postsByLocale[locale] || [];
+const _posts = postsByLocale[locale] || [];
 
-const t = translateFor(Astro.currentLocale);
+const _t = translateFor(Astro.currentLocale);
 
-const LOCALE = getLocaleInfo(Astro.currentLocale);
+const _LOCALE = getLocaleInfo(Astro.currentLocale);
 
 type MonthKey =
   | "1"

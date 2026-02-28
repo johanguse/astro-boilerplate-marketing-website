@@ -1,18 +1,14 @@
 ---
 import "@pagefind/default-ui/css/ui.css";
-import Layout from "@/layouts/Layout.astro";
-import Main from "@/layouts/Main.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import { translateFor } from "@/i18n/utils";
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import type { InferGetStaticParamsType } from "astro";
 import { SITE } from "@/config";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+import { translateFor } from "@/i18n/utils";
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return SUPPORTED_LOCALES.map(locale => ({
+  return SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }));
 }
@@ -21,9 +17,9 @@ type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 
 const { locale = DEFAULT_LOCALE } = Astro.params as Params;
 
-const t = translateFor(locale);
+const _t = translateFor(locale);
 
-const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+const _backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
 ---
 
 <Layout title={`${t("search")} | ${t("site.title")}`}>

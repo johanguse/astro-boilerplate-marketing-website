@@ -1,30 +1,25 @@
 ---
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { translateFor, getRelativeLocalePath } from "@/i18n/utils";
-import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
+import { translateFor } from "@/i18n/utils";
 
 const currentLocale = Astro.currentLocale;
 const t = translateFor(currentLocale);
-const currentYear = new Date().getFullYear();
+const _currentYear = new Date().getFullYear();
 
-const productLinks = [
+const _productLinks = [
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "Documentation", href: "/blog" },
   { label: "API Reference", href: "/api" },
 ];
 
-const companyLinks = [
+const _companyLinks = [
   { label: t("about"), href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
-const legalLinks = [
+const _legalLinks = [
   { label: "Privacy", href: "/legal/privacy" },
   { label: "Terms", href: "/legal/terms" },
   { label: "Security", href: "/legal/security" },

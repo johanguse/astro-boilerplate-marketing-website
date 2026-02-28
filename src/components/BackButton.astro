@@ -1,12 +1,9 @@
 ---
-import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
-import LinkButton from "./LinkButton.astro";
-import { SITE } from "@/config";
 import { translateFor } from "@/i18n/utils";
 
 const currentLocale = Astro.currentLocale;
 
-const t = translateFor(currentLocale);
+const _t = translateFor(currentLocale);
 ---
 
 {

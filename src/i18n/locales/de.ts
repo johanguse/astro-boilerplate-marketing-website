@@ -2,7 +2,8 @@ import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
   "site.title": "KI-gestützte SaaS-Plattform",
-  "site.desc": "Transformieren Sie Ihr Unternehmen mit KI-gestützter Dokumentenintelligenz, Content-Generierung und Analytik",
+  "site.desc":
+    "Transformieren Sie Ihr Unternehmen mit KI-gestützter Dokumentenintelligenz, Content-Generierung und Analytik",
 };
 
 const DELocale: I18nStrings = {
@@ -111,32 +112,45 @@ const DELocale: I18nStrings = {
   "cta.viewDemo": "Demo Ansehen",
   "cta.viewPricing": "Preise Ansehen",
   "home.hero.title": "KI-Superkräfte für Ihr Unternehmen",
-  "home.hero.subtitle": "Transformieren Sie Ihren Workflow mit KI-gestützter Dokumentenintelligenz, Content-Erstellung und Analytik. Starten Sie kostenlos, skalieren Sie mit Ihrem Wachstum.",
+  "home.hero.subtitle":
+    "Transformieren Sie Ihren Workflow mit KI-gestützter Dokumentenintelligenz, Content-Erstellung und Analytik. Starten Sie kostenlos, skalieren Sie mit Ihrem Wachstum.",
   "home.hero.badge": "🚀 Angetrieben von GPT-4 & Claude",
   "home.features.title": "Alles, was Sie zum Erfolg brauchen",
-  "home.features.subtitle": "Produktionsreife KI-Funktionen, die echten Geschäftswert liefern",
+  "home.features.subtitle":
+    "Produktionsreife KI-Funktionen, die echten Geschäftswert liefern",
   "home.feature.docIntel.title": "Dokumentenintelligenz",
-  "home.feature.docIntel.desc": "Laden Sie Dokumente hoch und verarbeiten Sie sie mit KI. Extrahieren Sie Erkenntnisse, Zusammenfassungen und chatten Sie mit Ihren Dateien mithilfe fortschrittlicher RAG-Technologie.",
+  "home.feature.docIntel.desc":
+    "Laden Sie Dokumente hoch und verarbeiten Sie sie mit KI. Extrahieren Sie Erkenntnisse, Zusammenfassungen und chatten Sie mit Ihren Dateien mithilfe fortschrittlicher RAG-Technologie.",
   "home.feature.contentGen.title": "Content-Erstellung",
-  "home.feature.contentGen.desc": "Erstellen Sie Blog-Posts, Marketing-Texte und Social-Media-Inhalte in Sekunden. Passen Sie Ton, Stil und Länge für perfekte Ergebnisse an.",
+  "home.feature.contentGen.desc":
+    "Erstellen Sie Blog-Posts, Marketing-Texte und Social-Media-Inhalte in Sekunden. Passen Sie Ton, Stil und Länge für perfekte Ergebnisse an.",
   "home.feature.analytics.title": "KI-Analytik",
-  "home.feature.analytics.desc": "Stellen Sie Fragen in natürlicher Sprache und erhalten Sie sofortige Erkenntnisse mit automatisch generierten Diagrammen und Berichten aus Ihren Daten.",
+  "home.feature.analytics.desc":
+    "Stellen Sie Fragen in natürlicher Sprache und erhalten Sie sofortige Erkenntnisse mit automatisch generierten Diagrammen und Berichten aus Ihren Daten.",
   "home.feature.security.title": "Unternehmenssicherheit",
-  "home.feature.security.desc": "Integrierte RBAC, Audit-Protokollierung und DSGVO-konforme Datenverarbeitung. Ihre Daten sind immer sicher und privat.",
+  "home.feature.security.desc":
+    "Integrierte RBAC, Audit-Protokollierung und DSGVO-konforme Datenverarbeitung. Ihre Daten sind immer sicher und privat.",
   "home.feature.multiLang.title": "Mehrsprachig",
-  "home.feature.multiLang.desc": "Generieren Sie Inhalte und arbeiten Sie in mehreren Sprachen. Vollständige Internationalisierungsunterstützung für globale Teams.",
+  "home.feature.multiLang.desc":
+    "Generieren Sie Inhalte und arbeiten Sie in mehreren Sprachen. Vollständige Internationalisierungsunterstützung für globale Teams.",
   "home.feature.flexible.title": "Flexible KI-Anbieter",
-  "home.feature.flexible.desc": "Wählen Sie zwischen OpenAI, Anthropic oder OpenRouter. Wechseln Sie Anbieter je nach Bedarf und Budget.",
+  "home.feature.flexible.desc":
+    "Wählen Sie zwischen OpenAI, Anthropic oder OpenRouter. Wechseln Sie Anbieter je nach Bedarf und Budget.",
   "home.howItWorks.title": "In wenigen Minuten loslegen",
-  "home.howItWorks.subtitle": "Einfache Integration, leistungsstarke Ergebnisse",
+  "home.howItWorks.subtitle":
+    "Einfache Integration, leistungsstarke Ergebnisse",
   "home.howItWorks.step1.title": "Anmelden",
-  "home.howItWorks.step1.desc": "Erstellen Sie Ihr Konto in Sekunden. Keine Kreditkarte erforderlich, um zu starten.",
+  "home.howItWorks.step1.desc":
+    "Erstellen Sie Ihr Konto in Sekunden. Keine Kreditkarte erforderlich, um zu starten.",
   "home.howItWorks.step2.title": "Hochladen & Verarbeiten",
-  "home.howItWorks.step2.desc": "Laden Sie Ihre Dokumente hoch oder beginnen Sie mit der Erstellung von Inhalten mit unseren KI-Tools.",
+  "home.howItWorks.step2.desc":
+    "Laden Sie Ihre Dokumente hoch oder beginnen Sie mit der Erstellung von Inhalten mit unseren KI-Tools.",
   "home.howItWorks.step3.title": "Erkenntnisse Erhalten",
-  "home.howItWorks.step3.desc": "Lassen Sie KI Ihre Daten sofort analysieren, zusammenfassen und Erkenntnisse generieren.",
+  "home.howItWorks.step3.desc":
+    "Lassen Sie KI Ihre Daten sofort analysieren, zusammenfassen und Erkenntnisse generieren.",
   "home.stats.title": "Vertraut von Teams weltweit",
-  "home.stats.subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die unsere KI-Plattform nutzen",
+  "home.stats.subtitle":
+    "Schließen Sie sich Tausenden von Unternehmen an, die unsere KI-Plattform nutzen",
   "home.stats.uptime": "Verfügbarkeits-SLA",
   "home.stats.operations": "KI-Operationen",
   "home.stats.customers": "Zufriedene Kunden",
@@ -144,15 +158,19 @@ const DELocale: I18nStrings = {
   "home.testimonials.title": "Was unsere Kunden sagen",
   "home.testimonial1.name": "Hans Schmidt",
   "home.testimonial1.role": "CEO, TechCorp",
-  "home.testimonial1.text": "Diese Plattform hat verändert, wie wir mit Dokumenten umgehen. Die KI-Chat-Funktion ist unglaublich!",
+  "home.testimonial1.text":
+    "Diese Plattform hat verändert, wie wir mit Dokumenten umgehen. Die KI-Chat-Funktion ist unglaublich!",
   "home.testimonial2.name": "Maria Müller",
   "home.testimonial2.role": "Marketing-Direktorin",
-  "home.testimonial2.text": "Content-Erstellung spart uns jede Woche Stunden. Die Qualität ist durchweg hervorragend.",
+  "home.testimonial2.text":
+    "Content-Erstellung spart uns jede Woche Stunden. Die Qualität ist durchweg hervorragend.",
   "home.testimonial3.name": "Thomas Weber",
   "home.testimonial3.role": "Datenanalyst",
-  "home.testimonial3.text": "KI-Analytik ermöglicht es mir, Daten abzufragen, ohne SQL zu schreiben. Ein Game-Changer für unser Team.",
+  "home.testimonial3.text":
+    "KI-Analytik ermöglicht es mir, Daten abzufragen, ohne SQL zu schreiben. Ein Game-Changer für unser Team.",
   "home.finalCta.title": "Bereit, Ihren Workflow zu optimieren?",
-  "home.finalCta.subtitle": "Schließen Sie sich Tausenden von Teams an, die bereits unsere KI-Plattform nutzen. Starten Sie kostenlos, keine Kreditkarte erforderlich.",
+  "home.finalCta.subtitle":
+    "Schließen Sie sich Tausenden von Teams an, die bereits unsere KI-Plattform nutzen. Starten Sie kostenlos, keine Kreditkarte erforderlich.",
 };
 
 export default DELocale;

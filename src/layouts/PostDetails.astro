@@ -1,25 +1,9 @@
 ---
-import { render, type CollectionEntry } from "astro:content";
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import Tag from "@/components/Tag.astro";
-import Datetime from "@/components/Datetime.astro";
-import EditPost from "@/components/EditPost.astro";
-import ShareLinks from "@/components/ShareLinks.astro";
-import BackButton from "@/components/BackButton.astro";
-import BackToTopButton from "@/components/BackToTopButton.astro";
-import { getPath } from "@/utils/getPath";
-import { slugifyStr } from "@/utils/slugify";
-import { getRelatedPosts } from "@/utils/relatedPosts";
-import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
-import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
-import {
-  getRelativeLocalePath,
-  getSlugWithoutLocale,
-  translateFor,
-} from "@/i18n/utils";
+import { type CollectionEntry, render } from "astro:content";
 import { SITE } from "@/config";
+import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
+import { getPath } from "@/utils/getPath";
+import { getRelatedPosts } from "@/utils/relatedPosts";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -31,7 +15,7 @@ const t = translateFor(Astro.currentLocale);
 const { post, posts } = Astro.props;
 
 // Get semantically related posts
-const relatedPosts = await getRelatedPosts(post, posts, 3);
+const _relatedPosts = await getRelatedPosts(post, posts, 3);
 
 const {
   title,
@@ -70,7 +54,7 @@ const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
   : undefined;
 
-const layoutProps = {
+const _layoutProps = {
   title: `${title} | ${t("site.title")}`,
   author,
   description,
@@ -88,10 +72,11 @@ const allPosts = posts.map(({ data: { title }, id }) => ({
   title,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
+const currentPostIndex = allPosts.findIndex((a) => a.slug === post.id);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
-const nextPost =
+const _prevPost =
+  currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const _nextPost =
   currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
 ---
 

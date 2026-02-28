@@ -1,5 +1,5 @@
-import type { LocaleKey } from "@/i18n/config";
 import { getEntry } from "astro:content";
+import type { LocaleKey } from "@/i18n/config";
 
 /**
  * Retrieves the about page for a specific locale.

@@ -1,19 +1,11 @@
 ---
-import { DEFAULT_LOCALE } from "@/i18n/config";
-import {
-  translateFor,
-  getLocaleInfo,
-  getRelativeLocalePath,
-} from "@/i18n/utils";
-import { ClientRouter } from "astro:transitions";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
-import CookieConsent from "@/components/CookieConsent.astro";
+import { getLocaleInfo, translateFor } from "@/i18n/utils";
 import "@/styles/global.css";
 
 const t = translateFor(Astro.currentLocale);
 
-const LOCALE = getLocaleInfo(Astro.currentLocale);
+const _LOCALE = getLocaleInfo(Astro.currentLocale);
 
 export interface Props {
   title?: string;
@@ -41,7 +33,7 @@ const {
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
-const structuredData = {
+const _structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: `${title}`,

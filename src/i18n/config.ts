@@ -1,9 +1,9 @@
-import type { I18nStrings } from "./types";
+import DELocale from "./locales/de";
 import ENLocale from "./locales/en";
 import ESLocale from "./locales/es";
 import FRLocale from "./locales/fr";
-import DELocale from "./locales/de";
 import PTLocale from "./locales/pt";
+import type { I18nStrings } from "./types";
 
 export type LocaleProfile = {
   name: string;
@@ -60,7 +60,7 @@ export const SUPPORTED_LOCALES = Object.keys(localeToProfile) as LocaleKey[];
 
 export const DEFAULT_LOCALE =
   SUPPORTED_LOCALES.find(
-    key => (localeToProfile[key] as LocaleProfile)?.default === true
+    (key) => (localeToProfile[key] as LocaleProfile)?.default === true
   ) ?? SUPPORTED_LOCALES[0];
 
 export const LOCALES_TO_LANG = Object.fromEntries(

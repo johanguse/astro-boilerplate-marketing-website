@@ -1,6 +1,4 @@
 ---
-import { Button } from "@/components/ui/button";
-
 interface Props {
   title: string;
   subtitle?: string;
@@ -21,10 +19,11 @@ const {
   variant = "default",
 } = Astro.props;
 
-const bgClass = variant === "gradient" 
-  ? "bg-gradient-to-br from-primary via-primary to-accent" 
-  : "bg-muted/50";
-const textClass = variant === "gradient" ? "text-white" : "text-foreground";
+const _bgClass =
+  variant === "gradient"
+    ? "bg-gradient-to-br from-primary via-primary to-accent"
+    : "bg-muted/50";
+const _textClass = variant === "gradient" ? "text-white" : "text-foreground";
 ---
 
 <section class={`py-20 md:py-32 ${bgClass}`}>

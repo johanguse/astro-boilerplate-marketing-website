@@ -2,7 +2,8 @@ import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
   "site.title": "AI-Powered SaaS Platform",
-  "site.desc": "Transform your business with AI-powered document intelligence, content generation, and analytics",
+  "site.desc":
+    "Transform your business with AI-powered document intelligence, content generation, and analytics",
 };
 
 const ENLocale: I18nStrings = {
@@ -112,30 +113,41 @@ const ENLocale: I18nStrings = {
   "cta.viewDemo": "View Demo",
   "cta.viewPricing": "View Pricing",
   "home.hero.title": "AI superpowers for your business",
-  "home.hero.subtitle": "Transform your workflow with AI-powered document intelligence, content generation, and analytics. Start free, scale as you grow.",
+  "home.hero.subtitle":
+    "Transform your workflow with AI-powered document intelligence, content generation, and analytics. Start free, scale as you grow.",
   "home.hero.badge": "🚀 Powered by GPT-4 & Claude",
   "home.features.title": "Everything you need to succeed",
-  "home.features.subtitle": "Production-ready AI features that drive real business value",
+  "home.features.subtitle":
+    "Production-ready AI features that drive real business value",
   "home.feature.docIntel.title": "Document Intelligence",
-  "home.feature.docIntel.desc": "Upload and process documents with AI. Extract insights, summaries, and chat with your files using advanced RAG technology.",
+  "home.feature.docIntel.desc":
+    "Upload and process documents with AI. Extract insights, summaries, and chat with your files using advanced RAG technology.",
   "home.feature.contentGen.title": "Content Generation",
-  "home.feature.contentGen.desc": "Create blog posts, marketing copy, and social media content in seconds. Customize tone, style, and length for perfect results.",
+  "home.feature.contentGen.desc":
+    "Create blog posts, marketing copy, and social media content in seconds. Customize tone, style, and length for perfect results.",
   "home.feature.analytics.title": "AI Analytics",
-  "home.feature.analytics.desc": "Ask questions in natural language and get instant insights with auto-generated charts and reports from your data.",
+  "home.feature.analytics.desc":
+    "Ask questions in natural language and get instant insights with auto-generated charts and reports from your data.",
   "home.feature.security.title": "Enterprise Security",
-  "home.feature.security.desc": "Built-in RBAC, audit logging, and GDPR-compliant data handling. Your data is always secure and private.",
+  "home.feature.security.desc":
+    "Built-in RBAC, audit logging, and GDPR-compliant data handling. Your data is always secure and private.",
   "home.feature.multiLang.title": "Multi-language",
-  "home.feature.multiLang.desc": "Generate content and work in multiple languages. Full internationalization support for global teams.",
+  "home.feature.multiLang.desc":
+    "Generate content and work in multiple languages. Full internationalization support for global teams.",
   "home.feature.flexible.title": "Flexible AI Providers",
-  "home.feature.flexible.desc": "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
+  "home.feature.flexible.desc":
+    "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
   "home.howItWorks.title": "Get started in minutes",
   "home.howItWorks.subtitle": "Simple integration, powerful results",
   "home.howItWorks.step1.title": "Sign Up",
-  "home.howItWorks.step1.desc": "Create your account in seconds. No credit card required to start.",
+  "home.howItWorks.step1.desc":
+    "Create your account in seconds. No credit card required to start.",
   "home.howItWorks.step2.title": "Upload & Process",
-  "home.howItWorks.step2.desc": "Upload your documents or start generating content with our AI tools.",
+  "home.howItWorks.step2.desc":
+    "Upload your documents or start generating content with our AI tools.",
   "home.howItWorks.step3.title": "Get Insights",
-  "home.howItWorks.step3.desc": "Let AI analyze, summarize, and generate insights from your data instantly.",
+  "home.howItWorks.step3.desc":
+    "Let AI analyze, summarize, and generate insights from your data instantly.",
   "home.stats.title": "Trusted by teams worldwide",
   "home.stats.subtitle": "Join thousands of companies using our AI platform",
   "home.stats.uptime": "Uptime SLA",
@@ -145,15 +157,19 @@ const ENLocale: I18nStrings = {
   "home.testimonials.title": "What our customers say",
   "home.testimonial1.name": "John Doe",
   "home.testimonial1.role": "CEO, TechCorp",
-  "home.testimonial1.text": "This platform has transformed how we handle documents. The AI chat feature is incredible!",
+  "home.testimonial1.text":
+    "This platform has transformed how we handle documents. The AI chat feature is incredible!",
   "home.testimonial2.name": "Sarah Miller",
   "home.testimonial2.role": "Marketing Director",
-  "home.testimonial2.text": "Content generation saves us hours every week. The quality is consistently excellent.",
+  "home.testimonial2.text":
+    "Content generation saves us hours every week. The quality is consistently excellent.",
   "home.testimonial3.name": "Michael Johnson",
   "home.testimonial3.role": "Data Analyst",
-  "home.testimonial3.text": "AI Analytics lets me query data without writing SQL. It's a game-changer for our team.",
+  "home.testimonial3.text":
+    "AI Analytics lets me query data without writing SQL. It's a game-changer for our team.",
   "home.finalCta.title": "Ready to supercharge your workflow?",
-  "home.finalCta.subtitle": "Join thousands of teams already using our AI platform. Start free, no credit card required.",
+  "home.finalCta.subtitle":
+    "Join thousands of teams already using our AI platform. Start free, no credit card required.",
 };
 
 export default ENLocale;

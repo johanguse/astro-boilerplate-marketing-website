@@ -2,7 +2,8 @@ import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
   "site.title": "Plataforma SaaS con IA",
-  "site.desc": "Transforme su negocio con inteligencia de documentos, generación de contenido y análisis impulsados por IA",
+  "site.desc":
+    "Transforme su negocio con inteligencia de documentos, generación de contenido y análisis impulsados por IA",
 };
 
 const ESLocale: I18nStrings = {
@@ -111,31 +112,44 @@ const ESLocale: I18nStrings = {
   "cta.viewDemo": "Ver Demo",
   "cta.viewPricing": "Ver Precios",
   "home.hero.title": "Superpoderes de IA para tu negocio",
-  "home.hero.subtitle": "Transforma tu flujo de trabajo con inteligencia documental, generación de contenido y análisis impulsados por IA. Comienza gratis, escala mientras creces.",
-  "home.hero.badge": "🚀 Impulsado por GPT-4 y Claude",  "home.features.title": "Todo lo que necesitas para tener éxito",
-  "home.features.subtitle": "Funciones de IA listas para producción que generan valor empresarial real",
+  "home.hero.subtitle":
+    "Transforma tu flujo de trabajo con inteligencia documental, generación de contenido y análisis impulsados por IA. Comienza gratis, escala mientras creces.",
+  "home.hero.badge": "🚀 Impulsado por GPT-4 y Claude",
+  "home.features.title": "Todo lo que necesitas para tener éxito",
+  "home.features.subtitle":
+    "Funciones de IA listas para producción que generan valor empresarial real",
   "home.feature.docIntel.title": "Inteligencia Documental",
-  "home.feature.docIntel.desc": "Sube y procesa documentos con IA. Extrae información, resúmenes y chatea con tus archivos usando tecnología RAG avanzada.",
+  "home.feature.docIntel.desc":
+    "Sube y procesa documentos con IA. Extrae información, resúmenes y chatea con tus archivos usando tecnología RAG avanzada.",
   "home.feature.contentGen.title": "Generación de Contenido",
-  "home.feature.contentGen.desc": "Crea publicaciones de blog, textos de marketing y contenido para redes sociales en segundos. Personaliza el tono, estilo y longitud para obtener resultados perfectos.",
+  "home.feature.contentGen.desc":
+    "Crea publicaciones de blog, textos de marketing y contenido para redes sociales en segundos. Personaliza el tono, estilo y longitud para obtener resultados perfectos.",
   "home.feature.analytics.title": "Análisis con IA",
-  "home.feature.analytics.desc": "Haz preguntas en lenguaje natural y obtén información instantánea con gráficos y reportes generados automáticamente a partir de tus datos.",
+  "home.feature.analytics.desc":
+    "Haz preguntas en lenguaje natural y obtén información instantánea con gráficos y reportes generados automáticamente a partir de tus datos.",
   "home.feature.security.title": "Seguridad Empresarial",
-  "home.feature.security.desc": "RBAC integrado, registro de auditoría y manejo de datos conforme a GDPR. Tus datos siempre están seguros y privados.",
+  "home.feature.security.desc":
+    "RBAC integrado, registro de auditoría y manejo de datos conforme a GDPR. Tus datos siempre están seguros y privados.",
   "home.feature.multiLang.title": "Multiidioma",
-  "home.feature.multiLang.desc": "Genera contenido y trabaja en múltiples idiomas. Soporte completo de internacionalización para equipos globales.",
+  "home.feature.multiLang.desc":
+    "Genera contenido y trabaja en múltiples idiomas. Soporte completo de internacionalización para equipos globales.",
   "home.feature.flexible.title": "Proveedores de IA Flexibles",
-  "home.feature.flexible.desc": "Elige entre OpenAI, Anthropic u OpenRouter. Cambia de proveedor según tus necesidades y presupuesto.",
+  "home.feature.flexible.desc":
+    "Elige entre OpenAI, Anthropic u OpenRouter. Cambia de proveedor según tus necesidades y presupuesto.",
   "home.howItWorks.title": "Comienza en minutos",
   "home.howItWorks.subtitle": "Integración simple, resultados poderosos",
   "home.howItWorks.step1.title": "Regístrate",
-  "home.howItWorks.step1.desc": "Crea tu cuenta en segundos. No se requiere tarjeta de crédito para comenzar.",
+  "home.howItWorks.step1.desc":
+    "Crea tu cuenta en segundos. No se requiere tarjeta de crédito para comenzar.",
   "home.howItWorks.step2.title": "Sube y Procesa",
-  "home.howItWorks.step2.desc": "Sube tus documentos o comienza a generar contenido con nuestras herramientas de IA.",
+  "home.howItWorks.step2.desc":
+    "Sube tus documentos o comienza a generar contenido con nuestras herramientas de IA.",
   "home.howItWorks.step3.title": "Obtén Información",
-  "home.howItWorks.step3.desc": "Deja que la IA analice, resuma y genere información de tus datos al instante.",
+  "home.howItWorks.step3.desc":
+    "Deja que la IA analice, resuma y genere información de tus datos al instante.",
   "home.stats.title": "Confiado por equipos de todo el mundo",
-  "home.stats.subtitle": "Únete a miles de empresas que usan nuestra plataforma de IA",
+  "home.stats.subtitle":
+    "Únete a miles de empresas que usan nuestra plataforma de IA",
   "home.stats.uptime": "SLA de Tiempo de Actividad",
   "home.stats.operations": "Operaciones de IA",
   "home.stats.customers": "Clientes Satisfechos",
@@ -143,14 +157,19 @@ const ESLocale: I18nStrings = {
   "home.testimonials.title": "Lo que dicen nuestros clientes",
   "home.testimonial1.name": "Juan Pérez",
   "home.testimonial1.role": "CEO, TechCorp",
-  "home.testimonial1.text": "Esta plataforma ha transformado cómo manejamos documentos. ¡La función de chat con IA es increíble!",
+  "home.testimonial1.text":
+    "Esta plataforma ha transformado cómo manejamos documentos. ¡La función de chat con IA es increíble!",
   "home.testimonial2.name": "María García",
   "home.testimonial2.role": "Directora de Marketing",
-  "home.testimonial2.text": "La generación de contenido nos ahorra horas cada semana. La calidad es consistentemente excelente.",
+  "home.testimonial2.text":
+    "La generación de contenido nos ahorra horas cada semana. La calidad es consistentemente excelente.",
   "home.testimonial3.name": "Miguel Rodríguez",
   "home.testimonial3.role": "Analista de Datos",
-  "home.testimonial3.text": "Los Análisis con IA me permiten consultar datos sin escribir SQL. Es un cambio radical para nuestro equipo.",
+  "home.testimonial3.text":
+    "Los Análisis con IA me permiten consultar datos sin escribir SQL. Es un cambio radical para nuestro equipo.",
   "home.finalCta.title": "¿Listo para potenciar tu flujo de trabajo?",
-  "home.finalCta.subtitle": "Únete a miles de equipos que ya usan nuestra plataforma de IA. Comienza gratis, no se requiere tarjeta de crédito.",};
+  "home.finalCta.subtitle":
+    "Únete a miles de equipos que ya usan nuestra plataforma de IA. Comienza gratis, no se requiere tarjeta de crédito.",
+};
 
 export default ESLocale;

@@ -1,11 +1,6 @@
 ---
 import type { I18nStrings } from "@/i18n/types";
-import {
-  getLocaleInfo,
-  getRelativeLocalePath,
-  translateFor,
-  isLocaleKey,
-} from "@/i18n/utils";
+import { getLocaleInfo, isLocaleKey, translateFor } from "@/i18n/utils";
 
 const t = translateFor(Astro.currentLocale);
 const LOCALE = getLocaleInfo(Astro.currentLocale);
@@ -30,7 +25,7 @@ if (isLocaleKey(breadcrumbList[0])) {
 
 // the urls aren't localized yet
 // so we need to keep a separate array of urls in english
-const breadcrumbListUrls = [...breadcrumbList];
+const _breadcrumbListUrls = [...breadcrumbList];
 
 if (breadcrumbList[0] !== "blog")
   breadcrumbList[0] = t(breadcrumbList[0] as keyof I18nStrings);
@@ -41,13 +36,13 @@ if (breadcrumbList[0] === "blog") {
   breadcrumbList.splice(
     0,
     2,
-    `${t("posts")} (${t("pageWithNo", { no: parseInt(breadcrumbList[1] || "1").toLocaleString(LOCALE.langTag) })})`
+    `${t("posts")} (${t("pageWithNo", { no: parseInt(breadcrumbList[1] || "1", 10).toLocaleString(LOCALE.langTag) })})`
   );
 }
 
 // if breadcrumb is Home > Tags > [tag] > [page] <etc>
 // replace [tag] > [page] with [tag] (page number)
-if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
+if (breadcrumbList[0] === "tags" && !Number.isNaN(Number(breadcrumbList[2]))) {
   breadcrumbList.splice(
     1,
     3,

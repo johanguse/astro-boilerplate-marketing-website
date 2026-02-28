@@ -280,26 +280,30 @@ Your about content here...
 
 ## 🚢 Deployment
 
-This site is configured for **Cloudflare Pages** deployment with the `@astrojs/cloudflare` adapter.
+This site is configured for **Cloudflare Workers** deployment with the `@astrojs/cloudflare` adapter.
 
-### Cloudflare Pages (Recommended)
+### Cloudflare Workers (Recommended)
 
 Deploy automatically via GitHub Actions (see `.github/workflows/deploy.yml`):
 
-1. Create a Cloudflare Pages project
-2. Add the following secrets and variables to your GitHub repository:
+1. **Optionally:** Configure the `name` property inside your `wrangler.json`.
+2. In your **Cloudflare Dashboard (Workers & Pages > your-worker > Settings > Variables and Secrets)**, add:
+   - `TURNSTILE_SITE_KEY`: Your Cloudflare Turnstile Site Key
+   - `TURNSTILE_SECRET_KEY`: Your Cloudflare Turnstile Secret Key
+3. Add the following to your **GitHub repository** (`Settings > Secrets and variables > Actions`):
    - **Secrets:**
-     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Pages edit permissions
+     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Workers permissions
      - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
    - **Variables:**
-     - `CLOUDFLARE_PROJECT_NAME`: Your Cloudflare Pages project name (optional, defaults to 'astro-marketing-website')
-3. Push to `main` branch to trigger deployment
+     - `TURNSTILE_SITE_KEY`: Your Cloudflare Turnstile Site Key (if needed during build)
+     - `TURNSTILE_SECRET_KEY`: Your Cloudflare Turnstile Secret Key (if needed during build)
+4. Push to `main` branch to trigger deployment
 
 Or deploy manually:
 
 ```bash
 bun run build
-wrangler pages deploy dist --project-name=your-project-name
+bun run deploy:cf
 ```
 
 ### Netlify

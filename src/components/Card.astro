@@ -1,9 +1,6 @@
 ---
-import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import Datetime from "./Datetime.astro";
-import { getRelativeLocalePath } from "@/i18n/utils";
+import { slugifyStr } from "@/utils/slugify";
 
 export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
@@ -13,12 +10,12 @@ const { variant = "h2", data, id, filePath } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, timezone } = data;
 
-const headerProps = {
+const _headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
   class: "text-lg font-medium decoration-dashed hover:underline",
 };
 
-const currentLocale = Astro.currentLocale;
+const _currentLocale = Astro.currentLocale;
 ---
 
 <li class="my-6">

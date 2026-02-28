@@ -1,6 +1,6 @@
+import { type CollectionEntry, getCollection } from "astro:content";
 import { BLOG_PATH } from "@/config";
 import { type LocaleKey } from "@/i18n/config";
-import { getCollection, type CollectionEntry } from "astro:content";
 
 type GetPostsOptions = {
   draft?: boolean;

@@ -1,13 +1,9 @@
 ---
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Layout from "@/layouts/Layout.astro";
 import { translateFor } from "@/i18n/utils";
-import { SITE } from "@/config";
 
 const currentLocale = Astro.currentLocale;
-const t = translateFor(currentLocale);
-const lastUpdated = "January 15, 2026";
+const _t = translateFor(currentLocale);
+const _lastUpdated = "January 15, 2026";
 ---
 
 <Layout title="GDPR Compliance" description="GDPR Compliance and Data Protection Rights">

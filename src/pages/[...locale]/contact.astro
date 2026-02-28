@@ -1,0 +1,33 @@
+---
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((locale) => ({
+    params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
+  }));
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.params;
+---
+
+<Layout title="Contact Us" description="Get in touch with us.">
+  <Header />
+  <main class="flex-1 bg-muted/10 py-20">
+    <div class="container max-w-2xl">
+      <div class="mb-10 text-center">
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-foreground">
+          Contact Us
+        </h1>
+        <p class="text-xl text-muted-foreground">
+          Have any questions? We'd love to hear from you.
+        </p>
+      </div>
+      <div class="rounded-xl border bg-card p-8 text-card-foreground shadow-sm">
+        <ContactForm client:visible />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
