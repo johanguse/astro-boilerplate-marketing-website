@@ -1,25 +1,31 @@
 ---
 import { translateFor } from "@/i18n/utils";
+import { SITE } from "@/config";
+import { SOCIALS } from "@/constants";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 const currentLocale = Astro.currentLocale;
 const t = translateFor(currentLocale);
-const _currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
-const _productLinks = [
+const productLinks = [
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "Documentation", href: "/blog" },
   { label: "API Reference", href: "/api" },
 ];
 
-const _companyLinks = [
+const companyLinks = [
   { label: t("about"), href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
-const _legalLinks = [
+const legalLinks = [
   { label: "Privacy", href: "/legal/privacy" },
   { label: "Terms", href: "/legal/terms" },
   { label: "Security", href: "/legal/security" },
@@ -33,7 +39,7 @@ const _legalLinks = [
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
       <!-- Brand Column -->
       <div class="lg:col-span-2">
-        <a href={getRelativeLocalePath(currentLocale, "/")} class="flex items-center space-x-2 font-bold text-xl mb-4">
+        <a href={getRelativeLocaleUrl(currentLocale ?? "en", "/")} class="flex items-center space-x-2 font-bold text-xl mb-4">
           <span class="text-primary">⚡</span>
           <span>{t("site.title")}</span>
         </a>
@@ -61,7 +67,7 @@ const _legalLinks = [
           {productLinks.map(link => (
             <li>
               <a
-                href={getRelativeLocalePath(currentLocale, link.href)}
+                href={getRelativeLocaleUrl(currentLocale ?? "en", link.href)}
                 class="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
@@ -78,7 +84,7 @@ const _legalLinks = [
           {companyLinks.map(link => (
             <li>
               <a
-                href={getRelativeLocalePath(currentLocale, link.href)}
+                href={getRelativeLocaleUrl(currentLocale ?? "en", link.href)}
                 class="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
@@ -95,7 +101,7 @@ const _legalLinks = [
           {legalLinks.map(link => (
             <li>
               <a
-                href={getRelativeLocalePath(currentLocale, link.href)}
+                href={getRelativeLocaleUrl(currentLocale ?? "en", link.href)}
                 class="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}

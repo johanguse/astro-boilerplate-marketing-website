@@ -1,5 +1,10 @@
 ---
 import { translateFor } from "@/i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import LanguagePicker from "./LanguagePicker.astro";
+import { Button } from "@/components/ui/button";
+import { MobileMenu } from "./MobileMenu";
+import { Sun as IconSunHigh, Moon as IconMoon } from "lucide-react";
 
 const { pathname } = Astro.url;
 const currentLocale = Astro.currentLocale;
@@ -8,13 +13,13 @@ const t = translateFor(currentLocale);
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
-const _isActive = (path: string) => {
+const isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter((p) => p.trim());
   const pathArray = path.split("/").filter((p) => p.trim());
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
 
-const _navLinks = [
+const navLinks = [
   { href: "/", label: t("home") },
   { href: "/features", label: t("features") },
   { href: "/pricing", label: t("pricing") },
@@ -28,7 +33,7 @@ const _navLinks = [
     <!-- Logo -->
     <div class="flex items-center gap-6">
       <a
-        href={getRelativeLocalePath(currentLocale, "/")}
+        href={getRelativeLocaleUrl(currentLocale ?? "en", "/")}
         class="flex items-center space-x-2 font-bold text-xl"
       >
         <span class="text-primary">⚡</span>
@@ -39,7 +44,7 @@ const _navLinks = [
       <nav class="hidden md:flex items-center gap-6">
         {navLinks.map(link => (
           <a
-            href={getRelativeLocalePath(currentLocale, link.href)}
+            href={getRelativeLocaleUrl(currentLocale ?? "en", link.href)}
             class:list={[
               "text-sm font-medium transition-colors hover:text-primary",
               isActive(link.href) ? "text-foreground" : "text-muted-foreground"
@@ -66,8 +71,8 @@ const _navLinks = [
         aria-label={t("toggleLightAndDark")}
         aria-live="polite"
       >
-        <IconSunHigh id="sun-svg" class="scale-125 hover:rotate-12 transition-transform" />
-        <IconMoon id="moon-svg" class="hidden scale-125 hover:-rotate-12 transition-transform" />
+        <IconSunHigh id="sun-svg" className="scale-125 hover:rotate-12 transition-transform" />
+        <IconMoon id="moon-svg" className="hidden scale-125 hover:-rotate-12 transition-transform" />
       </button>
 
       <!-- CTA Buttons (Desktop) -->

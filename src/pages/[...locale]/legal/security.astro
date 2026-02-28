@@ -1,9 +1,12 @@
 ---
 import { translateFor } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import { Card, CardContent } from "@/components/ui/card";
+import { SITE } from "@/config";
 
 const currentLocale = Astro.currentLocale;
-const _t = translateFor(currentLocale);
-const _lastUpdated = "January 15, 2026";
+const t = translateFor(currentLocale);
+const lastUpdated = "January 15, 2026";
 ---
 
 <Layout title="Security Policy" description="Security Policy and Best Practices">

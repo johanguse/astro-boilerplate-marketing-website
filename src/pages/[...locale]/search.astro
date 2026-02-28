@@ -7,6 +7,11 @@ import { translateFor } from "@/i18n/utils";
 
 export const prerender = true;
 
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/layouts/Main.astro";
+import Footer from "@/components/Footer.astro";
+
 export async function getStaticPaths() {
   return SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
@@ -17,9 +22,9 @@ type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 
 const { locale = DEFAULT_LOCALE } = Astro.params as Params;
 
-const _t = translateFor(locale);
+const t = translateFor(locale);
 
-const _backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
 ---
 
 <Layout title={`${t("search")} | ${t("site.title")}`}>

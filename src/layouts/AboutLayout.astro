@@ -1,5 +1,9 @@
 ---
 import { translateFor } from "@/i18n/utils";
+import Layout from "./Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Footer from "@/components/Footer.astro";
 
 export interface Props {
   frontmatter: {
@@ -14,7 +18,7 @@ const { frontmatter } = Astro.props;
 
 const siteTitle = t("site.title");
 const pageTitle = t("about");
-const _title = `${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)} | ${siteTitle}`;
+const title = `${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)} | ${siteTitle}`;
 ---
 
 <Layout title={title}>

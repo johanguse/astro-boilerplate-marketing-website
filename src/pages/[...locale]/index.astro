@@ -5,6 +5,15 @@ import { translateFor } from "@/i18n/utils";
 
 export const prerender = true;
 
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import HeroSection from "@/components/sections/HeroSection.astro";
+import FeatureGrid from "@/components/sections/FeatureGrid.astro";
+import StatsSection from "@/components/sections/StatsSection.astro";
+import CTASection from "@/components/sections/CTASection.astro";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+
 export const getStaticPaths = (async () =>
   SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
@@ -13,7 +22,7 @@ export const getStaticPaths = (async () =>
 const { locale = DEFAULT_LOCALE } = Astro.params;
 const t = translateFor(Astro.currentLocale);
 
-const _features = [
+const features = [
   {
     icon: "📄",
     title: t("home.feature.docIntel.title"),
@@ -46,7 +55,7 @@ const _features = [
   },
 ];
 
-const _stats = [
+const stats = [
   { value: "99.9", suffix: "%", label: t("home.stats.uptime") },
   { value: "10M+", suffix: "", label: t("home.stats.operations") },
   { value: "5K+", suffix: "", label: t("home.stats.customers") },
@@ -96,7 +105,7 @@ const _stats = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="text-center border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-3xl font-bold">
+              <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground text-3xl font-bold">
                 1
               </div>
               <CardTitle className="text-2xl">{t("home.howItWorks.step1.title")}</CardTitle>
@@ -110,7 +119,7 @@ const _stats = [
           
           <Card className="text-center border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent text-accent-foreground text-3xl font-bold">
+              <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent text-accent-foreground text-3xl font-bold">
                 2
               </div>
               <CardTitle className="text-2xl">{t("home.howItWorks.step2.title")}</CardTitle>
@@ -124,7 +133,7 @@ const _stats = [
           
           <Card className="text-center border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-success text-success-foreground text-3xl font-bold">
+              <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-success text-success-foreground text-3xl font-bold">
                 3
               </div>
               <CardTitle className="text-2xl">{t("home.howItWorks.step3.title")}</CardTitle>
@@ -158,8 +167,8 @@ const _stats = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
                   JD
                 </div>
                 <div>
@@ -169,7 +178,7 @@ const _stats = [
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
+              <p class="text-muted-foreground">
                 {t("home.testimonial1.text")}
               </p>
             </CardContent>
@@ -177,8 +186,8 @@ const _stats = [
           
           <Card className="border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">
                   SM
                 </div>
                 <div>
@@ -188,7 +197,7 @@ const _stats = [
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
+              <p class="text-muted-foreground">
                 {t("home.testimonial2.text")}
               </p>
             </CardContent>
@@ -196,8 +205,8 @@ const _stats = [
           
           <Card className="border-2 rounded-2xl" client:load>
             <CardHeader>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-12 w-12 rounded-full bg-success/10 flex items-center justify-center text-success text-xl font-bold">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="h-12 w-12 rounded-full bg-success/10 flex items-center justify-center text-success text-xl font-bold">
                   MJ
                 </div>
                 <div>
@@ -207,7 +216,7 @@ const _stats = [
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
+              <p class="text-muted-foreground">
                 {t("home.testimonial3.text")}
               </p>
             </CardContent>

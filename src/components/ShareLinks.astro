@@ -1,9 +1,11 @@
 ---
 import { translateFor } from "@/i18n/utils";
+import { SHARE_LINKS } from "@/constants";
+import LinkButton from "./LinkButton.astro";
 
-const _URL = Astro.url;
+const URL = Astro.url;
 
-const _t = translateFor(Astro.currentLocale);
+const t = translateFor(Astro.currentLocale);
 ---
 
 {
@@ -11,7 +13,7 @@ const _t = translateFor(Astro.currentLocale);
     <div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start">
       <span class="italic">{t("sharePost.desc")}:</span>
       <div class="text-center">
-        {SHARE_LINKS.map(social => (
+        {SHARE_LINKS.map((social: any) => (
           <LinkButton
             href={`${social.href + URL}`}
             class="scale-90 p-2 hover:rotate-6 sm:p-1"
