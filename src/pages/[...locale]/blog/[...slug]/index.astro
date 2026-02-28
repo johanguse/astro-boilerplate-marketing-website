@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
-import PostDetails from "@/layouts/PostDetails.astro";
 import { getPath } from "@/utils/getPath";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { getPostsByLocale, getPostsGroupedByLocale } from "@/utils/posts";
@@ -39,7 +38,7 @@ const { post } = Astro.props;
 const { locale = DEFAULT_LOCALE } = Astro.params;
 
 const posts = await getPostsByLocale(locale);
-const sortedPosts = getSortedPosts(posts);
+const _sortedPosts = getSortedPosts(posts);
 ---
 
 <PostDetails post={post} posts={sortedPosts} />

@@ -1,11 +1,7 @@
 ---
 export const prerender = true;
 
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-import LinkButton from "@/components/LinkButton.astro";
 import { getLocaleInfo, translateFor } from "@/i18n/utils";
-import Layout from "@/layouts/Layout.astro";
 
 const t = translateFor(Astro.currentLocale);
 
@@ -13,7 +9,7 @@ const LOCALE = getLocaleInfo(Astro.currentLocale);
 
 const local404 = (404).toLocaleString(LOCALE.langTag);
 
-const title = `${local404} ${t("notFound")} | ${t("site.title")}`;
+const _title = `${local404} ${t("notFound")} | ${t("site.title")}`;
 ---
 
 <Layout title={title}>

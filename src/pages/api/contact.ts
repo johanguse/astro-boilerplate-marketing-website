@@ -67,12 +67,5 @@ export const POST: APIRoute = async ({ request }) => {
 };
 
 async function handleContactFormSubmission(
-  data: ContactFormData
-): Promise<void> {
-  console.log("Form submission data:", {
-    name: data.name,
-    email: data.email,
-    message: data.message,
-    timestamp: new Date().toISOString(),
-  });
-}
+  _data: ContactFormData
+): Promise<void> {}

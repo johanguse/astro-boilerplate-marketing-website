@@ -1,21 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { Page } from "astro";
-import IconArrowLeft from "@/assets/icons/IconArrowLeft.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { getLocaleInfo, stripBaseAndLocale, translateFor } from "@/i18n/utils";
-import LinkButton from "./LinkButton.astro";
+import { getLocaleInfo, translateFor } from "@/i18n/utils";
 
 export interface Props {
   page: Page<CollectionEntry<"blog">>;
 }
 
-const t = translateFor(Astro.currentLocale);
-const LOCALE = getLocaleInfo(Astro.currentLocale);
+const _t = translateFor(Astro.currentLocale);
+const _LOCALE = getLocaleInfo(Astro.currentLocale);
 
 const { page } = Astro.props;
 
-const currentLocale = Astro.currentLocale;
+const _currentLocale = Astro.currentLocale;
 ---
 
 {

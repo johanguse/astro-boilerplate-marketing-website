@@ -1,17 +1,5 @@
 ---
-import IconMoon from "@/assets/icons/IconMoon.svg";
-import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import { MobileMenu } from "@/components/MobileMenu";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { SITE } from "@/config";
-import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
-import LanguagePicker from "./LanguagePicker.astro";
+import { translateFor } from "@/i18n/utils";
 
 const { pathname } = Astro.url;
 const currentLocale = Astro.currentLocale;
@@ -20,13 +8,13 @@ const t = translateFor(currentLocale);
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
-const isActive = (path: string) => {
+const _isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter((p) => p.trim());
   const pathArray = path.split("/").filter((p) => p.trim());
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
 
-const navLinks = [
+const _navLinks = [
   { href: "/", label: t("home") },
   { href: "/features", label: t("features") },
   { href: "/pricing", label: t("pricing") },

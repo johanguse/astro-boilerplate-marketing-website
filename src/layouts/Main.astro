@@ -1,5 +1,4 @@
 ---
-import Breadcrumb from "@/components/Breadcrumb.astro";
 import { SITE } from "@/config";
 
 interface StringTitleProp {
@@ -17,7 +16,7 @@ export type Props = StringTitleProp | ArrayTitleProp;
 
 const { props } = Astro;
 
-const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
+const _backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 ---
 
 <Breadcrumb />

@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import IconEdit from "@/assets/icons/IconEdit.svg";
 import { SITE } from "@/config";
 import { translateFor } from "@/i18n/utils";
 
@@ -13,10 +12,10 @@ export interface Props {
 const { hideEditPost, post, class: className = "" } = Astro.props;
 
 const href = `${SITE.editPost.url}${post.filePath}`;
-const showEditPost =
+const _showEditPost =
   SITE.editPost.enabled && !hideEditPost && href.trim() !== "";
 
-const t = translateFor(Astro.currentLocale);
+const _t = translateFor(Astro.currentLocale);
 ---
 
 {

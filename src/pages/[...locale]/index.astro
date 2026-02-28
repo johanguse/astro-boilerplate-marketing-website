@@ -1,22 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-import CTASection from "@/components/sections/CTASection.astro";
-import FeatureGrid from "@/components/sections/FeatureGrid.astro";
-import HeroSection from "@/components/sections/HeroSection.astro";
-import StatsSection from "@/components/sections/StatsSection.astro";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { translateFor } from "@/i18n/utils";
-import Layout from "@/layouts/Layout.astro";
 
 export const prerender = true;
 
@@ -28,7 +13,7 @@ export const getStaticPaths = (async () =>
 const { locale = DEFAULT_LOCALE } = Astro.params;
 const t = translateFor(Astro.currentLocale);
 
-const features = [
+const _features = [
   {
     icon: "📄",
     title: t("home.feature.docIntel.title"),
@@ -61,7 +46,7 @@ const features = [
   },
 ];
 
-const stats = [
+const _stats = [
   { value: "99.9", suffix: "%", label: t("home.stats.uptime") },
   { value: "10M+", suffix: "", label: t("home.stats.operations") },
   { value: "5K+", suffix: "", label: t("home.stats.customers") },

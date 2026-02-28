@@ -1,14 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { FeatureTabs } from "@/components/FeatureTabs";
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-import CTASection from "@/components/sections/CTASection.astro";
-import FeatureGrid from "@/components/sections/FeatureGrid.astro";
-import { Badge } from "@/components/ui/badge";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { translateFor } from "@/i18n/utils";
-import Layout from "@/layouts/Layout.astro";
 
 export const prerender = true;
 
@@ -18,9 +11,9 @@ export const getStaticPaths = (async () =>
   }))) satisfies GetStaticPaths;
 
 const { locale = DEFAULT_LOCALE } = Astro.params;
-const t = translateFor(Astro.currentLocale);
+const _t = translateFor(Astro.currentLocale);
 
-const aiFeatures = [
+const _aiFeatures = [
   {
     icon: "📄",
     title: "AI Document Intelligence",
@@ -59,7 +52,7 @@ const aiFeatures = [
   },
 ];
 
-const technicalFeatures = [
+const _technicalFeatures = [
   {
     icon: "🔐",
     title: "Enterprise Security",

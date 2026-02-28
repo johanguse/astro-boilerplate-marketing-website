@@ -1,6 +1,4 @@
 ---
-import { getRelativeLocalePath } from "@/i18n/utils";
-
 export interface Props {
   id?: string;
   href: string;
@@ -10,7 +8,7 @@ export interface Props {
   disabled?: boolean;
 }
 
-const isExternalPath = (path: string) => URL.canParse(path);
+const _isExternalPath = (path: string) => URL.canParse(path);
 
 const {
   id,
