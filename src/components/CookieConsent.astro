@@ -88,7 +88,8 @@
             acceptAllBtn: "Accept all",
             acceptNecessaryBtn: "Reject all",
             showPreferencesBtn: "Manage preferences",
-            footer: '<a href="/legal/privacy">Privacy Policy</a> | <a href="/legal/terms">Terms of Service</a>',
+            footer:
+              '<a href="/legal/privacy">Privacy Policy</a> | <a href="/legal/terms">Terms of Service</a>',
           },
           preferencesModal: {
             title: "Cookie Preferences",
@@ -104,7 +105,8 @@
                   "We use cookies to enhance your browsing experience and analyze our traffic. You can choose which categories of cookies you want to allow.",
               },
               {
-                title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
+                title:
+                  'Strictly Necessary Cookies <span class="pm__badge">Always Enabled</span>',
                 description:
                   "These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas. The website cannot function properly without these cookies.",
                 linkedCategory: "necessary",
@@ -125,13 +127,15 @@
                     {
                       name: "_ga",
                       domain: window.location.hostname,
-                      description: "Google Analytics - Used to distinguish users",
+                      description:
+                        "Google Analytics - Used to distinguish users",
                       expiration: "2 years",
                     },
                     {
                       name: "_gid",
                       domain: window.location.hostname,
-                      description: "Google Analytics - Used to distinguish users",
+                      description:
+                        "Google Analytics - Used to distinguish users",
                       expiration: "24 hours",
                     },
                   ],
@@ -179,7 +183,7 @@
 
     onFirstConsent: () => {
       console.info("First consent saved");
-      
+
       // Load GTM if analytics accepted
       if (CookieConsent.acceptedCategory("analytics")) {
         loadGoogleTagManager();
@@ -194,8 +198,10 @@
   // Function to load Google Tag Manager
   function loadGoogleTagManager() {
     // Get GTM ID from environment or meta tag
-    const gtmId = document.querySelector('meta[name="gtm-id"]')?.getAttribute("content");
-    
+    const gtmId = document
+      .querySelector('meta[name="gtm-id"]')
+      ?.getAttribute("content");
+
     if (!gtmId) {
       console.warn("GTM ID not found");
       return;
@@ -246,27 +252,38 @@
 <style is:global>
   /* Cookie Consent customization */
   :root {
-    --cc-bg: hsl(var(--background));
-    --cc-text: hsl(var(--foreground));
-    --cc-btn-primary-bg: hsl(var(--primary));
-    --cc-btn-primary-text: hsl(var(--primary-foreground));
-    --cc-btn-primary-hover-bg: hsl(var(--primary) / 0.9);
-    --cc-btn-secondary-bg: hsl(var(--secondary));
-    --cc-btn-secondary-text: hsl(var(--secondary-foreground));
-    --cc-btn-secondary-hover-bg: hsl(var(--secondary) / 0.8);
-    --cc-separator-border-color: hsl(var(--border));
-    --cc-toggle-on-bg: hsl(var(--primary));
-    --cc-toggle-off-bg: hsl(var(--muted));
-    --cc-cookie-category-block-bg: hsl(var(--muted) / 0.3);
+    --cc-bg: var(--card);
+    --cc-text: var(--card-foreground);
+    --cc-btn-primary-bg: var(--primary);
+    --cc-btn-primary-text: var(--primary-foreground);
+    --cc-btn-primary-hover-bg: var(--primary);
+    --cc-btn-secondary-bg: var(--secondary);
+    --cc-btn-secondary-text: var(--secondary-foreground);
+    --cc-btn-secondary-hover-bg: var(--secondary);
+    --cc-separator-border-color: var(--border);
+    --cc-toggle-on-bg: var(--primary);
+    --cc-toggle-off-bg: var(--muted);
+    --cc-cookie-category-block-bg: var(--muted);
+    --cc-cookie-category-block-border: var(--border);
     --cc-overlay-bg: rgba(0, 0, 0, 0.6);
-    --cc-webkit-scrollbar-bg: hsl(var(--muted));
-    --cc-webkit-scrollbar-hover-bg: hsl(var(--muted-foreground));
+    --cc-webkit-scrollbar-bg: var(--muted);
+    --cc-webkit-scrollbar-hover-bg: var(--muted-foreground);
   }
 
   /* Dark mode adjustments */
-  [data-theme="dark"] {
-    --cc-bg: hsl(var(--background));
-    --cc-text: hsl(var(--foreground));
+  html[data-theme="dark"], html.dark {
+    --cc-bg: var(--card);
+    --cc-text: var(--card-foreground);
+    --cc-btn-primary-bg: var(--primary);
+    --cc-btn-primary-text: var(--primary-foreground);
+    --cc-btn-primary-hover-bg: var(--primary);
+    --cc-btn-secondary-bg: var(--secondary);
+    --cc-btn-secondary-text: var(--secondary-foreground);
+    --cc-btn-secondary-hover-bg: var(--secondary);
+    --cc-separator-border-color: var(--border);
+    --cc-toggle-on-bg: var(--primary);
+    --cc-toggle-off-bg: var(--muted);
+    --cc-cookie-category-block-bg: var(--muted);
   }
 
   /* Custom styling */
