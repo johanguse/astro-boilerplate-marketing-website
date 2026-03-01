@@ -1,6 +1,6 @@
 ---
 import type { I18nStrings } from "@/i18n/types";
-import { getLocaleInfo, isLocaleKey, translateFor } from "@/i18n/utils";
+import { getLocaleInfo, isLocaleKey, translateFor, getRelativeLocalePath } from "@/i18n/utils";
 
 const t = translateFor(Astro.currentLocale);
 const LOCALE = getLocaleInfo(Astro.currentLocale);

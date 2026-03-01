@@ -1,5 +1,6 @@
 ---
-import { stripBaseAndLocale, translateFor } from "@/i18n/utils";
+import { stripBaseAndLocale, translateFor, getRelativeLocalePath, getLocaleInfo } from "@/i18n/utils";
+import { SUPPORTED_LOCALES } from "@/i18n/config";
 
 const t = translateFor(Astro.currentLocale);
 

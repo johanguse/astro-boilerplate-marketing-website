@@ -1,7 +1,17 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
 import { SITE } from "@/config";
-import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
+import { getRelativeLocalePath, translateFor, getSlugWithoutLocale } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import BackButton from "@/components/BackButton.astro";
+import EditPost from "@/components/EditPost.astro";
+import Tag from "@/components/Tag.astro";
+import BackToTopButton from "@/components/BackToTopButton.astro";
+import ShareLinks from "@/components/ShareLinks.astro";
+import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
+import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { getPath } from "@/utils/getPath";
 import { getRelatedPosts } from "@/utils/relatedPosts";
 import Datetime from "@/components/Datetime.astro";
@@ -145,6 +155,7 @@ const nextPost =
                 <div class="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
                   <Datetime
                     pubDatetime={relatedPost.data.pubDatetime}
+                    modDatetime={relatedPost.data.modDatetime}
                     timezone={relatedPost.data.timezone}
                   />
                 </div>
