@@ -253,13 +253,18 @@
   /* ----- Cookie Consent Light Mode & Base ----- */
   :root {
     --cc-bg: hsl(0 0% 100%);
-    --cc-text: hsl(240 10% 10%);
+    --cc-primary-color: hsl(240 10% 10%);
+    --cc-secondary-color: hsl(240 5% 35%);
     --cc-btn-primary-bg: var(--primary);
-    --cc-btn-primary-text: #ffffff;
+    --cc-btn-primary-color: #ffffff;
+    --cc-btn-primary-border-color: var(--primary);
     --cc-btn-primary-hover-bg: color-mix(in srgb, var(--primary) 85%, black);
+    --cc-btn-primary-hover-border-color: color-mix(in srgb, var(--primary) 85%, black);
     --cc-btn-secondary-bg: hsl(240 5% 94%);
-    --cc-btn-secondary-text: hsl(240 10% 10%);
+    --cc-btn-secondary-color: hsl(240 10% 10%);
+    --cc-btn-secondary-border-color: hsl(240 5% 94%);
     --cc-btn-secondary-hover-bg: hsl(240 5% 88%);
+    --cc-btn-secondary-hover-border-color: hsl(240 5% 88%);
     --cc-separator-border-color: hsl(240 6% 90%);
     --cc-toggle-on-bg: var(--primary);
     --cc-toggle-off-bg: hsl(240 4% 46%);
@@ -275,13 +280,18 @@
   html[data-theme="dark"], html.dark {
     /* Make the background distinctly lighter (16%) than the black body (6%) so it pops */
     --cc-bg: hsl(240 8% 18%);
-    --cc-text: hsl(0 0% 98%);
+    --cc-primary-color: hsl(0 0% 98%);
+    --cc-secondary-color: hsl(240 5% 85%);
     --cc-btn-primary-bg: var(--primary);
-    --cc-btn-primary-text: #ffffff;
+    --cc-btn-primary-color: #ffffff;
+    --cc-btn-primary-border-color: var(--primary);
     --cc-btn-primary-hover-bg: color-mix(in srgb, var(--primary) 85%, white);
+    --cc-btn-primary-hover-border-color: color-mix(in srgb, var(--primary) 85%, white);
     --cc-btn-secondary-bg: hsl(240 5% 24%);
-    --cc-btn-secondary-text: hsl(0 0% 98%);
+    --cc-btn-secondary-color: hsl(0 0% 98%);
+    --cc-btn-secondary-border-color: hsl(240 5% 24%);
     --cc-btn-secondary-hover-bg: hsl(240 5% 30%);
+    --cc-btn-secondary-hover-border-color: hsl(240 5% 30%);
     --cc-separator-border-color: hsl(240 5% 28%);
     --cc-toggle-on-bg: var(--primary);
     --cc-toggle-off-bg: hsl(240 5% 45%);
