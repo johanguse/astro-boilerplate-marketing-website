@@ -5,15 +5,22 @@ import { translateFor } from "@/i18n/utils";
 
 export const prerender = true;
 
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import PricingSection from "@/components/sections/PricingSection.astro";
+import StatsSection from "@/components/sections/StatsSection.astro";
+import CTASection from "@/components/sections/CTASection.astro";
+
 export const getStaticPaths = (async () =>
   SUPPORTED_LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }))) satisfies GetStaticPaths;
 
 const { locale = DEFAULT_LOCALE } = Astro.params;
-const _t = translateFor(Astro.currentLocale);
+const t = translateFor(Astro.currentLocale);
 
-const _plans = [
+const plans = [
   {
     name: "Free",
     price: "$0",
@@ -96,7 +103,7 @@ const _plans = [
   },
 ];
 
-const _stats = [
+const stats = [
   { value: "99.9", suffix: "%", label: "Uptime SLA" },
   { value: "10M+", suffix: "", label: "AI Operations" },
   { value: "5K+", suffix: "", label: "Happy Customers" },

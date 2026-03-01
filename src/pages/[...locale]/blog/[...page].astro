@@ -8,6 +8,12 @@ import { getPostsGroupedByLocale } from "@/utils/posts";
 
 export const prerender = true;
 
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Card from "@/components/Card.astro";
+import Pagination from "@/components/Pagination.astro";
+import Footer from "@/components/Footer.astro";
+
 export const getStaticPaths = (async ({ paginate }) => {
   const postsByLocale = await getPostsGroupedByLocale({
     draft: false,
@@ -28,7 +34,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const { page } = Astro.props;
 
-const _t = translateFor(Astro.currentLocale);
+const t = translateFor(Astro.currentLocale);
 ---
 
 <Layout title={`${t("posts")} | ${t("site.title")}`}>

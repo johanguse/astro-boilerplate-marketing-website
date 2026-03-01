@@ -3,6 +3,11 @@ import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/i18n/config";
 import { translateFor } from "@/i18n/utils";
 import getUniqueTags from "@/utils/getUniqueTags";
 import { getPostsByLocale } from "@/utils/posts";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/layouts/Main.astro";
+import Tag from "@/components/Tag.astro";
+import Footer from "@/components/Footer.astro";
 
 export const prerender = true;
 
@@ -16,9 +21,9 @@ const { locale = DEFAULT_LOCALE } = Astro.params;
 
 const posts = await getPostsByLocale(locale);
 
-const _t = translateFor(Astro.currentLocale);
+const t = translateFor(Astro.currentLocale);
 
-let _tags = getUniqueTags(posts);
+let tags = getUniqueTags(posts);
 ---
 
 <Layout title={`${t("tags")} | ${t("site.title")}`}>

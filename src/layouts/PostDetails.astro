@@ -1,9 +1,21 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
 import { SITE } from "@/config";
-import { getRelativeLocalePath, translateFor } from "@/i18n/utils";
+import { getRelativeLocalePath, translateFor, getSlugWithoutLocale } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import BackButton from "@/components/BackButton.astro";
+import EditPost from "@/components/EditPost.astro";
+import Tag from "@/components/Tag.astro";
+import BackToTopButton from "@/components/BackToTopButton.astro";
+import ShareLinks from "@/components/ShareLinks.astro";
+import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
+import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { getPath } from "@/utils/getPath";
 import { getRelatedPosts } from "@/utils/relatedPosts";
+import Datetime from "@/components/Datetime.astro";
+import { slugifyStr } from "@/utils/slugify";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -15,7 +27,7 @@ const t = translateFor(Astro.currentLocale);
 const { post, posts } = Astro.props;
 
 // Get semantically related posts
-const _relatedPosts = await getRelatedPosts(post, posts, 3);
+const relatedPosts = await getRelatedPosts(post, posts, 3);
 
 const {
   title,
@@ -54,7 +66,7 @@ const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
   : undefined;
 
-const _layoutProps = {
+const layoutProps = {
   title: `${title} | ${t("site.title")}`,
   author,
   description,
@@ -72,11 +84,10 @@ const allPosts = posts.map(({ data: { title }, id }) => ({
   title,
 }));
 
-const currentPostIndex = allPosts.findIndex((a) => a.slug === post.id);
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
 
-const _prevPost =
-  currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
-const _nextPost =
+const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const nextPost =
   currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
 ---
 
@@ -125,7 +136,7 @@ const _nextPost =
         <div class="my-8">
           <h2 class="mb-4 text-xl font-semibold">{t("relatedPosts.title")}</h2>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {relatedPosts.map((relatedPost) => (
+            {relatedPosts.map(relatedPost => (
               <a
                 href={getRelativeLocalePath(
                   Astro.currentLocale,
@@ -137,12 +148,16 @@ const _nextPost =
                   {relatedPost.data.title}
                 </h3>
                 {relatedPost.data.description && (
-                  <p class="text-sm text-muted-foreground line-clamp-2">
+                  <p class="line-clamp-2 text-sm text-muted-foreground">
                     {relatedPost.data.description}
                   </p>
                 )}
                 <div class="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
-                  <Datetime pubDatetime={relatedPost.data.pubDatetime} timezone={relatedPost.data.timezone} />
+                  <Datetime
+                    pubDatetime={relatedPost.data.pubDatetime}
+                    modDatetime={relatedPost.data.modDatetime}
+                    timezone={relatedPost.data.timezone}
+                  />
                 </div>
               </a>
             ))}

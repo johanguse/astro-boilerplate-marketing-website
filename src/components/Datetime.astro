@@ -2,6 +2,7 @@
 import { DateTime } from "luxon";
 import { SITE } from "@/config";
 import { getLocaleInfo, translateFor } from "@/i18n/utils";
+import IconCalendar from "@/assets/icons/IconCalendar.svg";
 
 export interface Props {
   class?: string;
@@ -23,7 +24,7 @@ const currentLocale = Astro.currentLocale;
 
 const LOCALE = getLocaleInfo(currentLocale);
 
-const _t = translateFor(currentLocale);
+const t = translateFor(currentLocale);
 
 /* ========== Formatted Datetime ========== */
 const latestDatetime =
@@ -32,8 +33,8 @@ const datetime = DateTime.fromJSDate(new Date(latestDatetime))
   .setZone(postTimezone || SITE.timezone)
   .setLocale(LOCALE.langTag);
 
-const _date = datetime.toFormat("d MMM, yyyy"); // e.g., '22 Mar, 2025'
-const _time = datetime.toFormat("hh:mm a"); // e.g., '08:30 PM'
+const date = datetime.toFormat("d MMM, yyyy"); // e.g., '22 Mar, 2025'
+const time = datetime.toFormat("hh:mm a"); // e.g., '08:30 PM'
 ---
 
 <div class:list={["flex items-end space-x-2 opacity-80", className]}>

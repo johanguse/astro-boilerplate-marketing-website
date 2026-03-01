@@ -1,11 +1,16 @@
 ---
 import { SITE } from "@/config";
+import { DEFAULT_LOCALE } from "@/i18n/config";
 import { getLocaleInfo, translateFor } from "@/i18n/utils";
 import "@/styles/global.css";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import { ClientRouter } from "astro:transitions";
+import CookieConsent from "@/components/CookieConsent.astro";
 
 const t = translateFor(Astro.currentLocale);
 
-const _LOCALE = getLocaleInfo(Astro.currentLocale);
+const LOCALE = getLocaleInfo(Astro.currentLocale);
 
 export interface Props {
   title?: string;
@@ -33,7 +38,7 @@ const {
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
-const _structuredData = {
+const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: `${title}`,
@@ -115,7 +120,7 @@ const _structuredData = {
       type="application/rss+xml"
       title={t("site.title")}
       href={new URL(
-        getRelativeLocalePath(Astro.currentLocale, "rss.xml"),
+        getRelativeLocaleUrl(Astro.currentLocale || "en", "rss.xml"),
         Astro.site
       )}
     />

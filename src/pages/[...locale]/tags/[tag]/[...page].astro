@@ -9,6 +9,13 @@ import { getPostsGroupedByLocale } from "@/utils/posts";
 
 export const prerender = true;
 
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/layouts/Main.astro";
+import Card from "@/components/Card.astro";
+import Pagination from "@/components/Pagination.astro";
+import Footer from "@/components/Footer.astro";
+
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const postsByLocale = await getPostsGroupedByLocale({
     allowedLocales: SUPPORTED_LOCALES,
@@ -38,7 +45,7 @@ const params = Astro.params;
 const { tag } = params;
 const { page, tagName } = Astro.props;
 
-const _t = translateFor(Astro.currentLocale);
+const t = translateFor(Astro.currentLocale);
 ---
 
 <Layout title={`${t("tag")}: ${tagName} | ${t("site.title")}`}>
