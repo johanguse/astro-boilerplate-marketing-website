@@ -250,54 +250,86 @@
 </noscript>
 
 <style is:global>
-  /* Cookie Consent customization */
+  /* ----- Cookie Consent Light Mode & Base ----- */
   :root {
-    --cc-bg: var(--card);
-    --cc-text: var(--card-foreground);
+    --cc-bg: hsl(0 0% 100%);
+    --cc-text: hsl(240 10% 10%);
     --cc-btn-primary-bg: var(--primary);
-    --cc-btn-primary-text: var(--primary-foreground);
-    --cc-btn-primary-hover-bg: var(--primary);
-    --cc-btn-secondary-bg: var(--secondary);
-    --cc-btn-secondary-text: var(--secondary-foreground);
-    --cc-btn-secondary-hover-bg: var(--secondary);
-    --cc-separator-border-color: var(--border);
+    --cc-btn-primary-text: #ffffff;
+    --cc-btn-primary-hover-bg: color-mix(in srgb, var(--primary) 85%, black);
+    --cc-btn-secondary-bg: hsl(240 5% 94%);
+    --cc-btn-secondary-text: hsl(240 10% 10%);
+    --cc-btn-secondary-hover-bg: hsl(240 5% 88%);
+    --cc-separator-border-color: hsl(240 6% 90%);
     --cc-toggle-on-bg: var(--primary);
-    --cc-toggle-off-bg: var(--muted);
-    --cc-cookie-category-block-bg: var(--muted);
-    --cc-cookie-category-block-border: var(--border);
-    --cc-overlay-bg: rgba(0, 0, 0, 0.6);
-    --cc-webkit-scrollbar-bg: var(--muted);
-    --cc-webkit-scrollbar-hover-bg: var(--muted-foreground);
+    --cc-toggle-off-bg: hsl(240 4% 46%);
+    --cc-cookie-category-block-bg: hsl(240 5% 96%);
+    --cc-cookie-category-block-border: hsl(240 6% 90%);
+    --cc-cookie-category-block-hover-bg: hsl(240 5% 92%);
+    --cc-overlay-bg: rgba(0, 0, 0, 0.5);
+    --cc-webkit-scrollbar-bg: hsl(240 5% 96%);
+    --cc-webkit-scrollbar-hover-bg: hsl(240 4% 46%);
   }
 
-  /* Dark mode adjustments */
+  /* ----- Cookie Consent Dark Mode ----- */
   html[data-theme="dark"], html.dark {
-    --cc-bg: var(--card);
-    --cc-text: var(--card-foreground);
+    /* Make the background distinctly lighter (16%) than the black body (6%) so it pops */
+    --cc-bg: hsl(240 8% 18%);
+    --cc-text: hsl(0 0% 98%);
     --cc-btn-primary-bg: var(--primary);
-    --cc-btn-primary-text: var(--primary-foreground);
-    --cc-btn-primary-hover-bg: var(--primary);
-    --cc-btn-secondary-bg: var(--secondary);
-    --cc-btn-secondary-text: var(--secondary-foreground);
-    --cc-btn-secondary-hover-bg: var(--secondary);
-    --cc-separator-border-color: var(--border);
+    --cc-btn-primary-text: #ffffff;
+    --cc-btn-primary-hover-bg: color-mix(in srgb, var(--primary) 85%, white);
+    --cc-btn-secondary-bg: hsl(240 5% 24%);
+    --cc-btn-secondary-text: hsl(0 0% 98%);
+    --cc-btn-secondary-hover-bg: hsl(240 5% 30%);
+    --cc-separator-border-color: hsl(240 5% 28%);
     --cc-toggle-on-bg: var(--primary);
-    --cc-toggle-off-bg: var(--muted);
-    --cc-cookie-category-block-bg: var(--muted);
+    --cc-toggle-off-bg: hsl(240 5% 45%);
+    --cc-cookie-category-block-bg: hsl(240 5% 22%);
+    --cc-cookie-category-block-border: hsl(240 5% 28%);
+    --cc-cookie-category-block-hover-bg: hsl(240 5% 26%);
+    --cc-overlay-bg: rgba(0, 0, 0, 0.75);
   }
 
-  /* Custom styling */
+  /* Explicitly target the cc-main div for fonts and legible links */
+  #cc-main {
+    --cc-font-family: inherit;
+  }
+  
+  #cc-main a {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  #cc-main a:hover {
+    color: color-mix(in srgb, var(--primary) 80%, white);
+  }
+
+  /* Custom styling for a modern soft look */
   #cc-main .cm {
     border-radius: var(--radius);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--cc-separator-border-color);
   }
 
+  /* Give the footer a slightly differentiated bg for depth */
   #cc-main .cm__footer {
     border-top: 1px solid var(--cc-separator-border-color);
   }
 
+  html[data-theme="dark"] #cc-main .cm__footer, html.dark #cc-main .cm__footer {
+    background-color: hsl(240 8% 15%);
+  }
+
+  html[data-theme="light"] #cc-main .cm__footer, :root #cc-main .cm__footer {
+    background-color: hsl(240 5% 98%);
+  }
+
+  /* Preferences Modal Adjustments */
   #cc-main .pm {
     border-radius: var(--radius);
+    border: 1px solid var(--cc-separator-border-color);
   }
 
   #cc-main .section__toggle {
