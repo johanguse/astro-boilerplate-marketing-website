@@ -171,6 +171,119 @@ const DELocale: I18nStrings = {
   "home.finalCta.title": "Bereit, Ihren Workflow zu optimieren?",
   "home.finalCta.subtitle":
     "Schließen Sie sich Tausenden von Teams an, die bereits unsere KI-Plattform nutzen. Starten Sie kostenlos, keine Kreditkarte erforderlich.",
+  // Features page
+  "features.meta.title": "Funktionen - KI-gestützte SaaS-Plattform",
+  "features.meta.description":
+    "Entdecken Sie leistungsstarke KI-Funktionen wie Dokumentenintelligenz, Content-Generierung, Analytik und mehr.",
+  "features.hero.badge": "🚀 Angetrieben von GPT-4 & Claude",
+  "features.hero.title": "KI-Superkräfte für Ihr Unternehmen",
+  "features.hero.subtitle":
+    "Alles, was Sie brauchen, um eine KI-gestützte SaaS-Anwendung zu erstellen, zu skalieren und zu verwalten. Von der Dokumentenverarbeitung bis zur Content-Erstellung und Analytik.",
+  "features.ai.title": "KI-gestützte Funktionen",
+  "features.ai.subtitle":
+    "Produktionsreife KI-Fähigkeiten, die echten Geschäftswert liefern",
+  "features.ai.docIntel.title": "KI-Dokumentenintelligenz",
+  "features.ai.docIntel.desc":
+    "Laden Sie Dokumente hoch und lassen Sie die KI Erkenntnisse extrahieren, Inhalte zusammenfassen und intelligente Suche ermöglichen. Chatten Sie mit Ihren Dokumenten mithilfe von RAG-Technologie.",
+  "features.ai.contentGen.title": "KI-Content-Generierung",
+  "features.ai.contentGen.desc":
+    "Generieren Sie Blog-Posts, Marketing-Texte, Social-Media-Inhalte und E-Mails mit KI. Wählen Sie Ton, Stil und Länge für perfekte Ergebnisse.",
+  "features.ai.analytics.title": "KI-Analytik",
+  "features.ai.analytics.desc":
+    "Stellen Sie Fragen in natürlicher Sprache und erhalten Sie sofortige Erkenntnisse, Diagramme und Berichte aus Ihren Daten. Keine SQL-Kenntnisse erforderlich.",
+  "features.ai.search.title": "Semantische Suche",
+  "features.ai.search.desc":
+    "Finden Sie genau das, was Sie brauchen, mit KI-gestützter Suche, die Kontext und Bedeutung versteht, nicht nur Schlüsselwörter.",
+  "features.ai.multiLang.title": "Mehrsprachige Unterstützung",
+  "features.ai.multiLang.desc":
+    "Generieren Sie Inhalte und analysieren Sie Daten in mehreren Sprachen. Vollständige i18n-Unterstützung für globale Teams.",
+  "features.ai.providers.title": "Flexible KI-Anbieter",
+  "features.ai.providers.desc":
+    "Wählen Sie zwischen OpenAI, Anthropic oder OpenRouter. Wechseln Sie Anbieter je nach Bedarf und Budget.",
+  "features.tabs.title": "Erkunden Sie unsere Funktionen im Detail",
+  "features.tabs.subtitle": "Entdecken Sie, was unsere Plattform einzigartig macht",
+  "features.tech.title": "Technische Exzellenz",
+  "features.tech.subtitle":
+    "Entwickelt mit modernen Tools und Best Practices",
+  "features.tech.security.title": "Unternehmenssicherheit",
+  "features.tech.security.desc":
+    "Integrierte RBAC, Audit-Protokollierung, Rate-Limiting und DSGVO-konforme Datenverarbeitung.",
+  "features.tech.realtime.title": "Echtzeit-Updates",
+  "features.tech.realtime.desc":
+    "WebSocket-Unterstützung für Live-Zusammenarbeit und sofortige Benachrichtigungen in Ihrem Team.",
+  "features.tech.api.title": "RESTful API",
+  "features.tech.api.desc":
+    "Umfassende API mit OpenAPI-Dokumentation. Integrieren Sie mit Ihren vorhandenen Tools und Workflows.",
+  "features.tech.ui.title": "Modernes UI/UX",
+  "features.tech.ui.desc":
+    "Schöne, responsive Oberflächen, entwickelt mit React, shadcn/ui und Tailwind CSS v4.",
+  "features.tech.usage.title": "Nutzungsanalytik",
+  "features.tech.usage.desc":
+    "Echtzeit-Dashboards mit KI-Nutzung, Kosten und Leistungsmetriken.",
+  "features.tech.async.title": "Asynchrone Verarbeitung",
+  "features.tech.async.desc":
+    "Hintergrund-Job-Verarbeitung mit Celery für schwere KI-Operationen, die Ihre App nicht blockieren.",
+  "features.cta.title": "Bereit für KI-gestützte Produktivität?",
+  "features.cta.subtitle":
+    "Starten Sie mit unserem kostenlosen Plan und upgraden Sie mit Ihrem Wachstum",
+  // Pricing page
+  "pricing.meta.title": "Preise - KI-gestützte SaaS-Plattform",
+  "pricing.meta.description":
+    "Einfache, transparente Preise für unsere KI-gestützte Plattform. Wählen Sie den Plan, der zu Ihren Bedürfnissen passt.",
+  "pricing.hero.title": "Preise, die mit Ihnen wachsen",
+  "pricing.hero.subtitle":
+    "Starten Sie kostenlos, upgraden Sie, wenn Sie mehr Leistung brauchen. Alle Pläne beinhalten Zugang zu unseren KI-Funktionen.",
+  "pricing.section.title": "Wählen Sie Ihren Plan",
+  "pricing.section.subtitle":
+    "Alle Pläne beinhalten eine 14-tägige Geld-zurück-Garantie",
+  "pricing.plan.free.name": "Kostenlos",
+  "pricing.plan.free.description":
+    "Perfekt zum Ausprobieren unserer KI-Funktionen",
+  "pricing.plan.free.cta": "Kostenlos Starten",
+  "pricing.plan.starter.name": "Starter",
+  "pricing.plan.starter.description":
+    "Ideal für Einzelpersonen und kleine Teams",
+  "pricing.plan.starter.cta": "Loslegen",
+  "pricing.plan.pro.name": "Professionell",
+  "pricing.plan.pro.description":
+    "Für wachsende Unternehmen und Teams",
+  "pricing.plan.pro.badge": "Am Beliebtesten",
+  "pricing.plan.pro.cta": "Pro Starten",
+  "pricing.plan.business.name": "Unternehmen",
+  "pricing.plan.business.description":
+    "KI-Fähigkeiten auf Unternehmensebene",
+  "pricing.plan.business.cta": "Vertrieb Kontaktieren",
+  "pricing.period.month": "Monat",
+  "pricing.feature.aiCredits": "{count} KI-Credits/Monat",
+  "pricing.feature.docIntel": "KI-Dokumentenintelligenz",
+  "pricing.feature.contentGen": "KI-Content-Generierung",
+  "pricing.feature.analytics": "KI-Analytik",
+  "pricing.feature.projects": "{count} Projekt|{count} Projekte",
+  "pricing.feature.users": "{count} Benutzer|{count} Benutzer",
+  "pricing.feature.storage": "{amount} Speicher",
+  "pricing.feature.api": "API-Zugang",
+  "pricing.feature.fullApi": "Vollständiger API-Zugang",
+  "pricing.faq.title": "Häufig gestellte Fragen",
+  "pricing.faq.credits.q": "Was sind KI-Credits?",
+  "pricing.faq.credits.a":
+    "KI-Credits werden verwendet, um alle KI-Operationen auf unserer Plattform zu betreiben. 1 Credit ≈ 1.000 Token. Dokumentenverarbeitung verbraucht 10-50 Credits, Content-Generierung 5-20 Credits und Analytik-Abfragen 3-10 Credits pro Vorgang.",
+  "pricing.faq.change.q": "Kann ich jederzeit den Plan wechseln?",
+  "pricing.faq.change.a":
+    "Ja! Sie können jederzeit upgraden oder downgraden. Änderungen werden sofort wirksam, und wir berechnen alle Gebühren oder Credits anteilig.",
+  "pricing.faq.exceed.q": "Was passiert, wenn ich meine Credits überschreite?",
+  "pricing.faq.exceed.a":
+    "Sie können zusätzliche Credit-Pakete kaufen oder auf einen höheren Plan upgraden. Wir benachrichtigen Sie, wenn Sie 80% Ihres monatlichen Limits erreichen.",
+  "pricing.faq.refund.q": "Bieten Sie Rückerstattungen an?",
+  "pricing.faq.refund.a":
+    "Ja! Wir bieten eine 14-tägige Geld-zurück-Garantie für alle bezahlten Pläne. Wenn Sie nicht zufrieden sind, erstatten wir Ihre Zahlung vollständig.",
+  "pricing.faq.apiKey.q": "Kann ich meinen eigenen OpenAI API-Schlüssel verwenden?",
+  "pricing.faq.apiKey.a":
+    "Benutzer des Unternehmensplans können ihre eigenen API-Schlüssel für OpenAI, Anthropic oder OpenRouter verbinden, um Kosten zu reduzieren und volle Kontrolle über ihre KI-Nutzung zu haben.",
+  "pricing.cta.title": "Bereit loszulegen?",
+  "pricing.cta.subtitle":
+    "Schließen Sie sich Tausenden von Teams an, die bereits unsere KI-Plattform nutzen",
+  "pricing.cta.primary": "Kostenlose Testversion Starten",
+  "pricing.cta.secondary": "Vertrieb Kontaktieren",
 };
 
 export default DELocale;

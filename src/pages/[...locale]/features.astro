@@ -24,107 +24,94 @@ const t = translateFor(Astro.currentLocale);
 const aiFeatures = [
   {
     icon: "📄",
-    title: "AI Document Intelligence",
-    description:
-      "Upload documents and let AI extract insights, summarize content, and enable intelligent search. Chat with your documents using RAG technology.",
+    title: t("features.ai.docIntel.title"),
+    description: t("features.ai.docIntel.desc"),
   },
   {
     icon: "✍️",
-    title: "AI Content Generation",
-    description:
-      "Generate blog posts, marketing copy, social media content, and emails with AI. Choose tone, style, and length for perfect results.",
+    title: t("features.ai.contentGen.title"),
+    description: t("features.ai.contentGen.desc"),
   },
   {
     icon: "📊",
-    title: "AI Analytics",
-    description:
-      "Ask questions in natural language and get instant insights, charts, and reports from your data. No SQL knowledge required.",
+    title: t("features.ai.analytics.title"),
+    description: t("features.ai.analytics.desc"),
   },
   {
     icon: "🔍",
-    title: "Semantic Search",
-    description:
-      "Find exactly what you need with AI-powered search that understands context and meaning, not just keywords.",
+    title: t("features.ai.search.title"),
+    description: t("features.ai.search.desc"),
   },
   {
     icon: "🌐",
-    title: "Multi-language Support",
-    description:
-      "Generate content and analyze data in multiple languages. Full i18n support for global teams.",
+    title: t("features.ai.multiLang.title"),
+    description: t("features.ai.multiLang.desc"),
   },
   {
     icon: "🔌",
-    title: "Flexible AI Providers",
-    description:
-      "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
+    title: t("features.ai.providers.title"),
+    description: t("features.ai.providers.desc"),
   },
 ];
 
 const technicalFeatures = [
   {
     icon: "🔐",
-    title: "Enterprise Security",
-    description:
-      "RBAC, audit logging, rate limiting, and GDPR-compliant data handling built-in.",
+    title: t("features.tech.security.title"),
+    description: t("features.tech.security.desc"),
   },
   {
     icon: "⚡",
-    title: "Real-time Updates",
-    description:
-      "WebSocket support for live collaboration and instant notifications across your team.",
+    title: t("features.tech.realtime.title"),
+    description: t("features.tech.realtime.desc"),
   },
   {
     icon: "📱",
-    title: "RESTful API",
-    description:
-      "Comprehensive API with OpenAPI documentation. Integrate with your existing tools and workflows.",
+    title: t("features.tech.api.title"),
+    description: t("features.tech.api.desc"),
   },
   {
     icon: "🎨",
-    title: "Modern UI/UX",
-    description:
-      "Beautiful, responsive interfaces built with React, shadcn/ui, and Tailwind CSS v4.",
+    title: t("features.tech.ui.title"),
+    description: t("features.tech.ui.desc"),
   },
   {
     icon: "📈",
-    title: "Usage Analytics",
-    description:
-      "Real-time dashboards showing AI usage, costs, and performance metrics.",
+    title: t("features.tech.usage.title"),
+    description: t("features.tech.usage.desc"),
   },
   {
     icon: "🔄",
-    title: "Async Processing",
-    description:
-      "Background job processing with Celery for heavy AI operations that don't block your app.",
+    title: t("features.tech.async.title"),
+    description: t("features.tech.async.desc"),
   },
 ];
 ---
 
-<Layout title="Features - AI-Powered SaaS Platform" description="Discover powerful AI features including document intelligence, content generation, analytics, and more.">
+<Layout title={t("features.meta.title")} description={t("features.meta.description")}>
   <Header />
   <main>
     <!-- Hero Section -->
     <section class="relative overflow-hidden py-20 md:py-32 bg-gradient-mesh">
       <div class="container max-w-5xl text-center">
         <Badge variant="secondary" className="mb-6 px-4 py-2" client:load>
-          🚀 Powered by GPT-4 & Claude
+          {t("features.hero.badge")}
         </Badge>
-        
+
         <h1 class="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6 animate-slide-up">
-          AI superpowers for your business
+          {t("features.hero.title")}
         </h1>
-        
+
         <p class="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-fade-in">
-          Everything you need to build, scale, and manage an AI-powered SaaS application. 
-          From document processing to content generation and analytics.
+          {t("features.hero.subtitle")}
         </p>
       </div>
     </section>
 
     <!-- AI Features -->
     <FeatureGrid
-      title="AI-Powered Features"
-      subtitle="Production-ready AI capabilities that drive real business value"
+      title={t("features.ai.title")}
+      subtitle={t("features.ai.subtitle")}
       features={aiFeatures}
     />
 
@@ -133,32 +120,32 @@ const technicalFeatures = [
       <div class="container max-w-6xl">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
-            Deep dive into our features
+            {t("features.tabs.title")}
           </h2>
           <p class="text-xl text-muted-foreground">
-            Explore what makes our platform unique
+            {t("features.tabs.subtitle")}
           </p>
         </div>
-        
+
         <FeatureTabs client:load />
       </div>
     </section>
 
     <!-- Technical Features -->
     <FeatureGrid
-      title="Technical Excellence"
-      subtitle="Built with modern tools and best practices"
+      title={t("features.tech.title")}
+      subtitle={t("features.tech.subtitle")}
       features={technicalFeatures}
     />
 
     <!-- CTA -->
     <CTASection
-      title="Ready to experience AI-powered productivity?"
-      subtitle="Start with our free plan and upgrade as you grow"
-      primaryCta="Start Free Trial"
+      title={t("features.cta.title")}
+      subtitle={t("features.cta.subtitle")}
+      primaryCta={t("cta.startFreeTrial")}
       primaryCtaHref="/signup"
-      secondaryCta="View Pricing"
-      secondaryCtaHref="/pricing"
+      secondaryCta={t("cta.viewPricing")}
+      secondaryCtaHref={locale === DEFAULT_LOCALE ? "/pricing" : `/${locale}/pricing`}
       variant="gradient"
     />
   </main>

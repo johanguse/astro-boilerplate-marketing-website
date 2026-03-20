@@ -63,7 +63,7 @@ A modern, multilingual marketing website built with Astro, featuring a professio
 
 ## 📦 Tech Stack
 
-- **Framework**: [Astro 5.17](https://astro.build)
+- **Framework**: [Astro 6](https://astro.build)
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com) (New York style)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
 - **Icons**: [Lucide Icons](https://lucide.dev)
@@ -79,7 +79,7 @@ A modern, multilingual marketing website built with Astro, featuring a professio
 ### Prerequisites
 
 - [Bun](https://bun.sh) v1.3.8 or higher (recommended)
-- OR [Node.js](https://nodejs.org) v20.19.0 with [pnpm](https://pnpm.io) v10.6.5 (via Volta)
+- OR [Node.js](https://nodejs.org) v22.12.0 with [pnpm](https://pnpm.io) v10.6.5 (via Volta)
 - [Wrangler](https://developers.cloudflare.com/workers/wrangler/) for Cloudflare deployment
 
 ### Installation

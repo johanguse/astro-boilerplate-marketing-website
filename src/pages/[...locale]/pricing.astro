@@ -22,121 +22,121 @@ const t = translateFor(Astro.currentLocale);
 
 const plans = [
   {
-    name: "Free",
+    name: t("pricing.plan.free.name"),
     price: "$0",
-    period: "month",
-    description: "Perfect for trying out our AI features",
+    period: t("pricing.period.month"),
+    description: t("pricing.plan.free.description"),
     badge: undefined,
     popular: false,
-    cta: "Start Free",
+    cta: t("pricing.plan.free.cta"),
     ctaHref: "/signup",
     features: [
-      { text: "10 AI Credits/month", included: true },
-      { text: "AI Document Intelligence", included: true },
-      { text: "1 Project", included: true },
-      { text: "1 User", included: true },
-      { text: "1GB Storage", included: true },
-      { text: "AI Content Generation", included: false },
-      { text: "AI Analytics", included: false },
-      { text: "API Access", included: false },
+      { text: t("pricing.feature.aiCredits", { count: "10" }), included: true },
+      { text: t("pricing.feature.docIntel"), included: true },
+      { text: t("pricing.feature.projects", { count: "1" }).split("|")[0], included: true },
+      { text: t("pricing.feature.users", { count: "1" }).split("|")[0], included: true },
+      { text: t("pricing.feature.storage", { amount: "1GB" }), included: true },
+      { text: t("pricing.feature.contentGen"), included: false },
+      { text: t("pricing.feature.analytics"), included: false },
+      { text: t("pricing.feature.api"), included: false },
     ],
   },
   {
-    name: "Starter",
+    name: t("pricing.plan.starter.name"),
     price: "$9.90",
-    period: "month",
-    description: "Great for individuals and small teams",
+    period: t("pricing.period.month"),
+    description: t("pricing.plan.starter.description"),
     badge: undefined,
     popular: false,
-    cta: "Get Started",
+    cta: t("pricing.plan.starter.cta"),
     ctaHref: "/signup?plan=starter",
     features: [
-      { text: "1,000 AI Credits/month", included: true },
-      { text: "AI Document Intelligence", included: true },
-      { text: "AI Content Generation", included: true },
-      { text: "1 Project", included: true },
-      { text: "3 Users", included: true },
-      { text: "5GB Storage", included: true },
-      { text: "AI Analytics", included: false },
-      { text: "API Access", included: false },
+      { text: t("pricing.feature.aiCredits", { count: "1,000" }), included: true },
+      { text: t("pricing.feature.docIntel"), included: true },
+      { text: t("pricing.feature.contentGen"), included: true },
+      { text: t("pricing.feature.projects", { count: "1" }).split("|")[0], included: true },
+      { text: t("pricing.feature.users", { count: "3" }).split("|")[1], included: true },
+      { text: t("pricing.feature.storage", { amount: "5GB" }), included: true },
+      { text: t("pricing.feature.analytics"), included: false },
+      { text: t("pricing.feature.api"), included: false },
     ],
   },
   {
-    name: "Professional",
+    name: t("pricing.plan.pro.name"),
     price: "$29.90",
-    period: "month",
-    description: "For growing businesses and teams",
-    badge: "Most Popular",
+    period: t("pricing.period.month"),
+    description: t("pricing.plan.pro.description"),
+    badge: t("pricing.plan.pro.badge"),
     popular: true,
-    cta: "Start Pro",
+    cta: t("pricing.plan.pro.cta"),
     ctaHref: "/signup?plan=professional",
     features: [
-      { text: "5,000 AI Credits/month", included: true },
-      { text: "AI Document Intelligence", included: true },
-      { text: "AI Content Generation", included: true },
-      { text: "AI Analytics", included: true },
-      { text: "5 Projects", included: true },
-      { text: "10 Users", included: true },
-      { text: "20GB Storage", included: true },
-      { text: "API Access", included: false },
+      { text: t("pricing.feature.aiCredits", { count: "5,000" }), included: true },
+      { text: t("pricing.feature.docIntel"), included: true },
+      { text: t("pricing.feature.contentGen"), included: true },
+      { text: t("pricing.feature.analytics"), included: true },
+      { text: t("pricing.feature.projects", { count: "5" }).split("|")[1], included: true },
+      { text: t("pricing.feature.users", { count: "10" }).split("|")[1], included: true },
+      { text: t("pricing.feature.storage", { amount: "20GB" }), included: true },
+      { text: t("pricing.feature.api"), included: false },
     ],
   },
   {
-    name: "Business",
+    name: t("pricing.plan.business.name"),
     price: "$99.90",
-    period: "month",
-    description: "Enterprise-grade AI capabilities",
+    period: t("pricing.period.month"),
+    description: t("pricing.plan.business.description"),
     badge: undefined,
     popular: false,
-    cta: "Contact Sales",
-    ctaHref: "/contact",
+    cta: t("pricing.plan.business.cta"),
+    ctaHref: locale === DEFAULT_LOCALE ? "/contact" : `/${locale}/contact`,
     features: [
-      { text: "25,000 AI Credits/month", included: true },
-      { text: "AI Document Intelligence", included: true },
-      { text: "AI Content Generation", included: true },
-      { text: "AI Analytics", included: true },
-      { text: "20 Projects", included: true },
-      { text: "50 Users", included: true },
-      { text: "100GB Storage", included: true },
-      { text: "Full API Access", included: true },
+      { text: t("pricing.feature.aiCredits", { count: "25,000" }), included: true },
+      { text: t("pricing.feature.docIntel"), included: true },
+      { text: t("pricing.feature.contentGen"), included: true },
+      { text: t("pricing.feature.analytics"), included: true },
+      { text: t("pricing.feature.projects", { count: "20" }).split("|")[1], included: true },
+      { text: t("pricing.feature.users", { count: "50" }).split("|")[1], included: true },
+      { text: t("pricing.feature.storage", { amount: "100GB" }), included: true },
+      { text: t("pricing.feature.fullApi"), included: true },
     ],
   },
 ];
 
 const stats = [
-  { value: "99.9", suffix: "%", label: "Uptime SLA" },
-  { value: "10M+", suffix: "", label: "AI Operations" },
-  { value: "5K+", suffix: "", label: "Happy Customers" },
-  { value: "24/7", suffix: "", label: "Support" },
+  { value: "99.9", suffix: "%", label: t("home.stats.uptime") },
+  { value: "10M+", suffix: "", label: t("home.stats.operations") },
+  { value: "5K+", suffix: "", label: t("home.stats.customers") },
+  { value: "24/7", suffix: "", label: t("home.stats.support") },
 ];
 ---
 
-<Layout title="Pricing - AI-Powered SaaS Platform" description="Simple, transparent pricing for our AI-powered platform. Choose the plan that fits your needs.">
+<Layout title={t("pricing.meta.title")} description={t("pricing.meta.description")}>
   <Header />
   <main>
     <!-- Hero Section -->
     <section class="relative overflow-hidden py-20 md:py-32 bg-gradient-mesh">
       <div class="container max-w-4xl text-center">
         <h1 class="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6 animate-slide-up">
-          Pricing that scales with you
+          {t("pricing.hero.title")}
         </h1>
         <p class="text-xl text-muted-foreground mb-8 animate-fade-in">
-          Start free, upgrade when you need more power. All plans include access to our AI features.
+          {t("pricing.hero.subtitle")}
         </p>
       </div>
     </section>
 
     <!-- Pricing Cards -->
     <PricingSection
-      title="Choose your plan"
-      subtitle="All plans include a 14-day money-back guarantee"
+      title={t("pricing.section.title")}
+      subtitle={t("pricing.section.subtitle")}
       plans={plans}
     />
 
     <!-- Stats -->
     <StatsSection
-      title="Trusted by teams worldwide"
-      subtitle="Join thousands of companies using our AI platform"
+      title={t("home.stats.title")}
+      subtitle={t("home.stats.subtitle")}
       stats={stats}
     />
 
@@ -144,47 +144,42 @@ const stats = [
     <section class="py-20 md:py-32 bg-muted/30">
       <div class="container max-w-4xl">
         <h2 class="text-4xl font-bold tracking-tight text-center mb-16">
-          Frequently asked questions
+          {t("pricing.faq.title")}
         </h2>
-        
+
         <div class="space-y-8">
           <div>
-            <h3 class="text-xl font-semibold mb-3">What are AI Credits?</h3>
+            <h3 class="text-xl font-semibold mb-3">{t("pricing.faq.credits.q")}</h3>
             <p class="text-muted-foreground leading-relaxed">
-              AI Credits are used to power all AI operations on our platform. 1 credit ≈ 1,000 tokens. 
-              Document processing uses 10-50 credits, content generation uses 5-20 credits, and analytics queries use 3-10 credits per operation.
+              {t("pricing.faq.credits.a")}
             </p>
           </div>
-          
+
           <div>
-            <h3 class="text-xl font-semibold mb-3">Can I change plans anytime?</h3>
+            <h3 class="text-xl font-semibold mb-3">{t("pricing.faq.change.q")}</h3>
             <p class="text-muted-foreground leading-relaxed">
-              Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, 
-              and we'll prorate any charges or credits.
+              {t("pricing.faq.change.a")}
             </p>
           </div>
-          
+
           <div>
-            <h3 class="text-xl font-semibold mb-3">What happens if I exceed my credits?</h3>
+            <h3 class="text-xl font-semibold mb-3">{t("pricing.faq.exceed.q")}</h3>
             <p class="text-muted-foreground leading-relaxed">
-              You can purchase additional credit packs or upgrade to a higher plan. We'll notify you 
-              when you reach 80% of your monthly limit.
+              {t("pricing.faq.exceed.a")}
             </p>
           </div>
-          
+
           <div>
-            <h3 class="text-xl font-semibold mb-3">Do you offer refunds?</h3>
+            <h3 class="text-xl font-semibold mb-3">{t("pricing.faq.refund.q")}</h3>
             <p class="text-muted-foreground leading-relaxed">
-              Yes! We offer a 14-day money-back guarantee on all paid plans. If you're not satisfied, 
-              we'll refund your payment in full.
+              {t("pricing.faq.refund.a")}
             </p>
           </div>
-          
+
           <div>
-            <h3 class="text-xl font-semibold mb-3">Can I use my own OpenAI API key?</h3>
+            <h3 class="text-xl font-semibold mb-3">{t("pricing.faq.apiKey.q")}</h3>
             <p class="text-muted-foreground leading-relaxed">
-              Business plan users can connect their own API keys for OpenAI, Anthropic, or OpenRouter 
-              to reduce costs and have full control over their AI usage.
+              {t("pricing.faq.apiKey.a")}
             </p>
           </div>
         </div>
@@ -193,12 +188,12 @@ const stats = [
 
     <!-- CTA -->
     <CTASection
-      title="Ready to get started?"
-      subtitle="Join thousands of teams already using our AI platform"
-      primaryCta="Start Free Trial"
+      title={t("pricing.cta.title")}
+      subtitle={t("pricing.cta.subtitle")}
+      primaryCta={t("pricing.cta.primary")}
       primaryCtaHref="/signup"
-      secondaryCta="Contact Sales"
-      secondaryCtaHref="/contact"
+      secondaryCta={t("pricing.cta.secondary")}
+      secondaryCtaHref={locale === DEFAULT_LOCALE ? "/contact" : `/${locale}/contact`}
       variant="gradient"
     />
   </main>
