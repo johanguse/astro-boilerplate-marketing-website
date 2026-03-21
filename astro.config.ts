@@ -53,13 +53,15 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      dedupe: ["react", "react-dom"],
+    },
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
+      include: ["react", "react-dom"],
     },
     ssr: {
       // Mark native Node.js modules as external to prevent bundling
       external: [
-        "@resvg/resvg-js",
         // Node.js built-ins (suppress Vite warnings for Cloudflare adapter)
         "node:fs",
         "node:path",
@@ -97,8 +99,5 @@ export default defineConfig({
         optional: true,
       }),
     },
-  },
-  experimental: {
-    preserveScriptOrder: true,
   },
 });

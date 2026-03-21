@@ -170,6 +170,119 @@ const FRLocale: I18nStrings = {
   "home.finalCta.title": "Prêt à booster votre flux de travail ?",
   "home.finalCta.subtitle":
     "Rejoignez des milliers d'équipes utilisant déjà notre plateforme IA. Commencez gratuitement, aucune carte de crédit requise.",
+  // Features page
+  "features.meta.title": "Fonctionnalités - Plateforme SaaS alimentée par l'IA",
+  "features.meta.description":
+    "Découvrez des fonctionnalités IA puissantes incluant l'intelligence documentaire, la génération de contenu, l'analytique et plus encore.",
+  "features.hero.badge": "🚀 Alimenté par GPT-4 et Claude",
+  "features.hero.title": "Des superpouvoirs IA pour votre entreprise",
+  "features.hero.subtitle":
+    "Tout ce dont vous avez besoin pour construire, faire évoluer et gérer une application SaaS alimentée par l'IA. Du traitement de documents à la génération de contenu et l'analytique.",
+  "features.ai.title": "Fonctionnalités Alimentées par l'IA",
+  "features.ai.subtitle":
+    "Capacités IA prêtes pour la production qui génèrent une réelle valeur commerciale",
+  "features.ai.docIntel.title": "Intelligence Documentaire IA",
+  "features.ai.docIntel.desc":
+    "Téléchargez des documents et laissez l'IA extraire des informations, résumer le contenu et activer la recherche intelligente. Discutez avec vos documents grâce à la technologie RAG.",
+  "features.ai.contentGen.title": "Génération de Contenu IA",
+  "features.ai.contentGen.desc":
+    "Générez des articles de blog, du contenu marketing, des publications sur les réseaux sociaux et des e-mails avec l'IA. Choisissez le ton, le style et la longueur pour des résultats parfaits.",
+  "features.ai.analytics.title": "Analytique IA",
+  "features.ai.analytics.desc":
+    "Posez des questions en langage naturel et obtenez des informations instantanées, des graphiques et des rapports à partir de vos données. Aucune connaissance SQL requise.",
+  "features.ai.search.title": "Recherche Sémantique",
+  "features.ai.search.desc":
+    "Trouvez exactement ce dont vous avez besoin avec une recherche alimentée par l'IA qui comprend le contexte et le sens, pas seulement les mots-clés.",
+  "features.ai.multiLang.title": "Support Multilingue",
+  "features.ai.multiLang.desc":
+    "Générez du contenu et analysez des données dans plusieurs langues. Support complet i18n pour les équipes mondiales.",
+  "features.ai.providers.title": "Fournisseurs IA Flexibles",
+  "features.ai.providers.desc":
+    "Choisissez parmi OpenAI, Anthropic ou OpenRouter. Changez de fournisseur selon vos besoins et votre budget.",
+  "features.tabs.title": "Explorez nos fonctionnalités en détail",
+  "features.tabs.subtitle": "Découvrez ce qui rend notre plateforme unique",
+  "features.tech.title": "Excellence Technique",
+  "features.tech.subtitle":
+    "Construit avec des outils modernes et les meilleures pratiques",
+  "features.tech.security.title": "Sécurité Entreprise",
+  "features.tech.security.desc":
+    "RBAC, journalisation d'audit, limitation de débit et gestion des données conforme au RGPD intégrés.",
+  "features.tech.realtime.title": "Mises à Jour en Temps Réel",
+  "features.tech.realtime.desc":
+    "Support WebSocket pour la collaboration en direct et les notifications instantanées dans toute votre équipe.",
+  "features.tech.api.title": "API RESTful",
+  "features.tech.api.desc":
+    "API complète avec documentation OpenAPI. Intégrez avec vos outils et flux de travail existants.",
+  "features.tech.ui.title": "UI/UX Moderne",
+  "features.tech.ui.desc":
+    "Interfaces belles et responsives construites avec React, shadcn/ui et Tailwind CSS v4.",
+  "features.tech.usage.title": "Analytique d'Utilisation",
+  "features.tech.usage.desc":
+    "Tableaux de bord en temps réel montrant l'utilisation de l'IA, les coûts et les métriques de performance.",
+  "features.tech.async.title": "Traitement Asynchrone",
+  "features.tech.async.desc":
+    "Traitement des tâches en arrière-plan avec Celery pour les opérations IA lourdes qui ne bloquent pas votre application.",
+  "features.cta.title": "Prêt à découvrir la productivité alimentée par l'IA ?",
+  "features.cta.subtitle":
+    "Commencez avec notre plan gratuit et évoluez au fur et à mesure",
+  // Pricing page
+  "pricing.meta.title": "Tarifs - Plateforme SaaS alimentée par l'IA",
+  "pricing.meta.description":
+    "Tarification simple et transparente pour notre plateforme alimentée par l'IA. Choisissez le plan qui correspond à vos besoins.",
+  "pricing.hero.title": "Des tarifs qui évoluent avec vous",
+  "pricing.hero.subtitle":
+    "Commencez gratuitement, évoluez quand vous avez besoin de plus de puissance. Tous les plans incluent l'accès à nos fonctionnalités IA.",
+  "pricing.section.title": "Choisissez votre plan",
+  "pricing.section.subtitle":
+    "Tous les plans incluent une garantie de remboursement de 14 jours",
+  "pricing.plan.free.name": "Gratuit",
+  "pricing.plan.free.description":
+    "Parfait pour essayer nos fonctionnalités IA",
+  "pricing.plan.free.cta": "Commencer Gratuitement",
+  "pricing.plan.starter.name": "Démarrage",
+  "pricing.plan.starter.description":
+    "Idéal pour les particuliers et les petites équipes",
+  "pricing.plan.starter.cta": "Commencer",
+  "pricing.plan.pro.name": "Professionnel",
+  "pricing.plan.pro.description":
+    "Pour les entreprises et équipes en croissance",
+  "pricing.plan.pro.badge": "Le Plus Populaire",
+  "pricing.plan.pro.cta": "Commencer Pro",
+  "pricing.plan.business.name": "Entreprise",
+  "pricing.plan.business.description":
+    "Capacités IA de niveau entreprise",
+  "pricing.plan.business.cta": "Contacter les Ventes",
+  "pricing.period.month": "mois",
+  "pricing.feature.aiCredits": "{count} Crédits IA/mois",
+  "pricing.feature.docIntel": "Intelligence Documentaire IA",
+  "pricing.feature.contentGen": "Génération de Contenu IA",
+  "pricing.feature.analytics": "Analytique IA",
+  "pricing.feature.projects": "{count} Projet|{count} Projets",
+  "pricing.feature.users": "{count} Utilisateur|{count} Utilisateurs",
+  "pricing.feature.storage": "{amount} de Stockage",
+  "pricing.feature.api": "Accès API",
+  "pricing.feature.fullApi": "Accès API Complet",
+  "pricing.faq.title": "Questions fréquemment posées",
+  "pricing.faq.credits.q": "Que sont les Crédits IA ?",
+  "pricing.faq.credits.a":
+    "Les Crédits IA sont utilisés pour alimenter toutes les opérations IA sur notre plateforme. 1 crédit ≈ 1 000 tokens. Le traitement de documents utilise 10-50 crédits, la génération de contenu utilise 5-20 crédits, et les requêtes analytiques utilisent 3-10 crédits par opération.",
+  "pricing.faq.change.q": "Puis-je changer de plan à tout moment ?",
+  "pricing.faq.change.a":
+    "Oui ! Vous pouvez passer à un plan supérieur ou inférieur à tout moment. Les changements prennent effet immédiatement, et nous calculerons au prorata les frais ou crédits.",
+  "pricing.faq.exceed.q": "Que se passe-t-il si je dépasse mes crédits ?",
+  "pricing.faq.exceed.a":
+    "Vous pouvez acheter des packs de crédits supplémentaires ou passer à un plan supérieur. Nous vous avertirons quand vous atteindrez 80% de votre limite mensuelle.",
+  "pricing.faq.refund.q": "Offrez-vous des remboursements ?",
+  "pricing.faq.refund.a":
+    "Oui ! Nous offrons une garantie de remboursement de 14 jours sur tous les plans payants. Si vous n'êtes pas satisfait, nous vous rembourserons intégralement.",
+  "pricing.faq.apiKey.q": "Puis-je utiliser ma propre clé API OpenAI ?",
+  "pricing.faq.apiKey.a":
+    "Les utilisateurs du plan Entreprise peuvent connecter leurs propres clés API pour OpenAI, Anthropic ou OpenRouter pour réduire les coûts et avoir un contrôle total sur leur utilisation de l'IA.",
+  "pricing.cta.title": "Prêt à commencer ?",
+  "pricing.cta.subtitle":
+    "Rejoignez des milliers d'équipes utilisant déjà notre plateforme IA",
+  "pricing.cta.primary": "Commencer l'Essai Gratuit",
+  "pricing.cta.secondary": "Contacter les Ventes",
 };
 
 export default FRLocale;

@@ -170,6 +170,112 @@ const ENLocale: I18nStrings = {
   "home.finalCta.title": "Ready to supercharge your workflow?",
   "home.finalCta.subtitle":
     "Join thousands of teams already using our AI platform. Start free, no credit card required.",
+  // Features page
+  "features.meta.title": "Features - AI-Powered SaaS Platform",
+  "features.meta.description":
+    "Discover powerful AI features including document intelligence, content generation, analytics, and more.",
+  "features.hero.badge": "🚀 Powered by GPT-4 & Claude",
+  "features.hero.title": "AI superpowers for your business",
+  "features.hero.subtitle":
+    "Everything you need to build, scale, and manage an AI-powered SaaS application. From document processing to content generation and analytics.",
+  "features.ai.title": "AI-Powered Features",
+  "features.ai.subtitle":
+    "Production-ready AI capabilities that drive real business value",
+  "features.ai.docIntel.title": "AI Document Intelligence",
+  "features.ai.docIntel.desc":
+    "Upload documents and let AI extract insights, summarize content, and enable intelligent search. Chat with your documents using RAG technology.",
+  "features.ai.contentGen.title": "AI Content Generation",
+  "features.ai.contentGen.desc":
+    "Generate blog posts, marketing copy, social media content, and emails with AI. Choose tone, style, and length for perfect results.",
+  "features.ai.analytics.title": "AI Analytics",
+  "features.ai.analytics.desc":
+    "Ask questions in natural language and get instant insights, charts, and reports from your data. No SQL knowledge required.",
+  "features.ai.search.title": "Semantic Search",
+  "features.ai.search.desc":
+    "Find exactly what you need with AI-powered search that understands context and meaning, not just keywords.",
+  "features.ai.multiLang.title": "Multi-language Support",
+  "features.ai.multiLang.desc":
+    "Generate content and analyze data in multiple languages. Full i18n support for global teams.",
+  "features.ai.providers.title": "Flexible AI Providers",
+  "features.ai.providers.desc":
+    "Choose from OpenAI, Anthropic, or OpenRouter. Switch providers based on your needs and budget.",
+  "features.tabs.title": "Deep dive into our features",
+  "features.tabs.subtitle": "Explore what makes our platform unique",
+  "features.tech.title": "Technical Excellence",
+  "features.tech.subtitle": "Built with modern tools and best practices",
+  "features.tech.security.title": "Enterprise Security",
+  "features.tech.security.desc":
+    "RBAC, audit logging, rate limiting, and GDPR-compliant data handling built-in.",
+  "features.tech.realtime.title": "Real-time Updates",
+  "features.tech.realtime.desc":
+    "WebSocket support for live collaboration and instant notifications across your team.",
+  "features.tech.api.title": "RESTful API",
+  "features.tech.api.desc":
+    "Comprehensive API with OpenAPI documentation. Integrate with your existing tools and workflows.",
+  "features.tech.ui.title": "Modern UI/UX",
+  "features.tech.ui.desc":
+    "Beautiful, responsive interfaces built with React, shadcn/ui, and Tailwind CSS v4.",
+  "features.tech.usage.title": "Usage Analytics",
+  "features.tech.usage.desc":
+    "Real-time dashboards showing AI usage, costs, and performance metrics.",
+  "features.tech.async.title": "Async Processing",
+  "features.tech.async.desc":
+    "Background job processing with Celery for heavy AI operations that don't block your app.",
+  "features.cta.title": "Ready to experience AI-powered productivity?",
+  "features.cta.subtitle": "Start with our free plan and upgrade as you grow",
+  // Pricing page
+  "pricing.meta.title": "Pricing - AI-Powered SaaS Platform",
+  "pricing.meta.description":
+    "Simple, transparent pricing for our AI-powered platform. Choose the plan that fits your needs.",
+  "pricing.hero.title": "Pricing that scales with you",
+  "pricing.hero.subtitle":
+    "Start free, upgrade when you need more power. All plans include access to our AI features.",
+  "pricing.section.title": "Choose your plan",
+  "pricing.section.subtitle": "All plans include a 14-day money-back guarantee",
+  "pricing.plan.free.name": "Free",
+  "pricing.plan.free.description": "Perfect for trying out our AI features",
+  "pricing.plan.free.cta": "Start Free",
+  "pricing.plan.starter.name": "Starter",
+  "pricing.plan.starter.description": "Great for individuals and small teams",
+  "pricing.plan.starter.cta": "Get Started",
+  "pricing.plan.pro.name": "Professional",
+  "pricing.plan.pro.description": "For growing businesses and teams",
+  "pricing.plan.pro.badge": "Most Popular",
+  "pricing.plan.pro.cta": "Start Pro",
+  "pricing.plan.business.name": "Business",
+  "pricing.plan.business.description": "Enterprise-grade AI capabilities",
+  "pricing.plan.business.cta": "Contact Sales",
+  "pricing.period.month": "month",
+  "pricing.feature.aiCredits": "{count} AI Credits/month",
+  "pricing.feature.docIntel": "AI Document Intelligence",
+  "pricing.feature.contentGen": "AI Content Generation",
+  "pricing.feature.analytics": "AI Analytics",
+  "pricing.feature.projects": "{count} Project|{count} Projects",
+  "pricing.feature.users": "{count} User|{count} Users",
+  "pricing.feature.storage": "{amount} Storage",
+  "pricing.feature.api": "API Access",
+  "pricing.feature.fullApi": "Full API Access",
+  "pricing.faq.title": "Frequently asked questions",
+  "pricing.faq.credits.q": "What are AI Credits?",
+  "pricing.faq.credits.a":
+    "AI Credits are used to power all AI operations on our platform. 1 credit ≈ 1,000 tokens. Document processing uses 10-50 credits, content generation uses 5-20 credits, and analytics queries use 3-10 credits per operation.",
+  "pricing.faq.change.q": "Can I change plans anytime?",
+  "pricing.faq.change.a":
+    "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges or credits.",
+  "pricing.faq.exceed.q": "What happens if I exceed my credits?",
+  "pricing.faq.exceed.a":
+    "You can purchase additional credit packs or upgrade to a higher plan. We'll notify you when you reach 80% of your monthly limit.",
+  "pricing.faq.refund.q": "Do you offer refunds?",
+  "pricing.faq.refund.a":
+    "Yes! We offer a 14-day money-back guarantee on all paid plans. If you're not satisfied, we'll refund your payment in full.",
+  "pricing.faq.apiKey.q": "Can I use my own OpenAI API key?",
+  "pricing.faq.apiKey.a":
+    "Business plan users can connect their own API keys for OpenAI, Anthropic, or OpenRouter to reduce costs and have full control over their AI usage.",
+  "pricing.cta.title": "Ready to get started?",
+  "pricing.cta.subtitle":
+    "Join thousands of teams already using our AI platform",
+  "pricing.cta.primary": "Start Free Trial",
+  "pricing.cta.secondary": "Contact Sales",
 };
 
 export default ENLocale;
