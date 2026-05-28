@@ -30,49 +30,43 @@ const textClass = variant === "gradient" ? "text-white" : "text-foreground";
 
 <section class={`py-20 md:py-32 ${bgClass}`}>
   <div class="container max-w-5xl">
-    <div class="animate-slide-up text-center">
-      <h2
-        class={`text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 ${textClass}`}
-      >
+    <div class="text-center">
+      <h2 class={`text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 ${textClass}`}>
         {title}
       </h2>
 
-      {
-        subtitle && (
-          <p
-            class={`mx-auto mb-10 max-w-3xl text-xl leading-relaxed ${variant === "gradient" ? "text-white/90" : "text-muted-foreground"}`}
-          >
-            {subtitle}
-          </p>
-        )
-      }
+      {subtitle && (
+        <p class={`mx-auto mb-10 max-w-3xl text-xl leading-relaxed ${variant === "gradient" ? "text-white/90" : "text-muted-foreground"}`}>
+          {subtitle}
+        </p>
+      )}
 
       <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Button
+          asChild
           size="lg"
           variant={variant === "gradient" ? "secondary" : "default"}
           className="rounded-2xl px-8 py-6 text-lg shadow-soft-lg transition-all duration-300 hover:shadow-soft-xl"
           client:load
         >
-          <a href={primaryCtaHref} class="no-underline">
+          <a href={primaryCtaHref}>
             {primaryCta}
           </a>
         </Button>
 
-        {
-          secondaryCta && (
-            <Button
-              variant={variant === "gradient" ? "outline" : "outline"}
-              size="lg"
-              className={`rounded-2xl px-8 py-6 text-lg shadow-soft transition-all duration-300 hover:shadow-soft-lg ${variant === "gradient" ? "border-white/30 text-white hover:bg-white/10" : ""}`}
-              client:load
-            >
-              <a href={secondaryCtaHref} class="no-underline">
-                {secondaryCta}
-              </a>
-            </Button>
-          )
-        }
+        {secondaryCta && (
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className={`rounded-2xl px-8 py-6 text-lg shadow-soft transition-all duration-300 hover:shadow-soft-lg ${variant === "gradient" ? "border-white/30 text-white hover:bg-white/10" : ""}`}
+            client:load
+          >
+            <a href={secondaryCtaHref}>
+              {secondaryCta}
+            </a>
+          </Button>
+        )}
       </div>
     </div>
   </div>

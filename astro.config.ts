@@ -1,4 +1,5 @@
 import cloudflare from "@astrojs/cloudflare";
+import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -35,16 +36,18 @@ export default defineConfig({
     react(),
   ],
   markdown: {
-    remarkPlugins: [
-      [
-        remarkToc,
-        {
-          heading:
-            "(table[ -]of[ -])?contents?|toc|محتويات|المحتويات|جدول المحتويات",
-        },
+    processor: unified({
+      remarkPlugins: [
+        [
+          remarkToc,
+          {
+            heading:
+              "(table[ -]of[ -])?contents?|toc|محتويات|المحتويات|جدول المحتويات",
+          },
+        ],
+        [remarkCollapse, { test: "Table of contents" }],
       ],
-      [remarkCollapse, { test: "Table of contents" }],
-    ],
+    }),
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
@@ -52,7 +55,7 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss() as any],
     resolve: {
       dedupe: ["react", "react-dom"],
     },
