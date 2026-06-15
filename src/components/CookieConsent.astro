@@ -1,25 +1,33 @@
 ---
-// Cookie Consent with Google Tag Manager integration
-// Using vanilla-cookieconsent library
+// Cookie Consent with Google Tag Manager Consent Mode v2
+// GTM loads in Layout.astro with denied defaults; this component updates consent state.
 ---
 
 <script>
   import "vanilla-cookieconsent/dist/cookieconsent.css";
-  import * as CookieConsent from "vanilla-cookieconsent";
+  import CookieConsent from "vanilla-cookieconsent";
 
-  // Extend Window interface for GTM dataLayer
   declare global {
     interface Window {
       dataLayer: unknown[];
+      gtag: (...args: unknown[]) => void;
     }
   }
 
-  // Initialize Cookie Consent
+  function updateGTMConsent(analyticsAccepted: boolean, marketingAccepted: boolean) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'update', {
+      analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+      ad_storage: marketingAccepted ? 'granted' : 'denied',
+      ad_user_data: marketingAccepted ? 'granted' : 'denied',
+      ad_personalization: marketingAccepted ? 'granted' : 'denied',
+    });
+  }
+
   CookieConsent.run({
-    // Disable page scripts by default
     disablePageInteraction: false,
 
-    // Cookie settings
     cookie: {
       name: "cc_cookie",
       domain: window.location.hostname,
@@ -28,7 +36,6 @@
       expiresAfterDays: 365,
     },
 
-    // GUI options
     guiOptions: {
       consentModal: {
         layout: "box inline",
@@ -44,7 +51,6 @@
       },
     },
 
-    // Categories of cookies
     categories: {
       necessary: {
         enabled: true,
@@ -54,27 +60,18 @@
         enabled: false,
         readOnly: false,
         autoClear: {
-          cookies: [
-            {
-              name: /^(_ga|_gid)/,
-            },
-          ],
+          cookies: [{ name: /^(_ga|_gid)/ }],
         },
       },
       marketing: {
         enabled: false,
         readOnly: false,
         autoClear: {
-          cookies: [
-            {
-              name: /^(_fbp|_gcl)/,
-            },
-          ],
+          cookies: [{ name: /^(_fbp|_gcl)/ }],
         },
       },
     },
 
-    // Language configuration
     language: {
       default: "en",
       translations: {
@@ -158,78 +155,31 @@
       },
     },
 
-    // Callback functions
-    onChange: ({ changedCategories }) => {
-      // Handle analytics consent
-      if (changedCategories.includes("analytics")) {
-        if (CookieConsent.acceptedCategory("analytics")) {
-          console.info("Analytics cookies enabled");
-          // Initialize Google Analytics/GTM
-          loadGoogleTagManager();
-        } else {
-          console.info("Analytics cookies disabled");
-        }
-      }
-
-      // Handle marketing consent
-      if (changedCategories.includes("marketing")) {
-        if (CookieConsent.acceptedCategory("marketing")) {
-          console.info("Marketing cookies enabled");
-        } else {
-          console.info("Marketing cookies disabled");
-        }
-      }
-    },
-
-    onFirstConsent: () => {
-      console.info("First consent saved");
-
-      // Load GTM if analytics accepted
-      if (CookieConsent.acceptedCategory("analytics")) {
-        loadGoogleTagManager();
-      }
-    },
-
+    // Fires on every page load when consent was previously saved — re-grants GTM consent
     onConsent: () => {
-      console.info("Consent updated");
+      updateGTMConsent(
+        CookieConsent.acceptedCategory("analytics"),
+        CookieConsent.acceptedCategory("marketing")
+      );
+    },
+
+    // Fires only the first time the user makes a choice
+    onFirstConsent: () => {
+      updateGTMConsent(
+        CookieConsent.acceptedCategory("analytics"),
+        CookieConsent.acceptedCategory("marketing")
+      );
+    },
+
+    // Fires when the user changes preferences
+    onChange: () => {
+      updateGTMConsent(
+        CookieConsent.acceptedCategory("analytics"),
+        CookieConsent.acceptedCategory("marketing")
+      );
     },
   });
 
-  // Function to load Google Tag Manager
-  function loadGoogleTagManager() {
-    // Get GTM ID from environment or meta tag
-    const gtmId = document
-      .querySelector('meta[name="gtm-id"]')
-      ?.getAttribute("content");
-
-    if (!gtmId) {
-      console.warn("GTM ID not found");
-      return;
-    }
-
-    // Check if GTM is already loaded
-    if (window.dataLayer) {
-      console.info("GTM already loaded");
-      return;
-    }
-
-    // Initialize dataLayer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      "gtm.start": new Date().getTime(),
-      event: "gtm.js",
-    });
-
-    // Load GTM script
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
-    document.head.appendChild(script);
-
-    console.info("Google Tag Manager loaded");
-  }
-
-  // Show preferences modal on button click
   document.addEventListener("DOMContentLoaded", () => {
     const manageCookiesBtn = document.getElementById("manage-cookies-btn");
     if (manageCookiesBtn) {
@@ -239,15 +189,6 @@
     }
   });
 </script>
-
-<!-- GTM noscript fallback -->
-<noscript>
-  <iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0"
-    width="0"
-    style="display:none;visibility:hidden"></iframe>
-</noscript>
 
 <style is:global>
   /* ----- Cookie Consent Light Mode & Base ----- */
@@ -278,7 +219,6 @@
 
   /* ----- Cookie Consent Dark Mode ----- */
   html[data-theme="dark"], html.dark {
-    /* Make the background distinctly lighter (16%) than the black body (6%) so it pops */
     --cc-bg: hsl(240 8% 18%);
     --cc-primary-color: hsl(0 0% 98%);
     --cc-secondary-color: hsl(240 5% 85%);
@@ -301,29 +241,26 @@
     --cc-overlay-bg: rgba(0, 0, 0, 0.75);
   }
 
-  /* Explicitly target the cc-main div for fonts and legible links */
   #cc-main {
     --cc-font-family: inherit;
   }
-  
+
   #cc-main a {
     color: var(--primary);
     text-decoration: underline;
     font-weight: 500;
   }
-  
+
   #cc-main a:hover {
     color: color-mix(in srgb, var(--primary) 80%, white);
   }
 
-  /* Custom styling for a modern soft look */
   #cc-main .cm {
     border-radius: var(--radius);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid var(--cc-separator-border-color);
   }
 
-  /* Give the footer a slightly differentiated bg for depth */
   #cc-main .cm__footer {
     border-top: 1px solid var(--cc-separator-border-color);
   }
@@ -336,7 +273,6 @@
     background-color: hsl(240 5% 98%);
   }
 
-  /* Preferences Modal Adjustments */
   #cc-main .pm {
     border-radius: var(--radius);
     border: 1px solid var(--cc-separator-border-color);

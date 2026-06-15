@@ -4,7 +4,7 @@ import { DEFAULT_LOCALE } from "@/i18n/config";
 import { getLocaleInfo, translateFor } from "@/i18n/utils";
 import "@/styles/global.css";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import { PUBLIC_GTM_ID, PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { ClientRouter } from "astro:transitions";
 import CookieConsent from "@/components/CookieConsent.astro";
 
@@ -174,10 +174,45 @@ const structuredData = {
     <ClientRouter />
 
     <script is:inline src="/toggle-theme.js"></script>
-    <!-- Google Tag Manager ID (replace with your GTM ID) -->
-    <meta name="gtm-id" content="GTM-XXXXXXX" />
+
+    {PUBLIC_GTM_ID && (
+      <>
+        <!-- GTM Consent Mode v2 defaults — must run before GTM loads -->
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            functionality_storage: 'granted',
+            security_storage: 'granted',
+            wait_for_update: 2000,
+          });
+        </script>
+        <!-- Google Tag Manager -->
+        <script is:inline define:vars={{ gtmId: PUBLIC_GTM_ID }}>
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer',gtmId);
+        </script>
+      </>
+    )}
   </head>
   <body>
+    {PUBLIC_GTM_ID && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${PUBLIC_GTM_ID}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        />
+      </noscript>
+    )}
     <slot />
     <CookieConsent />
   </body>
