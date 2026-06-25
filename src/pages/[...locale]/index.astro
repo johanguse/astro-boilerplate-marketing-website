@@ -19,7 +19,6 @@ export const getStaticPaths = (async () =>
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale },
   }))) satisfies GetStaticPaths;
 
-const { locale = DEFAULT_LOCALE } = Astro.params;
 const t = translateFor(Astro.currentLocale);
 
 const features = [

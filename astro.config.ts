@@ -1,4 +1,5 @@
 import cloudflare from "@astrojs/cloudflare";
+import { cacheCloudflare } from '@astrojs/cloudflare/cache';
 import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -13,10 +14,20 @@ import {
   SUPPORTED_LOCALES,
 } from "./src/i18n/config";
 
+// The Cloudflare adapter (v14) drives both `astro dev` and the test config
+// through `@cloudflare/vite-plugin` + workerd. That path is currently broken
+// against Astro 7's Rolldown-powered Vite 8 ("Missing field `moduleType`"), and
+// the plugin also rejects the `ssr.resolve.external` list Astro injects under
+// Vitest. So skip the adapter for `dev` and tests; `build` and `preview:cf`
+// (astro build && wrangler dev) still run the full Cloudflare runtime.
+const isTest = process.env.VITEST === "true";
+const isDev = process.argv.includes("dev");
+const useCloudflare = !isTest && !isDev;
+
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: cloudflare(),
+  adapter: useCloudflare ? cloudflare() : undefined,
   site: SITE.website,
   i18n: {
     locales: SUPPORTED_LOCALES,
@@ -24,6 +35,9 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false,
     },
+  },
+  cache: {
+    provider: cacheCloudflare(),
   },
   integrations: [
     sitemap({

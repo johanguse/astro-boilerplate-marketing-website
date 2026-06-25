@@ -5,7 +5,7 @@
 
 <script>
   import "vanilla-cookieconsent/dist/cookieconsent.css";
-  import CookieConsent from "vanilla-cookieconsent";
+  import { run, acceptedCategory, showPreferences } from "vanilla-cookieconsent";
 
   declare global {
     interface Window {
@@ -25,7 +25,7 @@
     });
   }
 
-  CookieConsent.run({
+  run({
     disablePageInteraction: false,
 
     cookie: {
@@ -158,24 +158,24 @@
     // Fires on every page load when consent was previously saved — re-grants GTM consent
     onConsent: () => {
       updateGTMConsent(
-        CookieConsent.acceptedCategory("analytics"),
-        CookieConsent.acceptedCategory("marketing")
+        acceptedCategory("analytics"),
+        acceptedCategory("marketing")
       );
     },
 
     // Fires only the first time the user makes a choice
     onFirstConsent: () => {
       updateGTMConsent(
-        CookieConsent.acceptedCategory("analytics"),
-        CookieConsent.acceptedCategory("marketing")
+        acceptedCategory("analytics"),
+        acceptedCategory("marketing")
       );
     },
 
     // Fires when the user changes preferences
     onChange: () => {
       updateGTMConsent(
-        CookieConsent.acceptedCategory("analytics"),
-        CookieConsent.acceptedCategory("marketing")
+        acceptedCategory("analytics"),
+        acceptedCategory("marketing")
       );
     },
   });
@@ -184,7 +184,7 @@
     const manageCookiesBtn = document.getElementById("manage-cookies-btn");
     if (manageCookiesBtn) {
       manageCookiesBtn.addEventListener("click", () => {
-        CookieConsent.showPreferences();
+        showPreferences();
       });
     }
   });
